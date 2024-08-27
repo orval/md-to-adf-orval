@@ -1,5 +1,5 @@
 {
-  "name": "md-to-adf-dailykos",
+  "name": "md-to-adf-orval",
   "version": "0.1.1",
   "description": "Translate Markdown (Github) into Atlassian Document Format (ADF)",
   "main": "dist/index.js",
