@@ -31,8 +31,9 @@ function buildTreeFromMarkdown( rawTextMarkdown ){
 	//code block are the most greedy expression in markdown
 	const cleanedCodeBlock = collapseCodeBloc( rawTextMarkdown )
 	
+	const wibble = collapseTable( cleanedCodeBlock )
 	//block quote collapse paragraphs, so we have to to them first
-	const blockquotedNodes = collapseBlockquote( cleanedCodeBlock )
+	const blockquotedNodes = collapseBlockquote( wibble )
 	
 	//paragraph themselves collapse when they are not separated by
 	// two consecutive empty lines
@@ -147,6 +148,29 @@ function collapseBlockquote( rawIROfMarkdown ){
 	}, { blockquotedNodes: [ ] } )
 	
 	return blockquotedNodes
+}
+
+/**
+ * Tables start with a pipe
+ *
+ * @param rawIROfMarkdown	{Array} 	the array of IRElement to look into collapsing
+ *
+ * @returns {IRElement[]}	an array of IRElement
+ */
+function collapseTable( rawIROfMarkdown ){
+	const { tableNodes } = rawIROfMarkdown.reduce( ( { tableNodes, currentLastThatWasTable }, currentLineNode ) => {
+
+		if( !currentLastThatWasTable && currentLineNode.adfType === 'table' ){
+			tableNodes.push( currentLineNode )
+			return { tableNodes, currentLastThatWasTable: currentLineNode }
+		}
+
+		tableNodes.push( currentLineNode )
+		return { tableNodes }
+
+	}, { tableNodes: [ ] } )
+
+	return tableNodes
 }
 
 /**

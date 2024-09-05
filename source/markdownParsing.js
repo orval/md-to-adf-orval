@@ -52,6 +52,9 @@ function parseMarkdownLinetoIR( markdownLineTextWithTabs ){
 	const codeBlockNode = matchCodeBlock( markdownLine )
 	if( codeBlockNode ) return codeBlockNode
 	
+	const tableNode = matchTable( markdownLine )
+	if( tableNode ) return tableNode
+
 	const paragraphNode = matchParagraph( markdownLine )
 	if( paragraphNode ) return paragraphNode
 	
@@ -133,6 +136,27 @@ function matchCodeBlock( lineToMatch ){
 			textToEmphasis: '' }
 	}
 	
+	return null
+}
+
+
+/**
+ * Match a markdown table
+ *
+ * @param lineToMatch 	actual expression to match
+ *
+ * @returns {IRElement} | null if the expression doesn't match
+ */
+function matchTable( lineToMatch ){
+	const table = lineToMatch.match( /^\s*\|(?:[^|]+\|)+\s*$/i )
+	if( table ){
+		// && table.groups ){
+
+		return { 	adfType: 		"table",
+			textPosition: 	lineToMatch.indexOf( '|' ),
+			textToEmphasis: '' }
+	}
+
 	return null
 }
 

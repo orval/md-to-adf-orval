@@ -79,4 +79,3 @@ typings/
 .idea/
 .DS_Store
 dist/docs/
-yarn.lock

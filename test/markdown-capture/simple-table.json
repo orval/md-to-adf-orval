@@ -1,0 +1,111 @@
+{
+  "type": "table",
+  "attrs": {
+    "isNumberColumnEnabled": false,
+    "layout": "center",
+    "width": 900,
+    "displayMode": "default"
+  },
+  "content": [
+    {
+      "type": "tableHeader",
+      "content": [
+        {
+          "type": "tableCell",
+          "attrs": {},
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "This"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tableCell",
+          "attrs": {},
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "is a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tableCell",
+          "attrs": {},
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "table"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tableRow",
+      "content": [
+        {
+          "type": "tableCell",
+          "attrs": {},
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "this"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tableCell",
+          "attrs": {},
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "is a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tableCell",
+          "attrs": {},
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "row"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

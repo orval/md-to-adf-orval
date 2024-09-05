@@ -24,8 +24,11 @@
     "adf"
   ],
   "dependencies": {
-    "adf-builder": "^3.3.0",
+    "adf-builder": "github:yasoonOfficial/adf-builder-javascript",
     "marked": "^0.8.2"
+  },
+  "resolutions": {
+    "adf-builder": "github:yasoonOfficial/adf-builder-javascript"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",

@@ -9,7 +9,7 @@
  * It also remove non-compatible hierarchy that ADF doesn't support
  *
  **********************************************************************************************************************/
-const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention }	= require( 'adf-builder' )
+const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention, Table, TableCell, TableHeader, TableRow }	= require( 'adf-builder' )
 
 const attachTextToNodeSliceEmphasis = require( __dirname + '/adfEmphasisParsing' )
 
@@ -101,6 +101,9 @@ function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
 		case "paragraph":
 			return adfNodeToAttachTo.content.add( new Paragraph() )
 		
+		case "table":
+			return adfNodeToAttachTo.content.add( new Table( typeParams ) )
+
 		default:
 			throw 'incompatible type'
 	}
