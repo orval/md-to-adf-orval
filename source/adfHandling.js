@@ -10,6 +10,7 @@
  *
  **********************************************************************************************************************/
 const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention, Table, TableCell, TableHeader, TableRow }	= require( 'adf-builder' )
+const { ContentNode } = require('adf-builder/dist/nodes')
 
 const attachTextToNodeSliceEmphasis = require( __dirname + '/adfEmphasisParsing' )
 
@@ -55,7 +56,18 @@ function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameI
 		
 		else if( currentNode.node.adfType === 'codeBlock' )
 			attachTextToNodeRaw( nodeToAttachTextTo, currentNode.node.textToEmphasis )
-		
+
+		else if( currentNode.node.adfType === 'table' )
+			currentNode.children = currentNode.node.rows
+
+		else if( currentNode.node.adfType === 'tableRow' || currentNode.node.adfType === 'tableHeader' )
+			currentNode.children = currentNode.node.cells
+			// console.log('ROW', JSON.stringify(currentNode,null,4))
+
+		else if( currentNode.node.adfType === 'tableCell' )
+			currentNode.children = [ currentNode.node.value ]
+			// console.log('ROW', JSON.stringify(currentNode,null,4))
+
 		if( currentNode.children )
 			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
 		
@@ -101,8 +113,20 @@ function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
 		case "paragraph":
 			return adfNodeToAttachTo.content.add( new Paragraph() )
 		
-		case "table":
-			return adfNodeToAttachTo.content.add( new Table( typeParams ) )
+		case "table": {
+			const table = new Table( )
+			if( typeParams ) table.attrs = typeParams
+			return adfNodeToAttachTo.content.add( table )
+		}
+
+		case "tableHeader":
+			return adfNodeToAttachTo.content.add( new TableHeader() )
+
+		case "tableRow":
+			return adfNodeToAttachTo.content.add( new TableRow() )
+
+		case "tableCell":
+			return adfNodeToAttachTo.content.add( new TableCell() )
 
 		default:
 			throw 'incompatible type'

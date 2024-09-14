@@ -31,14 +31,15 @@ function buildTreeFromMarkdown( rawTextMarkdown ){
 	//code block are the most greedy expression in markdown
 	const cleanedCodeBlock = collapseCodeBloc( rawTextMarkdown )
 	
-	const wibble = collapseTable( cleanedCodeBlock )
 	//block quote collapse paragraphs, so we have to to them first
-	const blockquotedNodes = collapseBlockquote( wibble )
+	const blockquotedNodes = collapseBlockquote( cleanedCodeBlock )
 	
+	const tabledNodes = collapseTable( blockquotedNodes )
+
 	//paragraph themselves collapse when they are not separated by
 	// two consecutive empty lines
-	const breakedLineNodes = collapseParagraph( blockquotedNodes )
-	
+	const breakedLineNodes = collapseParagraph( tabledNodes )
+
 	//lists accumulate elements of the same level unless separated by
 	// 	two consecutive empty lines
 	const accumulatedNodes = accumulateLevelFromList( breakedLineNodes )
@@ -158,19 +159,95 @@ function collapseBlockquote( rawIROfMarkdown ){
  * @returns {IRElement[]}	an array of IRElement
  */
 function collapseTable( rawIROfMarkdown ){
-	const { tableNodes } = rawIROfMarkdown.reduce( ( { tableNodes, currentLastThatWasTable }, currentLineNode ) => {
 
-		if( !currentLastThatWasTable && currentLineNode.adfType === 'table' ){
-			tableNodes.push( currentLineNode )
-			return { tableNodes, currentLastThatWasTable: currentLineNode }
+	const TABLE_DELIM_RE = /^:{0,1}-+:{0,1}$/
+
+	function getCells(str) {
+			const cells = str.split('|')
+			cells.shift()
+			cells.pop()
+			return cells.map(c => c.trim())
+	}
+
+	// return the number of columns if this is a table delimiter
+	function checkTableDelimiterNode(node) {
+		if (node.adfType === 'paragraph') {
+			const cells = getCells(node.textToEmphasis)
+			if (cells.every(c => TABLE_DELIM_RE.test(c))) {
+				return cells.filter(c => TABLE_DELIM_RE.test(c))
+			}
+		}
+		return 0
+	}
+
+	// return the cells if this is a table row
+	function checkTableRowNode(node, numCols) {
+		if (node.adfType === 'paragraph') {
+			const cells = getCells(node.textToEmphasis)
+			if (cells.length === numCols) {
+				return cells
+			}
+		}
+		return []
+	}
+
+	function makeCell( value ){
+		return { node: { adfType: "tableCell", value: { node: {
+			adfType: 'paragraph',
+			textToEmphasis: value,
+			textPosition: 0
+		}}}}
+	}
+
+	const nodes = []
+
+  for (let i = 0; i < rawIROfMarkdown.length;) {
+		const delims = checkTableDelimiterNode(rawIROfMarkdown[i])
+
+		if (i > 0 && delims.length > 0) {
+			const headers = checkTableRowNode(rawIROfMarkdown[i - 1], delims.length)
+
+			// non-zero headers means a table has been found
+			if (headers.length > 0) {
+				const headerCells = headers.map(h => makeCell(h))
+
+				const headerRow = { node: { adfType: "tableHeader", cells: headerCells }}
+				const table = {
+					adfType: "table",
+					textPosition: rawIROfMarkdown[i].textPosition,
+					rows: [ headerRow ],
+					typeParam: {
+						isNumberColumnEnabled: false,
+						layout: "center",
+						width: 900,
+						displayMode: "default"
+					},
+				}
+
+				let j = i + 1
+
+				for (; j < rawIROfMarkdown.length; ++j) {
+					const cells = checkTableRowNode(rawIROfMarkdown[j], delims.length)
+
+				if (cells.length > 0) {
+						const row = { node: { adfType: "tableRow", cells: cells.map(c => makeCell(c)) }}
+						table.rows.push(row)
+					}
+				}
+
+				// remove paragraph that was actually a table header
+				nodes.pop()
+				nodes.push(table)
+				i = j
+				continue
+			}
 		}
 
-		tableNodes.push( currentLineNode )
-		return { tableNodes }
+    nodes.push(rawIROfMarkdown[i])
+		++i
+  }
 
-	}, { tableNodes: [ ] } )
-
-	return tableNodes
+  return nodes
 }
 
 /**
