@@ -4,7 +4,7 @@
   "description": "Translate Markdown (Github) into Atlassian Document Format (ADF)",
   "main": "dist/index.js",
   "scripts": {
-    "package": "ncc build source/index.js -o dist",
+    "package": "NODE_OPTIONS=--openssl-legacy-provider ncc build source/index.js -o dist",
     "test": "jest --color",
     "coverage": "codecov",
     "commit": "git-cz",
