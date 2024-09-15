@@ -62,11 +62,9 @@ function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameI
 
 		else if( currentNode.node.adfType === 'tableRow' || currentNode.node.adfType === 'tableHeader' )
 			currentNode.children = currentNode.node.cells
-			// console.log('ROW', JSON.stringify(currentNode,null,4))
 
 		else if( currentNode.node.adfType === 'tableCell' )
 			currentNode.children = [ currentNode.node.value ]
-			// console.log('ROW', JSON.stringify(currentNode,null,4))
 
 		if( currentNode.children )
 			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
