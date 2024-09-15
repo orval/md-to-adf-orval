@@ -229,10 +229,10 @@ function collapseTable( rawIROfMarkdown ){
 				for (; j < rawIROfMarkdown.length; ++j) {
 					const cells = checkTableRowNode(rawIROfMarkdown[j], delims.length)
 
-				if (cells.length > 0) {
-						const row = { node: { adfType: "tableRow", cells: cells.map(c => makeCell(c)) }}
-						table.rows.push(row)
-					}
+					if (cells.length == 0) break
+
+					const row = { node: { adfType: "tableRow", cells: cells.map(c => makeCell(c)) }}
+					table.rows.push(row)
 				}
 
 				// remove paragraph that was actually a table header
