@@ -113,11 +113,8 @@ function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
 		case "paragraph":
 			return adfNodeToAttachTo.content.add( new Paragraph() )
 		
-		case "table": {
-			const table = new Table( )
-			if( typeParams ) table.attrs = typeParams
-			return adfNodeToAttachTo.content.add( table )
-		}
+		case "table":
+			return adfNodeToAttachTo.content.add( new Table() )
 
 		case "tableHeader":
 			return adfNodeToAttachTo.content.add( new TableHeader() )

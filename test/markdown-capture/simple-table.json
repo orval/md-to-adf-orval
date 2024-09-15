@@ -1,15 +1,10 @@
 [
   {
     "type": "table",
-    "attrs": {
-      "isNumberColumnEnabled": false,
-      "layout": "center",
-      "width": 900,
-      "displayMode": "default"
-    },
     "content": [
       {
         "type": "tableHeader",
+        "attrs": {},
         "content": [
           {
             "type": "tableCell",
