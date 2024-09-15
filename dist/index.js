@@ -48,13 +48,25 @@ module.exports =
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class Strike extends mark_1.Mark {
-    constructor() {
-        super('strike');
+var mark_1 = __webpack_require__(711);
+var Strike = /** @class */ (function (_super) {
+    __extends(Strike, _super);
+    function Strike() {
+        return _super.call(this, 'strike') || this;
     }
-}
+    return Strike;
+}(mark_1.Mark));
 exports.Strike = Strike;
 //# sourceMappingURL=strike.js.map
 
@@ -65,56 +77,65 @@ exports.Strike = Strike;
 
 "use strict";
 
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const emoji_1 = __webpack_require__(526);
-const hard_break_1 = __webpack_require__(570);
-const index_1 = __webpack_require__(492);
-const mention_1 = __webpack_require__(962);
-const text_1 = __webpack_require__(171);
-class Decision {
-    constructor(localId, state) {
+var emoji_1 = __webpack_require__(526);
+var hard_break_1 = __webpack_require__(570);
+var index_1 = __webpack_require__(492);
+var mention_1 = __webpack_require__(962);
+var text_1 = __webpack_require__(171);
+var Decision = /** @class */ (function () {
+    function Decision(localId, state) {
         this.localId = localId;
         this.state = state;
         this.content = new index_1.ContentNode('decisionItem');
     }
-    text(text, marks) {
+    Decision.prototype.text = function (text, marks) {
         return this.add(new text_1.Text(text, marks));
-    }
-    code(text) {
+    };
+    Decision.prototype.code = function (text) {
         return this.add(text_1.code(text));
-    }
-    em(text) {
+    };
+    Decision.prototype.em = function (text) {
         return this.add(text_1.em(text));
-    }
-    link(text, href, title) {
+    };
+    Decision.prototype.link = function (text, href, title) {
         return this.add(text_1.link(text, href, title));
-    }
-    strike(text) {
+    };
+    Decision.prototype.strike = function (text) {
         return this.add(text_1.strike(text));
-    }
-    strong(text) {
+    };
+    Decision.prototype.strong = function (text) {
         return this.add(text_1.strong(text));
-    }
-    mention(id, text) {
+    };
+    Decision.prototype.mention = function (id, text) {
         return this.add(new mention_1.Mention(id, text));
-    }
-    emoji(shortName, id, text) {
-        return this.add(new emoji_1.Emoji({ shortName, id, text }));
-    }
-    hardBreak() {
+    };
+    Decision.prototype.emoji = function (shortName, id, text) {
+        return this.add(new emoji_1.Emoji({ shortName: shortName, id: id, text: text }));
+    };
+    Decision.prototype.hardBreak = function () {
         return this.add(new hard_break_1.HardBreak());
-    }
-    add(node) {
+    };
+    Decision.prototype.add = function (node) {
         this.content.add(node);
         return this;
-    }
-    toJSON() {
-        return Object.assign({}, this.content.toJSON(), { attrs: {
+    };
+    Decision.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
                 localId: this.localId,
                 state: this.state
             } });
-    }
-}
+    };
+    return Decision;
+}());
 exports.Decision = Decision;
 //# sourceMappingURL=decision.js.map
 
@@ -125,49 +146,62 @@ exports.Decision = Decision;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const emoji_1 = __webpack_require__(526);
-const hard_break_1 = __webpack_require__(570);
-const index_1 = __webpack_require__(492);
-const mention_1 = __webpack_require__(962);
-const text_1 = __webpack_require__(171);
-class Paragraph extends index_1.TopLevelNode {
-    constructor() {
-        super(...arguments);
-        this.content = new index_1.ContentNode('paragraph');
+var emoji_1 = __webpack_require__(526);
+var hard_break_1 = __webpack_require__(570);
+var index_1 = __webpack_require__(492);
+var mention_1 = __webpack_require__(962);
+var text_1 = __webpack_require__(171);
+var Paragraph = /** @class */ (function (_super) {
+    __extends(Paragraph, _super);
+    function Paragraph() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.content = new index_1.ContentNode('paragraph');
+        return _this;
     }
-    text(text, marks) {
+    Paragraph.prototype.text = function (text, marks) {
         return this.add(new text_1.Text(text, marks));
-    }
-    code(text) {
+    };
+    Paragraph.prototype.code = function (text) {
         return this.add(text_1.code(text));
-    }
-    em(text) {
+    };
+    Paragraph.prototype.em = function (text) {
         return this.add(text_1.em(text));
-    }
-    link(text, href, title) {
+    };
+    Paragraph.prototype.link = function (text, href, title) {
         return this.add(text_1.link(text, href, title));
-    }
-    strong(text) {
+    };
+    Paragraph.prototype.strong = function (text) {
         return this.add(text_1.strong(text));
-    }
-    mention(id, text) {
+    };
+    Paragraph.prototype.mention = function (id, text) {
         return this.add(new mention_1.Mention(id, text));
-    }
-    emoji(shortName, id, text) {
-        return this.add(new emoji_1.Emoji({ shortName, id, text }));
-    }
-    hardBreak() {
+    };
+    Paragraph.prototype.emoji = function (shortName, id, text) {
+        return this.add(new emoji_1.Emoji({ shortName: shortName, id: id, text: text }));
+    };
+    Paragraph.prototype.hardBreak = function () {
         return this.add(new hard_break_1.HardBreak());
-    }
-    add(node) {
+    };
+    Paragraph.prototype.add = function (node) {
         this.content.add(node);
         return this;
-    }
-    toJSON() {
+    };
+    Paragraph.prototype.toJSON = function () {
         return this.content.toJSON();
-    }
-}
+    };
+    return Paragraph;
+}(index_1.TopLevelNode));
 exports.Paragraph = Paragraph;
 //# sourceMappingURL=paragraph.js.map
 
@@ -178,9 +212,19 @@ exports.Paragraph = Paragraph;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(812);
-const index_2 = __webpack_require__(492);
+var index_1 = __webpack_require__(812);
+var index_2 = __webpack_require__(492);
 function plain(text) {
     return new Text(text);
 }
@@ -205,17 +249,19 @@ function code(text) {
     return new Text(text, index_1.marks().code());
 }
 exports.code = code;
-class Text extends index_2.InlineNode {
-    constructor(text, marks) {
-        super();
-        this.text = text;
-        this.marks = marks;
+var Text = /** @class */ (function (_super) {
+    __extends(Text, _super);
+    function Text(text, marks) {
+        var _this = _super.call(this) || this;
+        _this.text = text;
+        _this.marks = marks;
         if (!text || text.length === 0) {
             throw new Error('Text must be at least one character long');
         }
+        return _this;
     }
-    toJSON() {
-        const textNode = {
+    Text.prototype.toJSON = function () {
+        var textNode = {
             type: 'text',
             text: this.text,
         };
@@ -223,8 +269,9 @@ class Text extends index_2.InlineNode {
             textNode.marks = this.marks.toJSON();
         }
         return textNode;
-    }
-}
+    };
+    return Text;
+}(index_2.InlineNode));
 exports.Text = Text;
 //# sourceMappingURL=text.js.map
 
@@ -235,13 +282,25 @@ exports.Text = Text;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class Strong extends mark_1.Mark {
-    constructor() {
-        super('strong');
+var mark_1 = __webpack_require__(711);
+var Strong = /** @class */ (function (_super) {
+    __extends(Strong, _super);
+    function Strong() {
+        return _super.call(this, 'strong') || this;
     }
-}
+    return Strong;
+}(mark_1.Mark));
 exports.Strong = Strong;
 //# sourceMappingURL=strong.js.map
 
@@ -286,10 +345,12 @@ function buildTreeFromMarkdown( rawTextMarkdown ){
 	//block quote collapse paragraphs, so we have to to them first
 	const blockquotedNodes = collapseBlockquote( cleanedCodeBlock )
 	
+	const tabledNodes = collapseTable( blockquotedNodes )
+
 	//paragraph themselves collapse when they are not separated by
 	// two consecutive empty lines
-	const breakedLineNodes = collapseParagraph( blockquotedNodes )
-	
+	const breakedLineNodes = collapseParagraph( tabledNodes )
+
 	//lists accumulate elements of the same level unless separated by
 	// 	two consecutive empty lines
 	const accumulatedNodes = accumulateLevelFromList( breakedLineNodes )
@@ -399,6 +460,105 @@ function collapseBlockquote( rawIROfMarkdown ){
 	}, { blockquotedNodes: [ ] } )
 	
 	return blockquotedNodes
+}
+
+/**
+ * Tables start with a pipe
+ *
+ * @param rawIROfMarkdown	{Array} 	the array of IRElement to look into collapsing
+ *
+ * @returns {IRElement[]}	an array of IRElement
+ */
+function collapseTable( rawIROfMarkdown ){
+
+	const TABLE_DELIM_RE = /^:{0,1}-+:{0,1}$/
+
+	function getCells(str) {
+			const cells = str.split('|')
+			cells.shift()
+			cells.pop()
+			return cells.map(c => c.trim())
+	}
+
+	// return the number of columns if this is a table delimiter
+	function checkTableDelimiterNode(node) {
+		if (node.adfType === 'paragraph') {
+			const cells = getCells(node.textToEmphasis)
+			if (cells.every(c => TABLE_DELIM_RE.test(c))) {
+				return cells.filter(c => TABLE_DELIM_RE.test(c))
+			}
+		}
+		return 0
+	}
+
+	// return the cells if this is a table row
+	function checkTableRowNode(node, numCols) {
+		if (node.adfType === 'paragraph') {
+			const cells = getCells(node.textToEmphasis)
+			if (cells.length === numCols) {
+				return cells
+			}
+		}
+		return []
+	}
+
+	function makeCell( value ){
+		return { node: { adfType: "tableCell", value: { node: {
+			adfType: 'paragraph',
+			textToEmphasis: value,
+			textPosition: 0
+		}}}}
+	}
+
+	const nodes = []
+
+  for (let i = 0; i < rawIROfMarkdown.length;) {
+		const delims = checkTableDelimiterNode(rawIROfMarkdown[i])
+
+		if (i > 0 && delims.length > 0) {
+			const headers = checkTableRowNode(rawIROfMarkdown[i - 1], delims.length)
+
+			// non-zero headers means a table has been found
+			if (headers.length > 0) {
+				const headerCells = headers.map(h => makeCell(h))
+
+				const headerRow = { node: { adfType: "tableHeader", cells: headerCells }}
+				const table = {
+					adfType: "table",
+					textPosition: rawIROfMarkdown[i].textPosition,
+					rows: [ headerRow ],
+					typeParam: {
+						isNumberColumnEnabled: false,
+						layout: "center",
+						width: 900,
+						displayMode: "default"
+					},
+				}
+
+				let j = i + 1
+
+				for (; j < rawIROfMarkdown.length; ++j) {
+					const cells = checkTableRowNode(rawIROfMarkdown[j], delims.length)
+
+					if (cells.length == 0) break
+
+					const row = { node: { adfType: "tableRow", cells: cells.map(c => makeCell(c)) }}
+					table.rows.push(row)
+				}
+
+				// remove paragraph that was actually a table header
+				nodes.pop()
+				nodes.push(table)
+				i = j
+				continue
+			}
+		}
+
+    nodes.push(rawIROfMarkdown[i])
+		++i
+  }
+
+  return nodes
 }
 
 /**
@@ -583,24 +743,45 @@ module.exports = buildTreeFromMarkdown
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const decision_1 = __webpack_require__(135);
-const index_1 = __webpack_require__(492);
-class DecisionList extends index_1.TopLevelNode {
-    constructor(localId) {
-        super();
-        this.localId = localId;
-        this.content = new index_1.ContentNode('decisionList');
+var decision_1 = __webpack_require__(135);
+var index_1 = __webpack_require__(492);
+var DecisionList = /** @class */ (function (_super) {
+    __extends(DecisionList, _super);
+    function DecisionList(localId) {
+        var _this = _super.call(this) || this;
+        _this.localId = localId;
+        _this.content = new index_1.ContentNode('decisionList');
+        return _this;
     }
-    decision(localId, state) {
+    DecisionList.prototype.decision = function (localId, state) {
         return this.content.add(new decision_1.Decision(localId, state));
-    }
-    toJSON() {
-        return Object.assign({}, this.content.toJSON(), { attrs: {
+    };
+    DecisionList.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
                 localId: this.localId
             } });
-    }
-}
+    };
+    return DecisionList;
+}(index_1.TopLevelNode));
 exports.DecisionList = DecisionList;
 //# sourceMappingURL=decision-list.js.map
 
@@ -611,16 +792,28 @@ exports.DecisionList = DecisionList;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class Link extends mark_1.Mark {
-    constructor(href, title) {
-        super('link');
-        this.href = href;
-        this.title = title;
+var mark_1 = __webpack_require__(711);
+var Link = /** @class */ (function (_super) {
+    __extends(Link, _super);
+    function Link(href, title) {
+        var _this = _super.call(this, 'link') || this;
+        _this.href = href;
+        _this.title = title;
+        return _this;
     }
-    toJSON() {
-        const linkMark = {
+    Link.prototype.toJSON = function () {
+        var linkMark = {
             type: this.type,
             attrs: {
                 href: this.href
@@ -630,8 +823,9 @@ class Link extends mark_1.Mark {
             linkMark.attrs.title = this.title;
         }
         return linkMark;
-    }
-}
+    };
+    return Link;
+}(mark_1.Mark));
 exports.Link = Link;
 //# sourceMappingURL=link.js.map
 
@@ -642,17 +836,74 @@ exports.Link = Link;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-class Rule extends index_1.TopLevelNode {
-    toJSON() {
+var index_1 = __webpack_require__(492);
+var Rule = /** @class */ (function (_super) {
+    __extends(Rule, _super);
+    function Rule() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Rule.prototype.toJSON = function () {
         return {
             type: 'rule'
         };
-    }
-}
+    };
+    return Rule;
+}(index_1.TopLevelNode));
 exports.Rule = Rule;
 //# sourceMappingURL=rule.js.map
+
+/***/ }),
+
+/***/ 263:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var index_1 = __webpack_require__(492);
+var table_row_1 = __webpack_require__(632);
+var Table = /** @class */ (function (_super) {
+    __extends(Table, _super);
+    function Table() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.content = new index_1.ContentNode('table');
+        return _this;
+    }
+    Table.prototype.row = function () {
+        return this.content.add(new table_row_1.TableRow());
+    };
+    Table.prototype.add = function (node) {
+        this.content.add(node);
+        return this;
+    };
+    Table.prototype.toJSON = function () {
+        return this.content.toJSON();
+    };
+    return Table;
+}(index_1.TopLevelNode));
+exports.Table = Table;
+//# sourceMappingURL=table.js.map
 
 /***/ }),
 
@@ -661,36 +912,57 @@ exports.Rule = Rule;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const bullet_list_1 = __webpack_require__(849);
-const heading_1 = __webpack_require__(366);
-const index_1 = __webpack_require__(492);
-const ordered_list_1 = __webpack_require__(982);
-const paragraph_1 = __webpack_require__(147);
-class Panel extends index_1.TopLevelNode {
-    constructor(panelType) {
-        super();
-        this.panelType = panelType;
-        this.content = new index_1.ContentNode('panel');
+var bullet_list_1 = __webpack_require__(849);
+var heading_1 = __webpack_require__(366);
+var index_1 = __webpack_require__(492);
+var ordered_list_1 = __webpack_require__(982);
+var paragraph_1 = __webpack_require__(147);
+var Panel = /** @class */ (function (_super) {
+    __extends(Panel, _super);
+    function Panel(panelType) {
+        var _this = _super.call(this) || this;
+        _this.panelType = panelType;
+        _this.content = new index_1.ContentNode('panel');
+        return _this;
     }
-    heading(level) {
+    Panel.prototype.heading = function (level) {
         return this.content.add(new heading_1.Heading(level));
-    }
-    paragraph() {
+    };
+    Panel.prototype.paragraph = function () {
         return this.content.add(new paragraph_1.Paragraph());
-    }
-    orderedList() {
+    };
+    Panel.prototype.orderedList = function () {
         return this.content.add(new ordered_list_1.OrderedList());
-    }
-    bulletList() {
+    };
+    Panel.prototype.bulletList = function () {
         return this.content.add(new bullet_list_1.BulletList());
-    }
-    toJSON() {
-        return Object.assign({}, this.content.toJSON(), { attrs: {
+    };
+    Panel.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
                 panelType: this.panelType
             } });
-    }
-}
+    };
+    return Panel;
+}(index_1.TopLevelNode));
 exports.Panel = Panel;
 //# sourceMappingURL=panel.js.map
 
@@ -701,56 +973,65 @@ exports.Panel = Panel;
 
 "use strict";
 
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const emoji_1 = __webpack_require__(526);
-const hard_break_1 = __webpack_require__(570);
-const index_1 = __webpack_require__(492);
-const mention_1 = __webpack_require__(962);
-const text_1 = __webpack_require__(171);
-class Task {
-    constructor(localId, state) {
+var emoji_1 = __webpack_require__(526);
+var hard_break_1 = __webpack_require__(570);
+var index_1 = __webpack_require__(492);
+var mention_1 = __webpack_require__(962);
+var text_1 = __webpack_require__(171);
+var Task = /** @class */ (function () {
+    function Task(localId, state) {
         this.localId = localId;
         this.state = state;
         this.content = new index_1.ContentNode('taskItem');
     }
-    text(text, marks) {
+    Task.prototype.text = function (text, marks) {
         return this.add(new text_1.Text(text, marks));
-    }
-    code(text) {
+    };
+    Task.prototype.code = function (text) {
         return this.add(text_1.code(text));
-    }
-    em(text) {
+    };
+    Task.prototype.em = function (text) {
         return this.add(text_1.em(text));
-    }
-    link(text, href, title) {
+    };
+    Task.prototype.link = function (text, href, title) {
         return this.add(text_1.link(text, href, title));
-    }
-    strike(text) {
+    };
+    Task.prototype.strike = function (text) {
         return this.add(text_1.strike(text));
-    }
-    strong(text) {
+    };
+    Task.prototype.strong = function (text) {
         return this.add(text_1.strong(text));
-    }
-    mention(id, text) {
+    };
+    Task.prototype.mention = function (id, text) {
         return this.add(new mention_1.Mention(id, text));
-    }
-    emoji(shortName, id, text) {
-        return this.add(new emoji_1.Emoji({ shortName, id, text }));
-    }
-    hardBreak() {
+    };
+    Task.prototype.emoji = function (shortName, id, text) {
+        return this.add(new emoji_1.Emoji({ shortName: shortName, id: id, text: text }));
+    };
+    Task.prototype.hardBreak = function () {
         return this.add(new hard_break_1.HardBreak());
-    }
-    add(node) {
+    };
+    Task.prototype.add = function (node) {
         this.content.add(node);
         return this;
-    }
-    toJSON() {
-        return Object.assign({}, this.content.toJSON(), { attrs: {
+    };
+    Task.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
                 localId: this.localId,
                 state: this.state
             } });
-    }
-}
+    };
+    return Task;
+}());
 exports.Task = Task;
 var TaskState;
 (function (TaskState) {
@@ -785,12 +1066,17 @@ __export(__webpack_require__(570));
 __export(__webpack_require__(366));
 __export(__webpack_require__(566));
 __export(__webpack_require__(823));
+__export(__webpack_require__(659));
 __export(__webpack_require__(371));
 __export(__webpack_require__(962));
 __export(__webpack_require__(982));
 __export(__webpack_require__(270));
 __export(__webpack_require__(147));
 __export(__webpack_require__(223));
+__export(__webpack_require__(301));
+__export(__webpack_require__(639));
+__export(__webpack_require__(632));
+__export(__webpack_require__(263));
 __export(__webpack_require__(976));
 __export(__webpack_require__(284));
 __export(__webpack_require__(171));
@@ -804,15 +1090,113 @@ __export(__webpack_require__(812));
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class Underline extends mark_1.Mark {
-    constructor() {
-        super('underline');
+var mark_1 = __webpack_require__(711);
+var Underline = /** @class */ (function (_super) {
+    __extends(Underline, _super);
+    function Underline() {
+        return _super.call(this, 'underline') || this;
     }
-}
+    return Underline;
+}(mark_1.Mark));
 exports.Underline = Underline;
 //# sourceMappingURL=underline.js.map
+
+/***/ }),
+
+/***/ 301:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var application_card_1 = __webpack_require__(451);
+var block_quote_1 = __webpack_require__(893);
+var bullet_list_1 = __webpack_require__(849);
+var code_block_1 = __webpack_require__(561);
+var decision_list_1 = __webpack_require__(198);
+var heading_1 = __webpack_require__(366);
+var index_1 = __webpack_require__(492);
+var media_group_1 = __webpack_require__(823);
+var ordered_list_1 = __webpack_require__(982);
+var panel_1 = __webpack_require__(270);
+var paragraph_1 = __webpack_require__(147);
+var rule_1 = __webpack_require__(223);
+var task_list_1 = __webpack_require__(976);
+var colorPattern = /^#[0-9a-f]{6}$/;
+var TableCell = /** @class */ (function () {
+    function TableCell(backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        this.content = new index_1.ContentNode('tableCell');
+        if (backgroundColor) {
+            if (!colorPattern.test(backgroundColor)) {
+                throw new Error("Color " + backgroundColor + " does not match ^#[0-9a-f]{6}$");
+            }
+        }
+    }
+    TableCell.prototype.paragraph = function () {
+        return this.content.add(new paragraph_1.Paragraph());
+    };
+    TableCell.prototype.bulletList = function () {
+        return this.content.add(new bullet_list_1.BulletList());
+    };
+    TableCell.prototype.orderedList = function () {
+        return this.content.add(new ordered_list_1.OrderedList());
+    };
+    TableCell.prototype.heading = function (level) {
+        return this.content.add(new heading_1.Heading(level));
+    };
+    TableCell.prototype.panel = function (panelType) {
+        return this.content.add(new panel_1.Panel(panelType));
+    };
+    TableCell.prototype.blockQuote = function () {
+        return this.content.add(new block_quote_1.BlockQuote());
+    };
+    TableCell.prototype.rule = function () {
+        return this.content.add(new rule_1.Rule());
+    };
+    TableCell.prototype.mediaGroup = function () {
+        return this.content.add(new media_group_1.MediaGroup());
+    };
+    TableCell.prototype.applicationCard = function (title, text) {
+        return this.content.add(new application_card_1.ApplicationCard(title, text));
+    };
+    TableCell.prototype.decisionList = function (localId) {
+        return this.content.add(new decision_list_1.DecisionList(localId));
+    };
+    TableCell.prototype.taskList = function (localId) {
+        return this.content.add(new task_list_1.TaskList(localId));
+    };
+    TableCell.prototype.codeBlock = function (language) {
+        return this.content.add(new code_block_1.CodeBlock(language));
+    };
+    TableCell.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
+                background: this.backgroundColor
+            } });
+    };
+    return TableCell;
+}());
+exports.TableCell = TableCell;
+//# sourceMappingURL=table-cell.js.map
 
 /***/ }),
 
@@ -822,12 +1206,16 @@ exports.Underline = Underline;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const document_1 = __webpack_require__(802);
-const index_1 = __webpack_require__(492);
-function document(strings, ...args) {
-    const doc = new document_1.Document();
-    const paragraph = doc.paragraph();
-    for (let i = 0; i < args.length; i++) {
+var document_1 = __webpack_require__(802);
+var index_1 = __webpack_require__(492);
+function document(strings) {
+    var args = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
+    }
+    var doc = new document_1.Document();
+    var paragraph = doc.paragraph();
+    for (var i = 0; i < args.length; i++) {
         if (strings[i].length) {
             paragraph.text(strings[i]);
         }
@@ -838,7 +1226,7 @@ function document(strings, ...args) {
             paragraph.add(args[i]);
         }
         else {
-            const stringified = String(args[i]);
+            var stringified = String(args[i]);
             if (stringified.length > 0) {
                 paragraph.text(stringified);
             }
@@ -868,7 +1256,8 @@ exports.document = document;
  * It also remove non-compatible hierarchy that ADF doesn't support
  *
  **********************************************************************************************************************/
-const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention }	= __webpack_require__( 286 )
+const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention, Table, TableCell, TableHeader, TableRow }	= __webpack_require__( 286 )
+const { ContentNode } = __webpack_require__(492)
 
 const attachTextToNodeSliceEmphasis = __webpack_require__( 804 )
 
@@ -914,7 +1303,16 @@ function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameI
 		
 		else if( currentNode.node.adfType === 'codeBlock' )
 			attachTextToNodeRaw( nodeToAttachTextTo, currentNode.node.textToEmphasis )
-		
+
+		else if( currentNode.node.adfType === 'table' )
+			currentNode.children = currentNode.node.rows
+
+		else if( currentNode.node.adfType === 'tableRow' || currentNode.node.adfType === 'tableHeader' )
+			currentNode.children = currentNode.node.cells
+
+		else if( currentNode.node.adfType === 'tableCell' )
+			currentNode.children = [ currentNode.node.value ]
+
 		if( currentNode.children )
 			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
 		
@@ -960,6 +1358,18 @@ function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
 		case "paragraph":
 			return adfNodeToAttachTo.content.add( new Paragraph() )
 		
+		case "table":
+			return adfNodeToAttachTo.content.add( new Table() )
+
+		case "tableHeader":
+			return adfNodeToAttachTo.content.add( new TableHeader() )
+
+		case "tableRow":
+			return adfNodeToAttachTo.content.add( new TableRow() )
+
+		case "tableCell":
+			return adfNodeToAttachTo.content.add( new TableCell() )
+
 		default:
 			throw 'incompatible type'
 	}
@@ -1150,32 +1560,53 @@ module.exports = fillADFNodesWithMarkdown
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-const text_1 = __webpack_require__(171);
-class Heading extends index_1.TopLevelNode {
-    constructor(level) {
-        super();
-        this.level = level;
-        this.content = new index_1.ContentNode('heading');
+var index_1 = __webpack_require__(492);
+var text_1 = __webpack_require__(171);
+var Heading = /** @class */ (function (_super) {
+    __extends(Heading, _super);
+    function Heading(level) {
+        var _this = _super.call(this) || this;
+        _this.level = level;
+        _this.content = new index_1.ContentNode('heading');
         if (level < 1 || level > 6) {
             throw new Error('Level must be in the range of 1-6');
         }
+        return _this;
     }
-    link(text, href, title) {
+    Heading.prototype.link = function (text, href, title) {
         this.content.add(text_1.link(text, href, title));
         return this;
-    }
-    text(text) {
+    };
+    Heading.prototype.text = function (text) {
         this.content.add(text_1.plain(text));
         return this;
-    }
-    toJSON() {
-        return Object.assign({}, this.content.toJSON(), { attrs: {
+    };
+    Heading.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
                 level: this.level
             } });
-    }
-}
+    };
+    return Heading;
+}(index_1.TopLevelNode));
 exports.Heading = Heading;
 //# sourceMappingURL=heading.js.map
 
@@ -1187,12 +1618,12 @@ exports.Heading = Heading;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-class Media {
-    constructor(attrs) {
+var Media = /** @class */ (function () {
+    function Media(attrs) {
         this.attrs = attrs;
     }
-    toJSON() {
-        const media = {
+    Media.prototype.toJSON = function () {
+        var media = {
             type: 'media',
             attrs: {
                 id: this.attrs.id,
@@ -1203,9 +1634,19 @@ class Media {
         if (this.attrs.occurrenceKey) {
             media.attrs.occurrenceKey = this.attrs.occurrenceKey;
         }
+        if (this.attrs.url) {
+            media.attrs.url = this.attrs.url;
+        }
+        if (this.attrs.width) {
+            media.attrs.width = this.attrs.width;
+        }
+        if (this.attrs.height) {
+            media.attrs.height = this.attrs.height;
+        }
         return media;
-    }
-}
+    };
+    return Media;
+}());
 exports.Media = Media;
 //# sourceMappingURL=media.js.map
 
@@ -1216,22 +1657,35 @@ exports.Media = Media;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class SubSup extends mark_1.Mark {
-    constructor(variant) {
-        super('subsup');
-        this.variant = variant;
+var mark_1 = __webpack_require__(711);
+var SubSup = /** @class */ (function (_super) {
+    __extends(SubSup, _super);
+    function SubSup(variant) {
+        var _this = _super.call(this, 'subsup') || this;
+        _this.variant = variant;
+        return _this;
     }
-    toJSON() {
+    SubSup.prototype.toJSON = function () {
         return {
             type: this.type,
             attrs: {
                 type: this.variant
             }
         };
-    }
-}
+    };
+    return SubSup;
+}(mark_1.Mark));
 exports.SubSup = SubSup;
 //# sourceMappingURL=subsup.js.map
 
@@ -1242,13 +1696,25 @@ exports.SubSup = SubSup;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class Em extends mark_1.Mark {
-    constructor() {
-        super('em');
+var mark_1 = __webpack_require__(711);
+var Em = /** @class */ (function (_super) {
+    __extends(Em, _super);
+    function Em() {
+        return _super.call(this, 'em') || this;
     }
-}
+    return Em;
+}(mark_1.Mark));
 exports.Em = Em;
 //# sourceMappingURL=em.js.map
 
@@ -1259,26 +1725,38 @@ exports.Em = Em;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-class Action {
-    title(title) {
+var index_1 = __webpack_require__(492);
+var Action = /** @class */ (function () {
+    function Action() {
+    }
+    Action.prototype.title = function (title) {
         this.actionTitle = title;
         return this;
-    }
-    target(target) {
+    };
+    Action.prototype.target = function (target) {
         if (!target.key) {
             throw new Error('Action target key is required');
         }
         this.actionTarget = target;
         return this;
-    }
-    parameters(parameters) {
+    };
+    Action.prototype.parameters = function (parameters) {
         this.actionParameters = parameters;
         return this;
-    }
-    toJSON() {
-        const action = {};
+    };
+    Action.prototype.toJSON = function () {
+        var action = {};
         if (this.actionTitle) {
             action.title = this.actionTitle;
         }
@@ -1292,39 +1770,40 @@ class Action {
             throw new Error('Must set title and target attributes for action');
         }
         return action;
-    }
-}
+    };
+    return Action;
+}());
 exports.Action = Action;
-class Detail {
-    constructor() {
+var Detail = /** @class */ (function () {
+    function Detail() {
         this.detailUsers = [];
     }
-    title(text) {
+    Detail.prototype.title = function (text) {
         this.detailTitle = text;
         return this;
-    }
-    text(text) {
+    };
+    Detail.prototype.text = function (text) {
         this.detailText = text;
         return this;
-    }
-    lozenge(lozenge) {
+    };
+    Detail.prototype.lozenge = function (lozenge) {
         this.detailLozenge = lozenge;
         return this;
-    }
-    icon(icon) {
+    };
+    Detail.prototype.icon = function (icon) {
         this.detailIcon = icon;
         return this;
-    }
-    badge(badge) {
+    };
+    Detail.prototype.badge = function (badge) {
         this.detailBadge = badge;
         return this;
-    }
-    user(user) {
+    };
+    Detail.prototype.user = function (user) {
         this.detailUsers.push(user);
         return this;
-    }
-    toJSON() {
-        const detail = {};
+    };
+    Detail.prototype.toJSON = function () {
+        var detail = {};
         if (this.detailTitle) {
             detail.title = this.detailTitle;
         }
@@ -1347,97 +1826,102 @@ class Detail {
             throw new Error('Must at least set one attribute');
         }
         return detail;
-    }
-}
+    };
+    return Detail;
+}());
 exports.Detail = Detail;
-class Context {
-    constructor(text) {
+var Context = /** @class */ (function () {
+    function Context(text) {
         this.text = text;
     }
-    icon(icon) {
+    Context.prototype.icon = function (icon) {
         this.contextIcon = icon;
         return this;
-    }
-    toJSON() {
-        const context = {
+    };
+    Context.prototype.toJSON = function () {
+        var context = {
             text: this.text
         };
         if (this.contextIcon) {
             context.icon = this.contextIcon;
         }
         return context;
-    }
-}
+    };
+    return Context;
+}());
 exports.Context = Context;
-class TitleUser {
-    constructor(titleUserIcon) {
+var TitleUser = /** @class */ (function () {
+    function TitleUser(titleUserIcon) {
         this.titleUserIcon = titleUserIcon;
     }
-    id(id) {
+    TitleUser.prototype.id = function (id) {
         this.titleUserId = id;
         return this;
-    }
-    toJSON() {
-        const titleUser = {
+    };
+    TitleUser.prototype.toJSON = function () {
+        var titleUser = {
             icon: this.titleUserIcon
         };
         if (this.titleUserId) {
             titleUser.id = this.titleUserId;
         }
         return titleUser;
-    }
-}
+    };
+    return TitleUser;
+}());
 exports.TitleUser = TitleUser;
-class ApplicationCard extends index_1.TopLevelNode {
-    constructor(title, text) {
-        super();
-        this.title = title;
-        this.text = text;
-        this.isCollapsible = false;
-        this.details = [];
-        this.actions = [];
+var ApplicationCard = /** @class */ (function (_super) {
+    __extends(ApplicationCard, _super);
+    function ApplicationCard(title, text) {
+        var _this = _super.call(this) || this;
+        _this.title = title;
+        _this.text = text;
+        _this.isCollapsible = false;
+        _this.details = [];
+        _this.actions = [];
+        return _this;
     }
-    link(url) {
+    ApplicationCard.prototype.link = function (url) {
         this.linkUrl = url;
         return this;
-    }
-    background(url) {
+    };
+    ApplicationCard.prototype.background = function (url) {
         this.backgroundUrl = url;
         return this;
-    }
-    preview(url) {
+    };
+    ApplicationCard.prototype.preview = function (url) {
         this.previewUrl = url;
         return this;
-    }
-    collapsible(collapsible) {
+    };
+    ApplicationCard.prototype.collapsible = function (collapsible) {
         this.isCollapsible = collapsible;
         return this;
-    }
-    description(text) {
+    };
+    ApplicationCard.prototype.description = function (text) {
         this.descriptionText = text;
         return this;
-    }
-    titleUser(icon) {
-        const titleUser = new TitleUser(icon);
+    };
+    ApplicationCard.prototype.titleUser = function (icon) {
+        var titleUser = new TitleUser(icon);
         this.userInTitle = titleUser;
         return titleUser;
-    }
-    detail() {
-        const detail = new Detail();
+    };
+    ApplicationCard.prototype.detail = function () {
+        var detail = new Detail();
         this.details.push(detail);
         return detail;
-    }
-    action() {
-        const action = new Action();
+    };
+    ApplicationCard.prototype.action = function () {
+        var action = new Action();
         this.actions.push(action);
         return action;
-    }
-    context(text) {
+    };
+    ApplicationCard.prototype.context = function (text) {
         this.cardContext = new Context(text);
         return this.cardContext;
-    }
-    toJSON() {
-        const card = {
+    };
+    ApplicationCard.prototype.toJSON = function () {
+        var card = {
             type: 'applicationCard',
             attrs: {
                 text: this.text || this.title,
@@ -1472,17 +1956,18 @@ class ApplicationCard extends index_1.TopLevelNode {
             card.attrs.title.user = this.userInTitle.toJSON();
         }
         if (this.details.length > 0) {
-            card.attrs.details = this.details.map(detail => detail.toJSON());
+            card.attrs.details = this.details.map(function (detail) { return detail.toJSON(); });
         }
         if (this.actions.length > 0) {
-            card.attrs.actions = this.actions.map(action => action.toJSON());
+            card.attrs.actions = this.actions.map(function (action) { return action.toJSON(); });
         }
         if (this.cardContext) {
             card.attrs.context = this.cardContext.toJSON();
         }
         return card;
-    }
-}
+    };
+    return ApplicationCard;
+}(index_1.TopLevelNode));
 exports.ApplicationCard = ApplicationCard;
 //# sourceMappingURL=application-card.js.map
 
@@ -1494,35 +1979,64 @@ exports.ApplicationCard = ApplicationCard;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-class ContentNode {
-    constructor(type, minLength = 1) {
+var ContentNode = /** @class */ (function () {
+    function ContentNode(type, minLength) {
+        if (minLength === void 0) { minLength = 1; }
         this.type = type;
         this.minLength = minLength;
         this.content = [];
     }
-    toJSON() {
+    ContentNode.prototype.toJSON = function () {
         if (this.content.length < this.minLength) {
-            throw new Error(`There must be at least ${this.minLength} content elements`);
+            return {
+                type: this.type,
+                //We cannot import Paragraph as it is the subclass :(
+                //content: [new Paragraph().text(' ').toJSON()] 
+                content: [{
+                        type: 'paragraph',
+                        content: [{
+                                type: 'text',
+                                text: ' '
+                            }]
+                    }]
+            };
         }
         return {
             type: this.type,
-            content: this.content.map(node => node.toJSON())
+            content: this.content.map(function (node) { return node.toJSON(); })
         };
-    }
-    add(node) {
+    };
+    ContentNode.prototype.add = function (node) {
         if (!node) {
             throw new Error('Illegal value');
         }
         this.content.push(node);
         return node;
-    }
-}
+    };
+    Object.defineProperty(ContentNode.prototype, "length", {
+        get: function () {
+            return this.content.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ContentNode.prototype.getItem = function (index) {
+        return this.content[index];
+    };
+    return ContentNode;
+}());
 exports.ContentNode = ContentNode;
-class TopLevelNode {
-}
+var TopLevelNode = /** @class */ (function () {
+    function TopLevelNode() {
+    }
+    return TopLevelNode;
+}());
 exports.TopLevelNode = TopLevelNode;
-class InlineNode {
-}
+var InlineNode = /** @class */ (function () {
+    function InlineNode() {
+    }
+    return InlineNode;
+}());
 exports.InlineNode = InlineNode;
 //# sourceMappingURL=index.js.map
 
@@ -1565,19 +2079,31 @@ module.exports = translateGITHUBMarkdownToADF
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
+var index_1 = __webpack_require__(492);
 function emoji(shortName, id, text) {
-    return new Emoji({ shortName, id, text });
+    return new Emoji({ shortName: shortName, id: id, text: text });
 }
 exports.emoji = emoji;
-class Emoji extends index_1.InlineNode {
-    constructor(attrs) {
-        super();
-        this.attrs = attrs;
+var Emoji = /** @class */ (function (_super) {
+    __extends(Emoji, _super);
+    function Emoji(attrs) {
+        var _this = _super.call(this) || this;
+        _this.attrs = attrs;
+        return _this;
     }
-    toJSON() {
-        const emojiNode = {
+    Emoji.prototype.toJSON = function () {
+        var emojiNode = {
             type: 'emoji',
             attrs: {
                 shortName: this.attrs.shortName
@@ -1590,8 +2116,9 @@ class Emoji extends index_1.InlineNode {
             emojiNode.attrs.text = this.attrs.text;
         }
         return emojiNode;
-    }
-}
+    };
+    return Emoji;
+}(index_1.InlineNode));
 exports.Emoji = Emoji;
 //# sourceMappingURL=emoji.js.map
 
@@ -1602,29 +2129,42 @@ exports.Emoji = Emoji;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-const text_1 = __webpack_require__(171);
-class CodeBlock extends index_1.TopLevelNode {
-    constructor(language) {
-        super();
-        this.language = language;
-        this.content = new index_1.ContentNode('codeBlock');
+var index_1 = __webpack_require__(492);
+var text_1 = __webpack_require__(171);
+var CodeBlock = /** @class */ (function (_super) {
+    __extends(CodeBlock, _super);
+    function CodeBlock(language) {
+        var _this = _super.call(this) || this;
+        _this.language = language;
+        _this.content = new index_1.ContentNode('codeBlock');
+        return _this;
     }
-    text(code) {
+    CodeBlock.prototype.text = function (code) {
         this.content.add(text_1.plain(code));
         return this;
-    }
-    toJSON() {
-        const codeBlock = this.content.toJSON();
+    };
+    CodeBlock.prototype.toJSON = function () {
+        var codeBlock = this.content.toJSON();
         if (this.language) {
             codeBlock.attrs = {
                 language: this.language
             };
         }
         return codeBlock;
-    }
-}
+    };
+    return CodeBlock;
+}(index_1.TopLevelNode));
 exports.CodeBlock = CodeBlock;
 //# sourceMappingURL=code-block.js.map
 
@@ -1636,27 +2176,28 @@ exports.CodeBlock = CodeBlock;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const bullet_list_1 = __webpack_require__(849);
-const index_1 = __webpack_require__(492);
-const ordered_list_1 = __webpack_require__(982);
-const paragraph_1 = __webpack_require__(147);
-class ListItem {
-    constructor() {
+var bullet_list_1 = __webpack_require__(849);
+var index_1 = __webpack_require__(492);
+var ordered_list_1 = __webpack_require__(982);
+var paragraph_1 = __webpack_require__(147);
+var ListItem = /** @class */ (function () {
+    function ListItem() {
         this.content = new index_1.ContentNode('listItem');
     }
-    paragraph() {
+    ListItem.prototype.paragraph = function () {
         return this.content.add(new paragraph_1.Paragraph());
-    }
-    bulletList() {
+    };
+    ListItem.prototype.bulletList = function () {
         return this.content.add(new bullet_list_1.BulletList());
-    }
-    orderedList() {
+    };
+    ListItem.prototype.orderedList = function () {
         return this.content.add(new ordered_list_1.OrderedList());
-    }
-    toJSON() {
+    };
+    ListItem.prototype.toJSON = function () {
         return this.content.toJSON();
-    }
-}
+    };
+    return ListItem;
+}());
 exports.ListItem = ListItem;
 //# sourceMappingURL=list-item.js.map
 
@@ -1667,22 +2208,37 @@ exports.ListItem = ListItem;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
+var index_1 = __webpack_require__(492);
 function hardBreak() {
     return new HardBreak();
 }
 exports.hardBreak = hardBreak;
-class HardBreak extends index_1.InlineNode {
-    toJSON() {
+var HardBreak = /** @class */ (function (_super) {
+    __extends(HardBreak, _super);
+    function HardBreak() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    HardBreak.prototype.toJSON = function () {
         return {
             type: 'hardBreak',
             attrs: {
                 text: '\n'
             }
         };
-    }
-}
+    };
+    return HardBreak;
+}(index_1.InlineNode));
 exports.HardBreak = HardBreak;
 //# sourceMappingURL=hard-break.js.map
 
@@ -1900,13 +2456,25 @@ module.exports = parseMarkdownLinetoIR
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class Code extends mark_1.Mark {
-    constructor() {
-        super('code');
+var mark_1 = __webpack_require__(711);
+var Code = /** @class */ (function (_super) {
+    __extends(Code, _super);
+    function Code() {
+        return _super.call(this, 'code') || this;
     }
-}
+    return Code;
+}(mark_1.Mark));
 exports.Code = Code;
 //# sourceMappingURL=code.js.map
 
@@ -1917,17 +2485,29 @@ exports.Code = Code;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-class Action extends mark_1.Mark {
-    constructor(title, target, actionParameters) {
-        super('action');
-        this.title = title;
-        this.target = target;
-        this.actionParameters = actionParameters;
+var mark_1 = __webpack_require__(711);
+var Action = /** @class */ (function (_super) {
+    __extends(Action, _super);
+    function Action(title, target, actionParameters) {
+        var _this = _super.call(this, 'action') || this;
+        _this.title = title;
+        _this.target = target;
+        _this.actionParameters = actionParameters;
+        return _this;
     }
-    toJSON() {
-        const actionMark = {
+    Action.prototype.toJSON = function () {
+        var actionMark = {
             type: this.type,
             attrs: {
                 title: this.title,
@@ -1938,10 +2518,175 @@ class Action extends mark_1.Mark {
             actionMark.attrs.parameters = this.actionParameters;
         }
         return actionMark;
-    }
-}
+    };
+    return Action;
+}(mark_1.Mark));
 exports.Action = Action;
 //# sourceMappingURL=action.js.map
+
+/***/ }),
+
+/***/ 632:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var index_1 = __webpack_require__(492);
+var table_cell_1 = __webpack_require__(301);
+var table_header_1 = __webpack_require__(639);
+var TableRow = /** @class */ (function () {
+    function TableRow() {
+        this.content = new index_1.ContentNode('tableRow');
+    }
+    TableRow.prototype.cell = function (backgroundColor) {
+        return this.content.add(new table_cell_1.TableCell(backgroundColor));
+    };
+    TableRow.prototype.header = function (backgroundColor) {
+        return this.content.add(new table_header_1.TableHeader(backgroundColor));
+    };
+    TableRow.prototype.add = function (node) {
+        this.content.add(node);
+        return this;
+    };
+    TableRow.prototype.toJSON = function () {
+        return this.content.toJSON();
+    };
+    return TableRow;
+}());
+exports.TableRow = TableRow;
+//# sourceMappingURL=table-row.js.map
+
+/***/ }),
+
+/***/ 639:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var application_card_1 = __webpack_require__(451);
+var block_quote_1 = __webpack_require__(893);
+var bullet_list_1 = __webpack_require__(849);
+var code_block_1 = __webpack_require__(561);
+var decision_list_1 = __webpack_require__(198);
+var heading_1 = __webpack_require__(366);
+var index_1 = __webpack_require__(492);
+var media_group_1 = __webpack_require__(823);
+var ordered_list_1 = __webpack_require__(982);
+var panel_1 = __webpack_require__(270);
+var paragraph_1 = __webpack_require__(147);
+var rule_1 = __webpack_require__(223);
+var task_list_1 = __webpack_require__(976);
+var colorPattern = /^#[0-9a-f]{6}$/;
+var TableHeader = /** @class */ (function () {
+    function TableHeader(backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        this.content = new index_1.ContentNode('tableHeader');
+        if (backgroundColor) {
+            if (!colorPattern.test(backgroundColor)) {
+                throw new Error("Color " + backgroundColor + " does not match ^#[0-9a-f]{6}$");
+            }
+        }
+    }
+    TableHeader.prototype.paragraph = function () {
+        return this.content.add(new paragraph_1.Paragraph());
+    };
+    TableHeader.prototype.bulletList = function () {
+        return this.content.add(new bullet_list_1.BulletList());
+    };
+    TableHeader.prototype.orderedList = function () {
+        return this.content.add(new ordered_list_1.OrderedList());
+    };
+    TableHeader.prototype.heading = function (level) {
+        return this.content.add(new heading_1.Heading(level));
+    };
+    TableHeader.prototype.panel = function (panelType) {
+        return this.content.add(new panel_1.Panel(panelType));
+    };
+    TableHeader.prototype.blockQuote = function () {
+        return this.content.add(new block_quote_1.BlockQuote());
+    };
+    TableHeader.prototype.rule = function () {
+        return this.content.add(new rule_1.Rule());
+    };
+    TableHeader.prototype.mediaGroup = function () {
+        return this.content.add(new media_group_1.MediaGroup());
+    };
+    TableHeader.prototype.applicationCard = function (title, text) {
+        return this.content.add(new application_card_1.ApplicationCard(title, text));
+    };
+    TableHeader.prototype.decisionList = function (localId) {
+        return this.content.add(new decision_list_1.DecisionList(localId));
+    };
+    TableHeader.prototype.taskList = function (localId) {
+        return this.content.add(new task_list_1.TaskList(localId));
+    };
+    TableHeader.prototype.codeBlock = function (language) {
+        return this.content.add(new code_block_1.CodeBlock(language));
+    };
+    TableHeader.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
+                background: this.backgroundColor
+            } });
+    };
+    return TableHeader;
+}());
+exports.TableHeader = TableHeader;
+//# sourceMappingURL=table-header.js.map
+
+/***/ }),
+
+/***/ 659:
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var index_1 = __webpack_require__(492);
+var media_1 = __webpack_require__(371);
+var MediaSingle = /** @class */ (function (_super) {
+    __extends(MediaSingle, _super);
+    function MediaSingle(layout) {
+        var _this = _super.call(this) || this;
+        //private layout: MediaSingleLayout;
+        _this.content = new index_1.ContentNode('mediaGroup');
+        return _this;
+        //this.layout = layout || 'wrap-right';
+    }
+    MediaSingle.prototype.file = function (attr) {
+        this.content.add(new media_1.Media(attr));
+        return this;
+    };
+    MediaSingle.prototype.external = function (attr) {
+        this.content.add(new media_1.Media(attr));
+        return this;
+    };
+    MediaSingle.prototype.toJSON = function () {
+        return this.content.toJSON();
+    };
+    return MediaSingle;
+}(index_1.TopLevelNode));
+exports.MediaSingle = MediaSingle;
+//# sourceMappingURL=media-single.js.map
 
 /***/ }),
 
@@ -1951,16 +2696,17 @@ exports.Action = Action;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-class Mark {
-    constructor(type) {
+var Mark = /** @class */ (function () {
+    function Mark(type) {
         this.type = type;
     }
-    toJSON() {
+    Mark.prototype.toJSON = function () {
         return {
             type: this.type
         };
-    }
-}
+    };
+    return Mark;
+}());
 exports.Mark = Mark;
 //# sourceMappingURL=mark.js.map
 
@@ -1971,72 +2717,90 @@ exports.Mark = Mark;
 
 "use strict";
 
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const nodes_1 = __webpack_require__(492);
-const application_card_1 = __webpack_require__(451);
-const block_quote_1 = __webpack_require__(893);
-const bullet_list_1 = __webpack_require__(849);
-const code_block_1 = __webpack_require__(561);
-const decision_list_1 = __webpack_require__(198);
-const heading_1 = __webpack_require__(366);
-const media_group_1 = __webpack_require__(823);
-const ordered_list_1 = __webpack_require__(982);
-const panel_1 = __webpack_require__(270);
-const paragraph_1 = __webpack_require__(147);
-const rule_1 = __webpack_require__(223);
-const task_list_1 = __webpack_require__(976);
-class Document {
-    constructor(attrs = { version: 1 }) {
+var nodes_1 = __webpack_require__(492);
+var application_card_1 = __webpack_require__(451);
+var block_quote_1 = __webpack_require__(893);
+var bullet_list_1 = __webpack_require__(849);
+var code_block_1 = __webpack_require__(561);
+var decision_list_1 = __webpack_require__(198);
+var heading_1 = __webpack_require__(366);
+var media_group_1 = __webpack_require__(823);
+var ordered_list_1 = __webpack_require__(982);
+var panel_1 = __webpack_require__(270);
+var paragraph_1 = __webpack_require__(147);
+var rule_1 = __webpack_require__(223);
+var table_1 = __webpack_require__(263);
+var task_list_1 = __webpack_require__(976);
+var media_single_1 = __webpack_require__(659);
+var Document = /** @class */ (function () {
+    function Document(attrs) {
+        if (attrs === void 0) { attrs = { version: 1 }; }
         this.attrs = attrs;
         this.content = new nodes_1.ContentNode('doc');
     }
-    applicationCard(title, text) {
+    Document.prototype.applicationCard = function (title, text) {
         return this.content.add(new application_card_1.ApplicationCard(title, text));
-    }
-    blockQuote() {
+    };
+    Document.prototype.blockQuote = function () {
         return this.content.add(new block_quote_1.BlockQuote());
-    }
-    bulletList() {
+    };
+    Document.prototype.bulletList = function () {
         return this.content.add(new bullet_list_1.BulletList());
-    }
-    codeBlock(language) {
+    };
+    Document.prototype.codeBlock = function (language) {
         return this.content.add(new code_block_1.CodeBlock(language));
-    }
-    decisionList(localId) {
+    };
+    Document.prototype.decisionList = function (localId) {
         return this.content.add(new decision_list_1.DecisionList(localId));
-    }
-    heading(level) {
+    };
+    Document.prototype.heading = function (level) {
         return this.content.add(new heading_1.Heading(level));
-    }
-    textHeading(level, text) {
+    };
+    Document.prototype.textHeading = function (level, text) {
         return this.content.add(new heading_1.Heading(level).text(text));
-    }
-    mediaGroup() {
+    };
+    Document.prototype.mediaGroup = function () {
         return this.content.add(new media_group_1.MediaGroup());
-    }
-    orderedList() {
+    };
+    Document.prototype.mediaSingle = function () {
+        return this.content.add(new media_single_1.MediaSingle());
+    };
+    Document.prototype.orderedList = function () {
         return this.content.add(new ordered_list_1.OrderedList());
-    }
-    panel(type) {
+    };
+    Document.prototype.panel = function (type) {
         return this.content.add(new panel_1.Panel(type));
-    }
-    paragraph() {
+    };
+    Document.prototype.paragraph = function () {
         return this.content.add(new paragraph_1.Paragraph());
-    }
-    rule() {
+    };
+    Document.prototype.rule = function () {
         this.content.add(new rule_1.Rule());
         return this;
-    }
-    taskList(localId) {
+    };
+    Document.prototype.table = function () {
+        return this.content.add(new table_1.Table());
+    };
+    Document.prototype.taskList = function (localId) {
         return this.content.add(new task_list_1.TaskList(localId));
-    }
-    toJSON() {
-        return Object.assign({}, this.content.toJSON(), { version: this.attrs.version });
-    }
-    toString() {
+    };
+    Document.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { version: this.attrs.version });
+    };
+    Document.prototype.toString = function () {
         return JSON.stringify(this);
-    }
-}
+    };
+    return Document;
+}());
 exports.Document = Document;
 //# sourceMappingURL=document.js.map
 
@@ -2170,68 +2934,69 @@ module.exports = attachTextToNodeSliceEmphasis
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const action_1 = __webpack_require__(620);
-const code_1 = __webpack_require__(601);
-const em_1 = __webpack_require__(400);
-const link_1 = __webpack_require__(206);
-const strike_1 = __webpack_require__(103);
-const strong_1 = __webpack_require__(192);
-const subsup_1 = __webpack_require__(396);
-const text_color_1 = __webpack_require__(936);
-const underline_1 = __webpack_require__(294);
+var action_1 = __webpack_require__(620);
+var code_1 = __webpack_require__(601);
+var em_1 = __webpack_require__(400);
+var link_1 = __webpack_require__(206);
+var strike_1 = __webpack_require__(103);
+var strong_1 = __webpack_require__(192);
+var subsup_1 = __webpack_require__(396);
+var text_color_1 = __webpack_require__(936);
+var underline_1 = __webpack_require__(294);
 function marks() {
     return new Marks();
 }
 exports.marks = marks;
-class Marks {
-    constructor() {
+var Marks = /** @class */ (function () {
+    function Marks() {
         this.marks = [];
     }
-    code() {
+    Marks.prototype.code = function () {
         return this.add(new code_1.Code());
-    }
-    em() {
+    };
+    Marks.prototype.em = function () {
         return this.add(new em_1.Em());
-    }
-    link(href, title) {
+    };
+    Marks.prototype.link = function (href, title) {
         return this.add(new link_1.Link(href, title));
-    }
-    strike() {
+    };
+    Marks.prototype.strike = function () {
         return this.add(new strike_1.Strike());
-    }
-    strong() {
+    };
+    Marks.prototype.strong = function () {
         return this.add(new strong_1.Strong());
-    }
-    sub() {
+    };
+    Marks.prototype.sub = function () {
         return this.add(new subsup_1.SubSup('sub'));
-    }
-    sup() {
+    };
+    Marks.prototype.sup = function () {
         return this.add(new subsup_1.SubSup('sup'));
-    }
-    color(color) {
+    };
+    Marks.prototype.color = function (color) {
         return this.add(new text_color_1.TextColor(color));
-    }
-    underline() {
+    };
+    Marks.prototype.underline = function () {
         return this.add(new underline_1.Underline());
-    }
-    action(title, target, actionParameters) {
+    };
+    Marks.prototype.action = function (title, target, actionParameters) {
         return this.add(new action_1.Action(title, target, actionParameters));
-    }
-    toJSON() {
+    };
+    Marks.prototype.toJSON = function () {
         if (this.marks.length === 0) {
             throw new Error('At least one mark is required');
         }
-        return this.marks.map(mark => mark.toJSON());
-    }
-    add(mark) {
-        const existing = this.marks.filter(m => m.type === mark.type);
+        return this.marks.map(function (mark) { return mark.toJSON(); });
+    };
+    Marks.prototype.add = function (mark) {
+        var existing = this.marks.filter(function (m) { return m.type === mark.type; });
         if (existing.length > 0) {
             throw new Error('A mark type can only be used once');
         }
         this.marks.push(mark);
         return this;
-    }
-}
+    };
+    return Marks;
+}());
 exports.Marks = Marks;
 //# sourceMappingURL=index.js.map
 
@@ -2242,30 +3007,43 @@ exports.Marks = Marks;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-const media_1 = __webpack_require__(371);
-class MediaGroup extends index_1.TopLevelNode {
-    constructor() {
-        super(...arguments);
-        this.content = new index_1.ContentNode('mediaGroup');
+var index_1 = __webpack_require__(492);
+var media_1 = __webpack_require__(371);
+var MediaGroup = /** @class */ (function (_super) {
+    __extends(MediaGroup, _super);
+    function MediaGroup() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.content = new index_1.ContentNode('mediaGroup');
+        return _this;
     }
-    media(attrs) {
+    MediaGroup.prototype.media = function (attrs) {
         this.content.add(new media_1.Media(attrs));
         return this;
-    }
-    link(id, collection) {
-        this.content.add(new media_1.Media({ id, collection, type: 'link' }));
+    };
+    MediaGroup.prototype.link = function (id, collection) {
+        this.content.add(new media_1.Media({ id: id, collection: collection, type: 'link' }));
         return this;
-    }
-    file(id, collection) {
-        this.content.add(new media_1.Media({ id, collection, type: 'file' }));
+    };
+    MediaGroup.prototype.file = function (id, collection) {
+        this.content.add(new media_1.Media({ id: id, collection: collection, type: 'file' }));
         return this;
-    }
-    toJSON() {
+    };
+    MediaGroup.prototype.toJSON = function () {
         return this.content.toJSON();
-    }
-}
+    };
+    return MediaGroup;
+}(index_1.TopLevelNode));
 exports.MediaGroup = MediaGroup;
 //# sourceMappingURL=media-group.js.map
 
@@ -2276,29 +3054,42 @@ exports.MediaGroup = MediaGroup;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-const list_item_1 = __webpack_require__(566);
-class BulletList extends index_1.TopLevelNode {
-    constructor() {
-        super(...arguments);
-        this.content = new index_1.ContentNode('bulletList');
+var index_1 = __webpack_require__(492);
+var list_item_1 = __webpack_require__(566);
+var BulletList = /** @class */ (function (_super) {
+    __extends(BulletList, _super);
+    function BulletList() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.content = new index_1.ContentNode('bulletList');
+        return _this;
     }
-    item() {
+    BulletList.prototype.item = function () {
         return this.content.add(new list_item_1.ListItem());
-    }
-    textItem(text, marks) {
+    };
+    BulletList.prototype.textItem = function (text, marks) {
         this.item().paragraph().text(text, marks);
         return this;
-    }
-    linkItem(text, href, title) {
+    };
+    BulletList.prototype.linkItem = function (text, href, title) {
         this.item().paragraph().link(text, href, title);
         return this;
-    }
-    toJSON() {
+    };
+    BulletList.prototype.toJSON = function () {
         return this.content.toJSON();
-    }
-}
+    };
+    return BulletList;
+}(index_1.TopLevelNode));
 exports.BulletList = BulletList;
 //# sourceMappingURL=bullet-list.js.map
 
@@ -2309,21 +3100,34 @@ exports.BulletList = BulletList;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-const paragraph_1 = __webpack_require__(147);
-class BlockQuote extends index_1.TopLevelNode {
-    constructor() {
-        super(...arguments);
-        this.content = new index_1.ContentNode('blockquote');
+var index_1 = __webpack_require__(492);
+var paragraph_1 = __webpack_require__(147);
+var BlockQuote = /** @class */ (function (_super) {
+    __extends(BlockQuote, _super);
+    function BlockQuote() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.content = new index_1.ContentNode('blockquote');
+        return _this;
     }
-    paragraph() {
+    BlockQuote.prototype.paragraph = function () {
         return this.content.add(new paragraph_1.Paragraph());
-    }
-    toJSON() {
+    };
+    BlockQuote.prototype.toJSON = function () {
         return this.content.toJSON();
-    }
-}
+    };
+    return BlockQuote;
+}(index_1.TopLevelNode));
 exports.BlockQuote = BlockQuote;
 //# sourceMappingURL=block-quote.js.map
 
@@ -2334,26 +3138,39 @@ exports.BlockQuote = BlockQuote;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const mark_1 = __webpack_require__(711);
-const colorPattern = /^#[0-9a-f]{6}$/;
-class TextColor extends mark_1.Mark {
-    constructor(color) {
-        super('textColor');
-        this.color = color;
+var mark_1 = __webpack_require__(711);
+var colorPattern = /^#[0-9a-f]{6}$/;
+var TextColor = /** @class */ (function (_super) {
+    __extends(TextColor, _super);
+    function TextColor(color) {
+        var _this = _super.call(this, 'textColor') || this;
+        _this.color = color;
         if (!colorPattern.test(color)) {
-            throw new Error(`Color ${color} does not match ^#[0-9a-f]{6}$`);
+            throw new Error("Color " + color + " does not match ^#[0-9a-f]{6}$");
         }
+        return _this;
     }
-    toJSON() {
+    TextColor.prototype.toJSON = function () {
         return {
             type: this.type,
             attrs: {
                 color: this.color
             }
         };
-    }
-}
+    };
+    return TextColor;
+}(mark_1.Mark));
 exports.TextColor = TextColor;
 //# sourceMappingURL=text-color.js.map
 
@@ -2364,19 +3181,31 @@ exports.TextColor = TextColor;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
+var index_1 = __webpack_require__(492);
 function mention(id, text) {
     return new Mention(id, text);
 }
 exports.mention = mention;
-class Mention extends index_1.InlineNode {
-    constructor(id, text) {
-        super();
-        this.id = id;
-        this.text = text;
+var Mention = /** @class */ (function (_super) {
+    __extends(Mention, _super);
+    function Mention(id, text) {
+        var _this = _super.call(this) || this;
+        _this.id = id;
+        _this.text = text;
+        return _this;
     }
-    toJSON() {
+    Mention.prototype.toJSON = function () {
         return {
             type: 'mention',
             attrs: {
@@ -2384,8 +3213,9 @@ class Mention extends index_1.InlineNode {
                 text: this.text
             }
         };
-    }
-}
+    };
+    return Mention;
+}(index_1.InlineNode));
 exports.Mention = Mention;
 //# sourceMappingURL=mention.js.map
 
@@ -2396,24 +3226,45 @@ exports.Mention = Mention;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const task_1 = __webpack_require__(284);
-const index_1 = __webpack_require__(492);
-class TaskList extends index_1.TopLevelNode {
-    constructor(localId) {
-        super();
-        this.localId = localId;
-        this.content = new index_1.ContentNode('taskList');
+var index_1 = __webpack_require__(492);
+var task_1 = __webpack_require__(284);
+var TaskList = /** @class */ (function (_super) {
+    __extends(TaskList, _super);
+    function TaskList(localId) {
+        var _this = _super.call(this) || this;
+        _this.localId = localId;
+        _this.content = new index_1.ContentNode('taskList');
+        return _this;
     }
-    task(localId, state) {
+    TaskList.prototype.task = function (localId, state) {
         return this.content.add(new task_1.Task(localId, state));
-    }
-    toJSON() {
-        return Object.assign({}, this.content.toJSON(), { attrs: {
+    };
+    TaskList.prototype.toJSON = function () {
+        return __assign({}, this.content.toJSON(), { attrs: {
                 localId: this.localId
             } });
-    }
-}
+    };
+    return TaskList;
+}(index_1.TopLevelNode));
 exports.TaskList = TaskList;
 //# sourceMappingURL=task-list.js.map
 
@@ -2424,29 +3275,42 @@ exports.TaskList = TaskList;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __webpack_require__(492);
-const list_item_1 = __webpack_require__(566);
-class OrderedList extends index_1.TopLevelNode {
-    constructor() {
-        super(...arguments);
-        this.content = new index_1.ContentNode('orderedList');
+var index_1 = __webpack_require__(492);
+var list_item_1 = __webpack_require__(566);
+var OrderedList = /** @class */ (function (_super) {
+    __extends(OrderedList, _super);
+    function OrderedList() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.content = new index_1.ContentNode('orderedList');
+        return _this;
     }
-    item() {
+    OrderedList.prototype.item = function () {
         return this.content.add(new list_item_1.ListItem());
-    }
-    textItem(text, marks) {
+    };
+    OrderedList.prototype.textItem = function (text, marks) {
         this.item().paragraph().text(text, marks);
         return this;
-    }
-    linkItem(text, href, title) {
+    };
+    OrderedList.prototype.linkItem = function (text, href, title) {
         this.item().paragraph().link(text, href, title);
         return this;
-    }
-    toJSON() {
+    };
+    OrderedList.prototype.toJSON = function () {
         return this.content.toJSON();
-    }
-}
+    };
+    return OrderedList;
+}(index_1.TopLevelNode));
 exports.OrderedList = OrderedList;
 //# sourceMappingURL=ordered-list.js.map
 
