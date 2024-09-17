@@ -317,16 +317,6 @@ function collapseParagraph( rawIROfMarkdown ){
  */
 function accumulateLevelFromList( rawIROfMarkdown ){
 	const { accumulatedNodes } = rawIROfMarkdown.reduce( ( { accumulatedNodes, indexCurrentList }, currentLineNode ) => {
-		
-		if( currentLineNode.adfType !== 'heading'
-			&& currentLineNode.adfType !== 'divider'
-			&& currentLineNode.adfType !== 'orderedList'
-			&& currentLineNode.adfType !== 'bulletList'
-			&& indexCurrentList
-			&& currentLineNode.textPosition < accumulatedNodes[ indexCurrentList ].textPosition + 2 ){
-			currentLineNode.textPosition = accumulatedNodes[ indexCurrentList ].textPosition + 2
-		}
-		
 		accumulatedNodes.push( currentLineNode )
 		
 		if( currentLineNode.adfType === 'heading'
