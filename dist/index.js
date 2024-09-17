@@ -353,6 +353,7 @@ function buildTreeFromMarkdown( rawTextMarkdown ){
 
 	//lists accumulate elements of the same level unless separated by
 	// 	two consecutive empty lines
+	// TODO cannot have two consecutive empty lines
 	const accumulatedNodes = accumulateLevelFromList( breakedLineNodes )
 	
 	//we build the array of textPosition for each level
@@ -629,14 +630,15 @@ function collapseParagraph( rawIROfMarkdown ){
 function accumulateLevelFromList( rawIROfMarkdown ){
 	const { accumulatedNodes } = rawIROfMarkdown.reduce( ( { accumulatedNodes, indexCurrentList }, currentLineNode ) => {
 		
-		if( currentLineNode.adfType !== 'heading'
-			&& currentLineNode.adfType !== 'divider'
-			&& currentLineNode.adfType !== 'orderedList'
-			&& currentLineNode.adfType !== 'bulletList'
-			&& indexCurrentList
-			&& currentLineNode.textPosition < accumulatedNodes[ indexCurrentList ].textPosition + 2 ){
-			currentLineNode.textPosition = accumulatedNodes[ indexCurrentList ].textPosition + 2
-		}
+		// if( currentLineNode.adfType !== 'heading'
+		// 	&& currentLineNode.adfType !== 'divider'
+		// 	&& currentLineNode.adfType !== 'orderedList'
+		// 	&& currentLineNode.adfType !== 'bulletList'
+		// 	&& indexCurrentList
+		// 	&& currentLineNode.textPosition < accumulatedNodes[ indexCurrentList ].textPosition + 2 ){
+		// 	// TODO this is wrong -- should not indent a paragraph
+		// 	currentLineNode.textPosition = accumulatedNodes[ indexCurrentList ].textPosition + 2
+		// }
 		
 		accumulatedNodes.push( currentLineNode )
 		
