@@ -39,3 +39,12 @@ Feature: Conversion of lists markdown
     When we translate it in ADF
     Then the ADF chunk at content path [ 0 ] has type 'bulletList'
     And the ADF document content has all the object defined in json file named 'mix-lists'
+
+  Scenario: Base formatting - List with other nodes
+    Given the markdown in GITHUB the same than in the markdown file named 'list-plus'
+    When we translate it in ADF
+    Then the ADF chunk at content path [ 0 ] has type 'heading'
+    Then the ADF chunk at content path [ 1 ] has type 'paragraph'
+    Then the ADF chunk at content path [ 2 ] has type 'bulletList'
+    Then the ADF chunk at content path [ 3 ] has type 'bulletList'
+    Then the ADF chunk at content path [ 4 ] has type 'paragraph'
