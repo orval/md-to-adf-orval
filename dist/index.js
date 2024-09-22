@@ -1471,13 +1471,23 @@ function sliceLink( rawText ){
     if (regex.test(str)) {
       const typeTag = str[1] === "@" ? "mention" : "link";
       const catchText = str.match(/\[(.*?)\]\((.*?)\)/);
-      const optionalText = catchText[2].match(/(\S+)( "(.*)")?/);
+
+      let optionalText1 = ""
+      let optionalText2
+
+      // allow for an empty link
+      if (catchText[2] !== "") {
+        const match = catchText[2].match(/(\S+)( "(.*)")?/);
+        optionalText1 = match[1];
+        optionalText2 = match[3];
+      }
+
       return {
         isMatching: true,
         type: typeTag,
         text: catchText[1],
-        optionalText1: optionalText[1],
-        optionalText2: optionalText[3],
+        optionalText1,
+        optionalText2
       }
     } else {
       return {
