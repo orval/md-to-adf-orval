@@ -37,3 +37,11 @@ Feature: Conversion link and emoji markdown
     And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "Test with paragraph and an "}'
     And the ADF chunk at content path [ 0 ] contains '{ "type": "emoji", "attrs": { "shortName": "smile" } }'
     And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": " emoji"}'
+
+  Scenario: Base formatting - Complex link
+    Given the markdown in GITHUB the same than in the markdown file named 'complex-link'
+    When we translate it in ADF
+    Then the ADF chunk at content path [ 0 ] has type 'paragraph'
+    # And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "Test with complex "}'
+    # And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "TitleOfLink", "marks": [ { "type": "link", "attrs": { "href": "https://example.com/wibble/bob/foo/123/Floop+Badger#FloopBadger-ABC-99:Bananas('Apples')" } } ] }'
+    # And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "TitleOfLink", "marks": [ { "type": "link", "attrs": { "href": "https://example.com/wibble/bob/foo/123/Floop+Badger#FloopBadger-ABC-99%3ABananas%28%27Apples%27%29" } } ] }'

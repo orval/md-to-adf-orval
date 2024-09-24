@@ -10,6 +10,7 @@
  *
  **********************************************************************************************************************/
 const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention, Table, TableCell, TableHeader, TableRow }	= require( 'adf-builder' )
+const marked = require('marked')
 const { ContentNode } = require('adf-builder/dist/nodes')
 
 const attachTextToNodeSliceEmphasis = require( __dirname + '/adfEmphasisParsing' )
@@ -217,7 +218,7 @@ function sliceInLineCode( rawText ){
  * @returns 					{String[]}	the different slice matching an emoji style
  */
 function sliceEmoji( rawText ){
-	return sliceOneMatchFromRegexp( rawText, 'emoji',/(?<nonMatchBefore>[^`]*)(?::(?<match>[^`\s]+):)(?<nonMatchAfter>[^`]*)/g )
+	return sliceOneMatchFromRegexp( rawText, 'emoji',/(?<nonMatchBefore>[^`]*)(?::(?<match>[a-zA-Z0-9_]+):)(?<nonMatchAfter>[^`]*)/g )
 }
 
 /**
@@ -228,37 +229,29 @@ function sliceEmoji( rawText ){
  * @returns 					{String[]}	the different slice matching a link style
  */
 function sliceLink( rawText ){
-  const regex = /(\[.*?\]\(.*?\))/;
-  const splitted = rawText.split(regex);
-  return splitted.map(str => {
-    if (regex.test(str)) {
-      const typeTag = str[1] === "@" ? "mention" : "link";
-      const catchText = str.match(/\[(.*?)\]\((.*?)\)/);
-
-      let optionalText1 = ""
-      let optionalText2
-
-      // allow for an empty link
-      if (catchText[2] !== "") {
-        const match = catchText[2].match(/(\S+)( "(.*)")?/);
-        optionalText1 = match[1];
-        optionalText2 = match[3];
-      }
-
-      return {
-        isMatching: true,
-        type: typeTag,
-        text: catchText[1],
-        optionalText1,
-        optionalText2
-      }
-    } else {
-      return {
-        isMatching: false,
-        text: str,
-      }
-    }
-  });
+	const slices = [];
+	const walkTokens = (token) => {
+		if (token.type === 'link') {
+			const typeTag = token.text[0] === "@" ? 'mention' : 'link';
+			slices.push({
+				isMatching: true,
+				type: typeTag,
+				text: token.text,
+				optionalText1: token.href,
+				optionalText2: token.title
+			})
+		} else if (token.type === 'text') {
+			const lastSlice = slices.at(-1);
+			if (lastSlice === undefined || lastSlice.type !== 'link') {
+				slices.push({
+					isMatching: false,
+					text: token.text,
+				})
+			}
+		}
+	};
+	marked.parse(rawText, { walkTokens });
+	return slices
 }
 
 /**
