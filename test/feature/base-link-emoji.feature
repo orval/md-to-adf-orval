@@ -8,6 +8,14 @@ Feature: Conversion link and emoji markdown
     And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "Test with paragraph and a link "}'
     And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "TitleOfLink", "marks": [ { "type": "link", "attrs": { "href": "urltogoto" } } ] }'
 
+  Scenario: Base formatting - Links in a paragraph
+    Given the markdown in GITHUB is 'Test with paragraph and a link [TitleOfLink](urltogoto) plus another [mylink](somewhere)'
+    When we translate it in ADF
+    Then the ADF chunk at content path [ 0 ] has type 'paragraph'
+    And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "Test with paragraph and a link "}'
+    And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "TitleOfLink", "marks": [ { "type": "link", "attrs": { "href": "urltogoto" } } ] }'
+    And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "mylink", "marks": [ { "type": "link", "attrs": { "href": "somewhere" } } ] }'
+
   Scenario: Base formatting - Empty link
     Given the markdown in GITHUB is 'Test with paragraph and an empty link [Empty]()'
     When we translate it in ADF
