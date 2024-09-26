@@ -218,7 +218,7 @@ function sliceInLineCode( rawText ){
  * @returns 					{String[]}	the different slice matching an emoji style
  */
 function sliceEmoji( rawText ){
-	return sliceOneMatchFromRegexp( rawText, 'emoji',/(?<nonMatchBefore>[^`]*)(?::(?<match>[a-zA-Z0-9_]+):)(?<nonMatchAfter>[^`]*)/g )
+	return sliceOneMatchFromRegexp( rawText, 'emoji',/(?<nonMatchBefore>[^`]*)(?::(?<match>[a-zA-Z0-9_\+]+):)(?<nonMatchAfter>[^`]*)/g )
 }
 
 /**
@@ -229,28 +229,55 @@ function sliceEmoji( rawText ){
  * @returns 					{String[]}	the different slice matching a link style
  */
 function sliceLink( rawText ){
-	const slices = [];
+	const linkSlices = [];
 	const walkTokens = (token) => {
 		if (token.type === 'link') {
 			const typeTag = token.text[0] === "@" ? 'mention' : 'link';
-			slices.push({
+			linkSlices.push({
 				isMatching: true,
 				type: typeTag,
 				text: token.text,
 				optionalText1: token.href,
-				optionalText2: token.title
+				optionalText2: token.title,
+				raw: token.raw
 			})
-		} else if (token.type === 'text') {
-			const lastSlice = slices.at(-1);
-			if (lastSlice === undefined || lastSlice.type !== 'link') {
+		} 
+	};
+
+	// use marked to parse out just links
+	marked.parse(rawText, { walkTokens });
+
+	// this is crazy but pull the links out of the rawText to make the text slices
+	const slices = []
+	let paragraph = rawText
+
+	linkSlices.forEach(l => {
+		const link = l.raw
+		const linkIdx = rawText.indexOf(link)
+
+		if (linkIdx !== -1) {
+			const textBefore = paragraph.substring(0, linkIdx)
+
+			if (textBefore.length > 0) {
 				slices.push({
 					isMatching: false,
-					text: token.text,
+					text: textBefore
 				})
 			}
+			slices.push(l)
+
+			// set paragraph to the remaining text
+			paragraph = paragraph.substring(linkIdx + link.length)
 		}
-	};
-	marked.parse(rawText, { walkTokens });
+	})
+
+	if (paragraph.length > 0) {
+		slices.push({
+			isMatching: false,
+			text: paragraph
+		})
+	}
+
 	return slices
 }
 
