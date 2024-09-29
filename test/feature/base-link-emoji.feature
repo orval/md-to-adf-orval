@@ -28,7 +28,7 @@ Feature: Conversion link and emoji markdown
     When we translate it in ADF
     Then the ADF chunk at content path [ 0 ] has type 'paragraph'
     And the ADF chunk at content path [ 0 ] contains '{ "type": "text", "text": "Test with paragraph and a mention "}'
-    And the ADF chunk at content path [ 0 ] contains '{ "type": "mention", "attrs": { "text": "@name", "id": "user-id" } }'
+    And the ADF chunk at content path [ 0 ] contains '{ "type": "mention", "attrs": { "text": "@name", "id": "user-id", "accessLevel": "" } }'
 
   Scenario: Base formatting - Link in a paragraph with a title
     Given the markdown in GITHUB is 'Test with paragraph and a link [TitleOfLink](urltogoto "mytitle")'
