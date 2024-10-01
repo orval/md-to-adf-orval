@@ -46,5 +46,4 @@ Feature: Conversion of lists markdown
     Then the ADF chunk at content path [ 0 ] has type 'heading'
     Then the ADF chunk at content path [ 1 ] has type 'paragraph'
     Then the ADF chunk at content path [ 2 ] has type 'bulletList'
-    Then the ADF chunk at content path [ 3 ] has type 'bulletList'
-    Then the ADF chunk at content path [ 4 ] has type 'paragraph'
+    Then the ADF chunk at content path [ 3 ] has type 'paragraph'

@@ -12,16 +12,8 @@ const buildIRTreeFromMarkdown = require( __dirname + '/markdownHandling' )
 const fillADFNodesWithMarkdown = require( __dirname + '/adfHandling' )
 
 function translateGITHUBMarkdownToADF( markdownText ){
-	
 	const textTree = buildIRTreeFromMarkdown( markdownText )
-	
-	const content = []
-	if( textTree.length > 0 )
-		fillADFNodesWithMarkdown( content, textTree )
-
-	const adfRoot = doc(...content)
-	
-	return adfRoot
+	return doc(...fillADFNodesWithMarkdown(textTree))
 }
 
 module.exports = translateGITHUBMarkdownToADF

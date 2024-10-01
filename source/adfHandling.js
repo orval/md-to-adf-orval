@@ -20,73 +20,165 @@ const attachTextToNodeSliceEmphasis = require( __dirname + '/adfEmphasisParsing'
 //  * @typedef { import("./markdownHandling").IRTreeNode } IRTreeNode
 //  */
 
-/**
- * Browse the tree recursively to add each node to the ADF Document
- * 	It also treat special cases between top-level node and generic ones
- *
- * @param currentParentNode					{Document}		ADF document to add to
- * @param currentArrayOfNodesOfSameIndent	{IRTreeNode}
- */
-function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameIndent ){
-	currentArrayOfNodesOfSameIndent.reduce( ( lastListNode, currentNode ) => {
-		const nodeOrListNode = lastListNode !== null
-							   && ( currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' )
-							   && lastListNode.content.type === currentNode.node.adfType
-							   ? lastListNode
-							   : addTypeToNode( currentParentNode, currentNode.node.adfType, currentNode.node.typeParam )
-		
-		const nodeOrListItem = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList'
-							   ? nodeOrListNode.content.push(li())
-							   : nodeOrListNode
-		const nodeToAttachTextTo = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' || currentNode.node.adfType === 'blockQuote'
-								   ? typeof currentNode.node.textToEmphasis !== 'undefined' || currentNode.children.length === 0
-									 ? nodeOrListItem.content.push(p())
-									 : nodeOrListItem
-								   : nodeOrListItem
-		
-		if( currentNode.node.adfType === 'divider' )
-			return lastListNode
-		
-		else if( currentNode.node.adfType !== 'codeBlock'
-				 && currentNode.node.textToEmphasis )
-			attachItemNode( nodeToAttachTextTo, currentNode.node.textToEmphasis )
-		
-		else if( currentNode.node.adfType !== 'codeBlock'
-				 && currentNode.node.textToEmphasis === '' )
-			attachItemNode( nodeToAttachTextTo, ' ' )
-		
-		else if( currentNode.node.adfType === 'codeBlock' )
-			attachTextToNodeRaw( nodeToAttachTextTo, currentNode.node.textToEmphasis )
+// /**
+//  * Browse the tree recursively to add each node to the ADF Document
+//  * 	It also treat special cases between top-level node and generic ones
+//  *
+//  * @param currentParentNode					{Document}		ADF document to add to
+//  * @param currentArrayOfNodesOfSameIndent	{IRTreeNode}
+//  */
+// function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameIndent ){
+// 	currentArrayOfNodesOfSameIndent.reduce( ( lastListNode, currentNode ) => {
+// 		const nodeOrListNode = lastListNode !== null
+// 							   && ( currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' )
+// 							   && lastListNode.content.type === currentNode.node.adfType
+// 							   ? lastListNode
+// 							   : addTypeToNode( currentParentNode, currentNode.node.adfType, currentNode.node.typeParam )
 
-		else if( currentNode.node.adfType === 'table' ) {
-			const rows = currentNode.node.rows.map(r => {
-				let cells
-				if (r.node.adfType === 'tableHeader') {
-					cells = r.node.cells.map(c => {
-						let x = th({})(p(text(c.node.value.node.textToEmphasis)))
-						return x
-					})
-				} else if (r.node.adfType === 'tableRow') {
-					cells = r.node.cells.map(c => {
-						let y = td({})(p(text(c.node.value.node.textToEmphasis)))
-						return y
-					})
-				}
-				return tr(cells)
-			})
-			const tab = table(...rows)
-			tab.attrs = {}
-			currentParentNode[currentParentNode.length - 1] = tab;
+// 		const nodeOrListItem = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList'
+// 							   ? nodeOrListNode.content.push(li())
+// 							   : nodeOrListNode
+// 		const nodeToAttachTextTo = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' || currentNode.node.adfType === 'blockQuote'
+// 								   ? typeof currentNode.node.textToEmphasis !== 'undefined' || currentNode.children.length === 0
+// 									 ? nodeOrListItem.content.push(p())
+// 									 : nodeOrListItem
+// 								   : nodeOrListItem
+
+// 		if( currentNode.node.adfType === 'divider' )
+// 			return lastListNode
+		
+// 		else if( currentNode.node.adfType !== 'codeBlock'
+// 				 && currentNode.node.textToEmphasis )
+// 			attachItemNode( nodeToAttachTextTo, currentNode.node.textToEmphasis )
+		
+// 		else if( currentNode.node.adfType !== 'codeBlock'
+// 				 && currentNode.node.textToEmphasis === '' )
+// 			attachItemNode( nodeToAttachTextTo, ' ' )
+		
+// 		else if( currentNode.node.adfType === 'codeBlock' )
+// 			attachTextToNodeRaw( nodeToAttachTextTo, currentNode.node.textToEmphasis )
+
+// 		else if( currentNode.node.adfType === 'table' ) {
+// 			const rows = currentNode.node.rows.map(r => {
+// 				let cells
+// 				if (r.node.adfType === 'tableHeader') {
+// 					cells = r.node.cells.map(c => {
+// 						let x = th({})(p(text(c.node.value.node.textToEmphasis)))
+// 						return x
+// 					})
+// 				} else if (r.node.adfType === 'tableRow') {
+// 					cells = r.node.cells.map(c => {
+// 						let y = td({})(p(text(c.node.value.node.textToEmphasis)))
+// 						return y
+// 					})
+// 				}
+// 				return tr(cells)
+// 			})
+// 			const tab = table(...rows)
+// 			tab.attrs = {}
+// 			currentParentNode[currentParentNode.length - 1] = tab;
+// 		}
+
+// 		if( currentNode.children )
+// 			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
+		
+// 		return ( currentNode.node.adfType !== 'orderedList' && currentNode.node.adfType !== 'bulletList' )
+// 			   || ( !lastListNode || currentNode.node.adfType === lastListNode.content.type )
+// 			   ? nodeOrListNode
+// 			   : lastListNode
+// 	}, null )
+// }
+
+function treeToADF(tree) {
+	const elements = []
+	for (let i = 0; i < tree.length; i++) {
+		const node = tree[i].node
+		const children = tree[i].children
+		const tSlices = node?.textToEmphasis !== undefined ? textSlices(node.textToEmphasis) : undefined
+		let list
+
+		switch (node.adfType) {
+			case 'heading':
+				elements.push(heading({ level: node.typeParam })(...tSlices))
+				break
+
+			case 'paragraph':
+				node.textToEmphasis = node.textToEmphasis === '' ? ' ' : node.textToEmphasis
+				elements.push(p(...textSlices(node.textToEmphasis)))
+				break
+
+			case 'divider':
+				elements.push(rule())
+				break
+
+			case 'bulletList':
+				({ list, i } = processList('bulletList', tSlices, children, i))
+				elements.push(ul(...list))
+				break
+
+			case 'orderedList':
+				({ list, i } = processList('orderedList', tSlices, children, i))
+				if (node.typeParams)
+					elements.push(ol({ order: node.typeParams })(...list))
+				else
+					elements.push(ol()(...list))
+				break
+
+			case 'blockQuote':
+				elements.push(blockQuote(p(...tSlices)))
+				break
+
+			case 'table':
+				const rows = node.rows.map(r => {
+					let cells
+					if (r.node.adfType === 'tableHeader') {
+						cells = r.node.cells.map(c => {
+							let x = th({})(p(...textSlices(c.node.value.node.textToEmphasis)))
+							return x
+						})
+					} else if (r.node.adfType === 'tableRow') {
+						cells = r.node.cells.map(c => {
+							let y = td({})(p(...textSlices(c.node.value.node.textToEmphasis)))
+							return y
+						})
+					}
+					return tr(cells)
+				})
+				elements.push(table(...rows))
+				break
+
+			case 'codeBlock':
+				elements.push(codeBlock({ attrs: node.typeParams })(text(node.textToEmphasis)))
+				break
+
+			default:
+				console.log('incompatible type', node.adfType)
+				throw 'incompatible type'
+		}
+	}
+	return elements
+
+	function processList(adfType, tSlices, children, i) {
+		const items = [p(...tSlices)]
+
+		if (children?.length) {
+			items.push(...treeToADF(children))
 		}
 
-		if( currentNode.children )
-			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
-		
-		return ( currentNode.node.adfType !== 'orderedList' && currentNode.node.adfType !== 'bulletList' )
-			   || ( !lastListNode || currentNode.node.adfType === lastListNode.content.type )
-			   ? nodeOrListNode
-			   : lastListNode
-	}, null )
+		const list = [li(items)]
+		for (let j = i + 1; j < tree.length; j++) {
+			const moreChildren = tree[j].children
+			if (tree[j].node.adfType === adfType) {
+				const moreItems = [p(...textSlices(tree[j].node.textToEmphasis))]
+				if (moreChildren?.length) {
+					moreItems.push(...treeToADF(moreChildren))
+				}
+				list.push(li(moreItems))
+				i++
+			}
+		}
+		return { list, i }
+	}
 }
 
 /**
@@ -157,10 +249,11 @@ function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
 /**
  * Adding a non-top-level ADF node
  *
- * @param nodeToAttachTo		{Node}		ADF Node to attach to
  * @param rawText				{String}	text content of the node to add
  */
-function attachItemNode( nodeToAttachTo, rawText ) {
+function textSlices(rawText) {
+	if (rawText === '') return [text(' ')]
+
 	const slicedInline = sliceInLineCode( rawText )
 	
 	const { slicedInlineAndEmoji } = slicedInline.reduce( ( { slicedInlineAndEmoji }, currentSlice ) => {
@@ -184,17 +277,16 @@ function attachItemNode( nodeToAttachTo, rawText ) {
 		slicedInlineAndEmojiAndLink.push( currentSlice )
 		return { slicedInlineAndEmojiAndLink }
 	}, { slicedInlineAndEmojiAndLink: [] } )
-	
-	for( const currentSlice of slicedInlineAndEmojiAndLink ) {
-		const last = nodeToAttachTo.at(-1)
 
+	const elements = []
+	for( const currentSlice of slicedInlineAndEmojiAndLink ) {
 		switch( currentSlice.type ){
 			case 'inline':
-				last.content.push(code(textToAttach))
+				elements.push(code(currentSlice.text))
 				break
 			
 			case 'emoji':
-				last.content.push(emoji({ shortName: currentSlice.text }))
+				elements.push(emoji({ shortName: currentSlice.text }))
 				break
 			
 			case 'link':
@@ -202,11 +294,11 @@ function attachItemNode( nodeToAttachTo, rawText ) {
 					? link({ href: currentSlice.optionalText1, title: currentSlice.optionalText2 })
 					: link({ href: currentSlice.optionalText1 })
 
-				last.content.push(linkFn(text(currentSlice.text)))
+				elements.push(linkFn(text(currentSlice.text)))
 				break
 			
 			case 'mention':
-				last.content.push(mention({ id: currentSlice.optionalText1, text: currentSlice.text}))
+				elements.push(mention({ id: currentSlice.optionalText1, text: currentSlice.text}))
 				break
 			
 			case 'image':
@@ -219,13 +311,14 @@ function attachItemNode( nodeToAttachTo, rawText ) {
 				// 	: link({ href: currentSlice.optionalText1 })
 
 				// last.content.push(linkFn(text(currentSlice.text)))
-				last.content.push(mediaSingle({ href: currentSlice.optionalText1 }))
+				elements.push(mediaSingle({ href: currentSlice.optionalText1 }))
 				break
 			
 			default:
-				attachTextToNodeSliceEmphasis( last, currentSlice.text )
+				elements.push(...attachTextToNodeSliceEmphasis( currentSlice.text ))
 		}
 	}
+	return elements
 }
 
 /**
@@ -361,4 +454,4 @@ function attachTextToNodeRaw( nodeToAttachTo, textToAttach ){
 	nodeToAttachTo.push(text(textToAttach))
 }
 
-module.exports = fillADFNodesWithMarkdown
+module.exports = treeToADF

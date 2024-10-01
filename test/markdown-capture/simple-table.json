@@ -3,11 +3,10 @@
     "type": "table",
     "content": [
       {
-        "type": "tableHeader",
-        "attrs": {},
+        "type": "tableRow",
         "content": [
           {
-            "type": "tableCell",
+            "type": "tableHeader",
             "attrs": {},
             "content": [
               {
@@ -22,7 +21,7 @@
             ]
           },
           {
-            "type": "tableCell",
+            "type": "tableHeader",
             "attrs": {},
             "content": [
               {
@@ -37,7 +36,7 @@
             ]
           },
           {
-            "type": "tableCell",
+            "type": "tableHeader",
             "attrs": {},
             "content": [
               {

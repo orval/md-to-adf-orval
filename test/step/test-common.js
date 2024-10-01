@@ -91,8 +91,8 @@ Then( And( /^the ADF chunk at content path (\[(?: *\d+(?: |, |,)*)+\]) contains 
 	
 			   const parsedExpectedObject = JSON.parse( expectedTranslationObject )
 	
-			   expect( translatedADF.content.content ).toBeDefined()
-			   const flattenTranslatedADFChunk = JSON.parse( JSON.stringify( finalContentAtDepth.content.content ) )
+			   expect( translatedADF.content[0].content ).toBeDefined()
+			   const flattenTranslatedADFChunk = JSON.parse( JSON.stringify( finalContentAtDepth.content ) )
 	
 			   expect( flattenTranslatedADFChunk ).toEqual( expect.arrayContaining( [ expect.objectContaining( parsedExpectedObject ) ] ) )
 		   } ) )
@@ -103,7 +103,7 @@ Then( And( /the ADF document content has all the object defined in json file nam
 	const parsedExpectedObject = require( __dirname + '/../markdown-capture/' + exampleJSONFile + '.json' )
 	// const parsedExpectedObject = JSON.parse( expectedTranslationObject )
 	
-	const flattenTranslatedADFChunk = JSON.parse( JSON.stringify( translatedADF.content.content ) )
+	const flattenTranslatedADFChunk = JSON.parse( JSON.stringify( translatedADF.content ) )
 	
 	expect( flattenTranslatedADFChunk ).toEqual( expect.arrayContaining( parsedExpectedObject ) )
 } ) )
