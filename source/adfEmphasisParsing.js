@@ -8,7 +8,7 @@
  * This transform a text with emphasis mark (*, _ or `) into an ADF expanded Paragraph
  *
  **********************************************************************************************************************/
-const { marks, Text }	= require( 'adf-builder' )
+const { em, strike, strong, text } = require('@atlaskit/adf-utils/builders')
 
 
 /**
@@ -47,9 +47,7 @@ function attachTextToNodeSliceEmphasis( parentNode, textToEmphasis ){
 			&& lineUnderscored[ currentCharacterIndex - 1 ] === '~' ){
       const text = expressionBuffer.slice( 0, expressionBuffer.length - 2);
       if (text.length > 0) {
-        const textNode = new Text( text,
-          convertDecorationLevelToMark( currentDecorationLevel, strikedThrough ) )
-        parentNode.content.add( textNode )
+				parentNode.content.push(decorateText(text, currentDecorationLevel, strikedThrough))
       }
 
       expressionBuffer = ''
@@ -58,12 +56,8 @@ function attachTextToNodeSliceEmphasis( parentNode, textToEmphasis ){
 
 
     if( lineUnderscored[ currentCharacterIndex ] === '_' ){
-      let decorationToUse = convertDecorationLevelToMark( currentDecorationLevel, strikedThrough )
-			
 			if( expressionBuffer !== '' ){
-				const textNode = new Text( expressionBuffer, decorationToUse )
-				parentNode.content.add( textNode )
-				// textWithInline( parentNode, expressionBuffer, decorationToUse )
+				parentNode.content.push(decorateText(expressionBuffer, currentDecorationLevel, strikedThrough))
 			}
 			else {
 				if( potentialUnderscorePair )
@@ -78,14 +72,14 @@ function attachTextToNodeSliceEmphasis( parentNode, textToEmphasis ){
 	}
 	
 	if( expressionBuffer !== '' ){
-		const textNode = new Text( expressionBuffer, convertDecorationLevelToMark( currentDecorationLevel, strikedThrough ) )
-		parentNode.content.add( textNode )
+		parentNode.content.push(decorateText(expressionBuffer, currentDecorationLevel, strikedThrough))
 	}
 }
 
 /**
  * Convert a "decoration level" (bit swap) to an actual ADF Mark for the text
  *
+ * @param textContent		{String}	text to parse for emphasis parsing
  * @param decorationLevelToConvert	{Number}		decoration level follow the convention:
  * 														0 => no decoration
  * 														1 => italic
@@ -93,23 +87,23 @@ function attachTextToNodeSliceEmphasis( parentNode, textToEmphasis ){
  * 														3 => bold and italic
  * @param addStrikethrough			{Boolean}		is strikethrough active?
  */
-function convertDecorationLevelToMark( decorationLevelToConvert, addStrikethrough ){
-	if( addStrikethrough )
+function decorateText(textContent, decorationLevelToConvert, addStrikethrough) {
+	if (addStrikethrough)
 		return decorationLevelToConvert === 1
-			   ? marks().strike().em()
-			   : decorationLevelToConvert === 2
-				 ? marks().strike().strong()
-				 : decorationLevelToConvert === 3
-				   ? marks().strike().strong().em()
-				   : marks().strike()
-	
-	return decorationLevelToConvert === 1
-		   ? marks().em()
-		   : decorationLevelToConvert === 2
-			 ? marks().strong()
-			 : decorationLevelToConvert === 3
-			   ? marks().strong().em()
-			   : null
+		? strike(em(textContent))
+		: decorationLevelToConvert === 2
+			? strike(strong(textContent))
+			: decorationLevelToConvert === 3
+				? strike(em(strong(textContent)))
+				: text(textContent)
+
+  return decorationLevelToConvert === 1
+    ? em(textContent)
+    : decorationLevelToConvert === 2
+      ? strong(textContent)
+      : decorationLevelToConvert === 3
+        ? em(strong(textContent))
+        : text(textContent)
 }
 
 module.exports = attachTextToNodeSliceEmphasis

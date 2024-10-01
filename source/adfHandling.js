@@ -9,9 +9,9 @@
  * It also remove non-compatible hierarchy that ADF doesn't support
  *
  **********************************************************************************************************************/
-const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention, Table, TableCell, TableHeader, TableRow }	= require( 'adf-builder' )
+const { blockQuote, code, codeBlock, emoji, heading, li, link, mediaSingle, mention, ol, p, rule, table, td, text, th, tr, ul } = require('@atlaskit/adf-utils/builders')
+
 const marked = require('marked')
-const { ContentNode } = require('adf-builder/dist/nodes')
 
 const attachTextToNodeSliceEmphasis = require( __dirname + '/adfEmphasisParsing' )
 
@@ -36,11 +36,11 @@ function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameI
 							   : addTypeToNode( currentParentNode, currentNode.node.adfType, currentNode.node.typeParam )
 		
 		const nodeOrListItem = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList'
-							   ? nodeOrListNode.content.add( new ListItem() )
+							   ? nodeOrListNode.content.push(li())
 							   : nodeOrListNode
 		const nodeToAttachTextTo = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' || currentNode.node.adfType === 'blockQuote'
 								   ? typeof currentNode.node.textToEmphasis !== 'undefined' || currentNode.children.length === 0
-									 ? nodeOrListItem.content.add( new Paragraph() )
+									 ? nodeOrListItem.content.push(p())
 									 : nodeOrListItem
 								   : nodeOrListItem
 		
@@ -58,14 +58,26 @@ function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameI
 		else if( currentNode.node.adfType === 'codeBlock' )
 			attachTextToNodeRaw( nodeToAttachTextTo, currentNode.node.textToEmphasis )
 
-		else if( currentNode.node.adfType === 'table' )
-			currentNode.children = currentNode.node.rows
-
-		else if( currentNode.node.adfType === 'tableRow' || currentNode.node.adfType === 'tableHeader' )
-			currentNode.children = currentNode.node.cells
-
-		else if( currentNode.node.adfType === 'tableCell' )
-			currentNode.children = [ currentNode.node.value ]
+		else if( currentNode.node.adfType === 'table' ) {
+			const rows = currentNode.node.rows.map(r => {
+				let cells
+				if (r.node.adfType === 'tableHeader') {
+					cells = r.node.cells.map(c => {
+						let x = th({})(p(text(c.node.value.node.textToEmphasis)))
+						return x
+					})
+				} else if (r.node.adfType === 'tableRow') {
+					cells = r.node.cells.map(c => {
+						let y = td({})(p(text(c.node.value.node.textToEmphasis)))
+						return y
+					})
+				}
+				return tr(cells)
+			})
+			const tab = table(...rows)
+			tab.attrs = {}
+			currentParentNode[currentParentNode.length - 1] = tab;
+		}
 
 		if( currentNode.children )
 			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
@@ -89,44 +101,57 @@ function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameI
 function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
 	switch( adfType ) {
 		case "heading":
-			return adfNodeToAttachTo.content.add( new Heading( typeParams ) )
+			adfNodeToAttachTo.push(heading({ level: typeParams })())
+			break
 		
 		case "divider":
-			return adfNodeToAttachTo.content.add( new Rule() )
+			adfNodeToAttachTo.push(rule())
+			break
 		
 		case "bulletList":
-			return adfNodeToAttachTo.content.add( new BulletList() )
+			adfNodeToAttachTo.push(ul())
+			break
 		
-		case "orderedList": {
-			const orderedListNode = new OrderedList( )
-			if( typeParams ) orderedListNode.attrs = { order: typeParams }
-			return adfNodeToAttachTo.content.add( orderedListNode )
-		}
+		case "orderedList":
+			if (typeParams)
+				adfNodeToAttachTo.push(ol({ order: typeParams })())
+			else
+				adfNodeToAttachTo.push(ol()())
+			break
 		
 		case "codeBlock":
-			return adfNodeToAttachTo.content.add( new CodeBlock( typeParams ) )
+			adfNodeToAttachTo.push(codeBlock({ typeParams })())
+			break
 		
 		case "blockQuote":
-			return adfNodeToAttachTo.content.add( new BlockQuote() )
+			adfNodeToAttachTo.push(blockQuote())
+			break
 		
 		case "paragraph":
-			return adfNodeToAttachTo.content.add( new Paragraph() )
+			adfNodeToAttachTo.push(p())
+			break
 		
 		case "table":
-			return adfNodeToAttachTo.content.add( new Table() )
+			adfNodeToAttachTo.push(table())
+			break
 
 		case "tableHeader":
-			return adfNodeToAttachTo.content.add( new TableHeader() )
+			adfNodeToAttachTo.push(th())
+			break
 
 		case "tableRow":
-			return adfNodeToAttachTo.content.add( new TableRow() )
+			adfNodeToAttachTo.push(tr())
+			break
 
 		case "tableCell":
-			return adfNodeToAttachTo.content.add( new TableCell() )
+				adfNodeToAttachTo.push(td())
+			break
 
 		default:
 			throw 'incompatible type'
 	}
+
+	return adfNodeToAttachTo
 }
 
 /**
@@ -161,40 +186,44 @@ function attachItemNode( nodeToAttachTo, rawText ) {
 	}, { slicedInlineAndEmojiAndLink: [] } )
 	
 	for( const currentSlice of slicedInlineAndEmojiAndLink ) {
+		const last = nodeToAttachTo.at(-1)
+
 		switch( currentSlice.type ){
 			case 'inline':
-				const inlineCodeNode = new Text( currentSlice.text, marks().code() )
-				nodeToAttachTo.content.add( inlineCodeNode )
+				last.content.push(code(textToAttach))
 				break
 			
 			case 'emoji':
-				const emojiNode = new Emoji( {shortName: currentSlice.text } )
-				nodeToAttachTo.content.add( emojiNode )
+				last.content.push(emoji({ shortName: currentSlice.text }))
 				break
 			
 			case 'link':
-				const linkNode = new Text( currentSlice.text,
-										   marks().link( currentSlice.optionalText1,
-														 currentSlice.optionalText2 ) )
-				nodeToAttachTo.content.add( linkNode )
+				const linkFn = (currentSlice.optionalText2)
+					? link({ href: currentSlice.optionalText1, title: currentSlice.optionalText2 })
+					: link({ href: currentSlice.optionalText1 })
+
+				last.content.push(linkFn(text(currentSlice.text)))
 				break
 			
 			case 'mention':
-				const mentionNode = new Mention( currentSlice.optionalText1, currentSlice.text)
-				nodeToAttachTo.content.add( mentionNode )
+				last.content.push(mention({ id: currentSlice.optionalText1, text: currentSlice.text}))
 				break
 			
 			case 'image':
-				const imageNode = new Text( currentSlice.text,
-											marks().link( currentSlice.optionalText1,
-														  currentSlice.optionalText2 ) )
-				nodeToAttachTo.content.add( imageNode )
+				// const imageNode = new Text( currentSlice.text,
+				// 							marks().link( currentSlice.optionalText1,
+				// 										  currentSlice.optionalText2 ) )
+				// nodeToAttachTo.content.add( imageNode )
+				// const linkFn = (currentSlice.optionalText2)
+				// 	? link({ href: currentSlice.optionalText1, title: currentSlice.optionalText2 })
+				// 	: link({ href: currentSlice.optionalText1 })
+
+				// last.content.push(linkFn(text(currentSlice.text)))
+				last.content.push(mediaSingle({ href: currentSlice.optionalText1 }))
 				break
 			
 			default:
-				attachTextToNodeSliceEmphasis( nodeToAttachTo, currentSlice.text )
-			// const textNode = new Text( currentSlice.text, marksToUse )
-			// nodeToAttachTo.content.add( textNode )
+				attachTextToNodeSliceEmphasis( last, currentSlice.text )
 		}
 	}
 }
@@ -329,8 +358,7 @@ function sliceOneMatchFromRegexp( rawText, typeTag, regexpToSliceWith ){
  * @param textToAttach		{String}	text to use for the Text node
  */
 function attachTextToNodeRaw( nodeToAttachTo, textToAttach ){
-  const textNode = new Text( textToAttach )
-  nodeToAttachTo.content.add( textNode )
+	nodeToAttachTo.push(text(textToAttach))
 }
 
 module.exports = fillADFNodesWithMarkdown

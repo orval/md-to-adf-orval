@@ -24,6 +24,7 @@
     "adf"
   ],
   "dependencies": {
+    "@atlaskit/adf-utils": "^19.8.1",
     "adf-builder": "github:orval/adf-builder-javascript",
     "marked": "^4.3.0"
   },
