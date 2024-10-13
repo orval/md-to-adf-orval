@@ -1,313 +1,2307 @@
-module.exports =
-/******/ (function(modules, runtime) { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	__webpack_require__.ab = __dirname + "/";
-/******/
-/******/ 	// the startup function
-/******/ 	function startup() {
-/******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(503);
-/******/ 	};
-/******/
-/******/ 	// run startup
-/******/ 	return startup();
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
-/***/ 103:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 7265:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var Strike = /** @class */ (function (_super) {
-    __extends(Strike, _super);
-    function Strike() {
-        return _super.call(this, 'strike') || this;
-    }
-    return Strike;
-}(mark_1.Mark));
-exports.Strike = Strike;
-//# sourceMappingURL=strike.js.map
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+Object.defineProperty(exports, "a", ({
+  enumerable: true,
+  get: function get() {
+    return _link.link;
+  }
+}));
+Object.defineProperty(exports, "alignment", ({
+  enumerable: true,
+  get: function get() {
+    return _alignment.alignment;
+  }
+}));
+Object.defineProperty(exports, "b", ({
+  enumerable: true,
+  get: function get() {
+    return _strong.strong;
+  }
+}));
+Object.defineProperty(exports, "backgroundColor", ({
+  enumerable: true,
+  get: function get() {
+    return _backgroundColor.backgroundColor;
+  }
+}));
+Object.defineProperty(exports, "blockCard", ({
+  enumerable: true,
+  get: function get() {
+    return _blockCard.blockCard;
+  }
+}));
+Object.defineProperty(exports, "blockQuote", ({
+  enumerable: true,
+  get: function get() {
+    return _blockquote.blockQuote;
+  }
+}));
+Object.defineProperty(exports, "bodiedExtension", ({
+  enumerable: true,
+  get: function get() {
+    return _bodiedExtension.bodiedExtension;
+  }
+}));
+Object.defineProperty(exports, "border", ({
+  enumerable: true,
+  get: function get() {
+    return _border.border;
+  }
+}));
+Object.defineProperty(exports, "br", ({
+  enumerable: true,
+  get: function get() {
+    return _hardBreak.hardBreak;
+  }
+}));
+Object.defineProperty(exports, "breakout", ({
+  enumerable: true,
+  get: function get() {
+    return _breakout.breakout;
+  }
+}));
+Object.defineProperty(exports, "bulletList", ({
+  enumerable: true,
+  get: function get() {
+    return _bulletList.bulletList;
+  }
+}));
+Object.defineProperty(exports, "code", ({
+  enumerable: true,
+  get: function get() {
+    return _code.code;
+  }
+}));
+Object.defineProperty(exports, "codeBlock", ({
+  enumerable: true,
+  get: function get() {
+    return _codeBlock.codeBlock;
+  }
+}));
+Object.defineProperty(exports, "dataConsumer", ({
+  enumerable: true,
+  get: function get() {
+    return _dataConsumer.dataConsumer;
+  }
+}));
+Object.defineProperty(exports, "date", ({
+  enumerable: true,
+  get: function get() {
+    return _date.date;
+  }
+}));
+Object.defineProperty(exports, "decisionItem", ({
+  enumerable: true,
+  get: function get() {
+    return _decisionItem.decisionItem;
+  }
+}));
+Object.defineProperty(exports, "decisionList", ({
+  enumerable: true,
+  get: function get() {
+    return _decisionList.decisionList;
+  }
+}));
+Object.defineProperty(exports, "doc", ({
+  enumerable: true,
+  get: function get() {
+    return _doc.doc;
+  }
+}));
+Object.defineProperty(exports, "em", ({
+  enumerable: true,
+  get: function get() {
+    return _em.em;
+  }
+}));
+Object.defineProperty(exports, "embedCard", ({
+  enumerable: true,
+  get: function get() {
+    return _embedCard.embedCard;
+  }
+}));
+Object.defineProperty(exports, "emoji", ({
+  enumerable: true,
+  get: function get() {
+    return _emoji.emoji;
+  }
+}));
+Object.defineProperty(exports, "expand", ({
+  enumerable: true,
+  get: function get() {
+    return _expand.expand;
+  }
+}));
+Object.defineProperty(exports, "extension", ({
+  enumerable: true,
+  get: function get() {
+    return _extension.extension;
+  }
+}));
+Object.defineProperty(exports, "fragment", ({
+  enumerable: true,
+  get: function get() {
+    return _fragment.fragment;
+  }
+}));
+Object.defineProperty(exports, "hardBreak", ({
+  enumerable: true,
+  get: function get() {
+    return _hardBreak.hardBreak;
+  }
+}));
+Object.defineProperty(exports, "heading", ({
+  enumerable: true,
+  get: function get() {
+    return _heading.heading;
+  }
+}));
+Object.defineProperty(exports, "hr", ({
+  enumerable: true,
+  get: function get() {
+    return _rule.rule;
+  }
+}));
+Object.defineProperty(exports, "indentation", ({
+  enumerable: true,
+  get: function get() {
+    return _indentation.indentation;
+  }
+}));
+Object.defineProperty(exports, "inlineCard", ({
+  enumerable: true,
+  get: function get() {
+    return _inlineCard.inlineCard;
+  }
+}));
+Object.defineProperty(exports, "inlineExtension", ({
+  enumerable: true,
+  get: function get() {
+    return _inlineExtension.inlineExtension;
+  }
+}));
+Object.defineProperty(exports, "layoutColumn", ({
+  enumerable: true,
+  get: function get() {
+    return _layoutColumn.layoutColumn;
+  }
+}));
+Object.defineProperty(exports, "layoutSection", ({
+  enumerable: true,
+  get: function get() {
+    return _layoutSection.layoutSection;
+  }
+}));
+Object.defineProperty(exports, "li", ({
+  enumerable: true,
+  get: function get() {
+    return _listItem.listItem;
+  }
+}));
+Object.defineProperty(exports, "link", ({
+  enumerable: true,
+  get: function get() {
+    return _link.link;
+  }
+}));
+Object.defineProperty(exports, "listItem", ({
+  enumerable: true,
+  get: function get() {
+    return _listItem.listItem;
+  }
+}));
+Object.defineProperty(exports, "media", ({
+  enumerable: true,
+  get: function get() {
+    return _media.media;
+  }
+}));
+Object.defineProperty(exports, "mediaGroup", ({
+  enumerable: true,
+  get: function get() {
+    return _mediaGroup.mediaGroup;
+  }
+}));
+Object.defineProperty(exports, "mediaSingle", ({
+  enumerable: true,
+  get: function get() {
+    return _mediaSingle.mediaSingle;
+  }
+}));
+Object.defineProperty(exports, "mention", ({
+  enumerable: true,
+  get: function get() {
+    return _mention.mention;
+  }
+}));
+Object.defineProperty(exports, "nestedExpand", ({
+  enumerable: true,
+  get: function get() {
+    return _nestedExpand.nestedExpand;
+  }
+}));
+Object.defineProperty(exports, "ol", ({
+  enumerable: true,
+  get: function get() {
+    return _orderedList.orderedList;
+  }
+}));
+Object.defineProperty(exports, "orderedList", ({
+  enumerable: true,
+  get: function get() {
+    return _orderedList.orderedList;
+  }
+}));
+Object.defineProperty(exports, "p", ({
+  enumerable: true,
+  get: function get() {
+    return _paragraph.paragraph;
+  }
+}));
+Object.defineProperty(exports, "panel", ({
+  enumerable: true,
+  get: function get() {
+    return _panel.panel;
+  }
+}));
+Object.defineProperty(exports, "paragraph", ({
+  enumerable: true,
+  get: function get() {
+    return _paragraph.paragraph;
+  }
+}));
+Object.defineProperty(exports, "placeholder", ({
+  enumerable: true,
+  get: function get() {
+    return _placeholder.placeholder;
+  }
+}));
+Object.defineProperty(exports, "rule", ({
+  enumerable: true,
+  get: function get() {
+    return _rule.rule;
+  }
+}));
+Object.defineProperty(exports, "status", ({
+  enumerable: true,
+  get: function get() {
+    return _status.status;
+  }
+}));
+Object.defineProperty(exports, "strike", ({
+  enumerable: true,
+  get: function get() {
+    return _strike.strike;
+  }
+}));
+Object.defineProperty(exports, "strong", ({
+  enumerable: true,
+  get: function get() {
+    return _strong.strong;
+  }
+}));
+Object.defineProperty(exports, "subsup", ({
+  enumerable: true,
+  get: function get() {
+    return _subsup.subsup;
+  }
+}));
+Object.defineProperty(exports, "table", ({
+  enumerable: true,
+  get: function get() {
+    return _table.table;
+  }
+}));
+Object.defineProperty(exports, "tableCell", ({
+  enumerable: true,
+  get: function get() {
+    return _tableCell.tableCell;
+  }
+}));
+Object.defineProperty(exports, "tableHeader", ({
+  enumerable: true,
+  get: function get() {
+    return _tableHeader.tableHeader;
+  }
+}));
+Object.defineProperty(exports, "tableRow", ({
+  enumerable: true,
+  get: function get() {
+    return _tableRow.tableRow;
+  }
+}));
+Object.defineProperty(exports, "taskItem", ({
+  enumerable: true,
+  get: function get() {
+    return _taskItem.taskItem;
+  }
+}));
+Object.defineProperty(exports, "taskList", ({
+  enumerable: true,
+  get: function get() {
+    return _taskList.taskList;
+  }
+}));
+Object.defineProperty(exports, "td", ({
+  enumerable: true,
+  get: function get() {
+    return _tableCell.tableCell;
+  }
+}));
+Object.defineProperty(exports, "text", ({
+  enumerable: true,
+  get: function get() {
+    return _text.text;
+  }
+}));
+Object.defineProperty(exports, "textColor", ({
+  enumerable: true,
+  get: function get() {
+    return _textColor.textColor;
+  }
+}));
+Object.defineProperty(exports, "th", ({
+  enumerable: true,
+  get: function get() {
+    return _tableHeader.tableHeader;
+  }
+}));
+Object.defineProperty(exports, "tr", ({
+  enumerable: true,
+  get: function get() {
+    return _tableRow.tableRow;
+  }
+}));
+Object.defineProperty(exports, "u", ({
+  enumerable: true,
+  get: function get() {
+    return _underline.underline;
+  }
+}));
+Object.defineProperty(exports, "ul", ({
+  enumerable: true,
+  get: function get() {
+    return _bulletList.bulletList;
+  }
+}));
+Object.defineProperty(exports, "underline", ({
+  enumerable: true,
+  get: function get() {
+    return _underline.underline;
+  }
+}));
+var _breakout = __nccwpck_require__(1426);
+var _code = __nccwpck_require__(22);
+var _em = __nccwpck_require__(7529);
+var _link = __nccwpck_require__(2999);
+var _strike = __nccwpck_require__(5781);
+var _strong = __nccwpck_require__(7212);
+var _subsup = __nccwpck_require__(713);
+var _textColor = __nccwpck_require__(9850);
+var _underline = __nccwpck_require__(8043);
+var _alignment = __nccwpck_require__(1374);
+var _indentation = __nccwpck_require__(5524);
+var _dataConsumer = __nccwpck_require__(5092);
+var _fragment = __nccwpck_require__(6999);
+var _border = __nccwpck_require__(9961);
+var _backgroundColor = __nccwpck_require__(2077);
+var _blockquote = __nccwpck_require__(9873);
+var _bodiedExtension = __nccwpck_require__(7867);
+var _blockCard = __nccwpck_require__(8220);
+var _bulletList = __nccwpck_require__(587);
+var _codeBlock = __nccwpck_require__(339);
+var _date = __nccwpck_require__(194);
+var _decisionItem = __nccwpck_require__(9882);
+var _decisionList = __nccwpck_require__(6313);
+var _doc = __nccwpck_require__(8774);
+var _emoji = __nccwpck_require__(4438);
+var _extension = __nccwpck_require__(5741);
+var _expand = __nccwpck_require__(7898);
+var _nestedExpand = __nccwpck_require__(9202);
+var _hardBreak = __nccwpck_require__(4385);
+var _heading = __nccwpck_require__(6630);
+var _inlineExtension = __nccwpck_require__(1795);
+var _inlineCard = __nccwpck_require__(990);
+var _layoutColumn = __nccwpck_require__(8595);
+var _layoutSection = __nccwpck_require__(6898);
+var _listItem = __nccwpck_require__(8368);
+var _mediaGroup = __nccwpck_require__(9814);
+var _mediaSingle = __nccwpck_require__(6221);
+var _media = __nccwpck_require__(48);
+var _mention = __nccwpck_require__(3894);
+var _orderedList = __nccwpck_require__(4966);
+var _panel = __nccwpck_require__(2574);
+var _paragraph = __nccwpck_require__(9706);
+var _placeholder = __nccwpck_require__(7581);
+var _rule = __nccwpck_require__(2520);
+var _status = __nccwpck_require__(956);
+var _tableCell = __nccwpck_require__(2937);
+var _tableHeader = __nccwpck_require__(6228);
+var _tableRow = __nccwpck_require__(2861);
+var _table = __nccwpck_require__(8772);
+var _taskItem = __nccwpck_require__(7059);
+var _taskList = __nccwpck_require__(1824);
+var _text = __nccwpck_require__(9561);
+var _embedCard = __nccwpck_require__(808);
 
 /***/ }),
 
-/***/ 135:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 1374:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.alignment = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var alignment = exports.alignment = function alignment(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'alignment',
+      attrs: attrs
+    }, maybeNode);
+  };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var emoji_1 = __webpack_require__(526);
-var hard_break_1 = __webpack_require__(570);
-var index_1 = __webpack_require__(492);
-var mention_1 = __webpack_require__(962);
-var text_1 = __webpack_require__(171);
-var Decision = /** @class */ (function () {
-    function Decision(localId, state) {
-        this.localId = localId;
-        this.state = state;
-        this.content = new index_1.ContentNode('decisionItem');
-    }
-    Decision.prototype.text = function (text, marks) {
-        return this.add(new text_1.Text(text, marks));
-    };
-    Decision.prototype.code = function (text) {
-        return this.add(text_1.code(text));
-    };
-    Decision.prototype.em = function (text) {
-        return this.add(text_1.em(text));
-    };
-    Decision.prototype.link = function (text, href, title) {
-        return this.add(text_1.link(text, href, title));
-    };
-    Decision.prototype.strike = function (text) {
-        return this.add(text_1.strike(text));
-    };
-    Decision.prototype.strong = function (text) {
-        return this.add(text_1.strong(text));
-    };
-    Decision.prototype.mention = function (id, text) {
-        return this.add(new mention_1.Mention(id, text));
-    };
-    Decision.prototype.emoji = function (shortName, id, text) {
-        return this.add(new emoji_1.Emoji({ shortName: shortName, id: id, text: text }));
-    };
-    Decision.prototype.hardBreak = function () {
-        return this.add(new hard_break_1.HardBreak());
-    };
-    Decision.prototype.add = function (node) {
-        this.content.add(node);
-        return this;
-    };
-    Decision.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                localId: this.localId,
-                state: this.state
-            } });
-    };
-    return Decision;
-}());
-exports.Decision = Decision;
-//# sourceMappingURL=decision.js.map
 
 /***/ }),
 
-/***/ 147:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 2077:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var emoji_1 = __webpack_require__(526);
-var hard_break_1 = __webpack_require__(570);
-var index_1 = __webpack_require__(492);
-var mention_1 = __webpack_require__(962);
-var text_1 = __webpack_require__(171);
-var Paragraph = /** @class */ (function (_super) {
-    __extends(Paragraph, _super);
-    function Paragraph() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.content = new index_1.ContentNode('paragraph');
-        return _this;
-    }
-    Paragraph.prototype.text = function (text, marks) {
-        return this.add(new text_1.Text(text, marks));
-    };
-    Paragraph.prototype.code = function (text) {
-        return this.add(text_1.code(text));
-    };
-    Paragraph.prototype.em = function (text) {
-        return this.add(text_1.em(text));
-    };
-    Paragraph.prototype.link = function (text, href, title) {
-        return this.add(text_1.link(text, href, title));
-    };
-    Paragraph.prototype.strong = function (text) {
-        return this.add(text_1.strong(text));
-    };
-    Paragraph.prototype.mention = function (id, text) {
-        return this.add(new mention_1.Mention(id, text));
-    };
-    Paragraph.prototype.emoji = function (shortName, id, text) {
-        return this.add(new emoji_1.Emoji({ shortName: shortName, id: id, text: text }));
-    };
-    Paragraph.prototype.hardBreak = function () {
-        return this.add(new hard_break_1.HardBreak());
-    };
-    Paragraph.prototype.add = function (node) {
-        this.content.add(node);
-        return this;
-    };
-    Paragraph.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return Paragraph;
-}(index_1.TopLevelNode));
-exports.Paragraph = Paragraph;
-//# sourceMappingURL=paragraph.js.map
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.backgroundColor = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var backgroundColor = exports.backgroundColor = function backgroundColor(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'backgroundColor',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
 
 /***/ }),
 
-/***/ 171:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 9961:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(812);
-var index_2 = __webpack_require__(492);
-function plain(text) {
-    return new Text(text);
-}
-exports.plain = plain;
-function strike(text) {
-    return new Text(text, index_1.marks().strike());
-}
-exports.strike = strike;
-function strong(text) {
-    return new Text(text, index_1.marks().strong());
-}
-exports.strong = strong;
-function em(text) {
-    return new Text(text, index_1.marks().em());
-}
-exports.em = em;
-function link(text, href, title) {
-    return new Text(text, index_1.marks().link(href, title));
-}
-exports.link = link;
-function code(text) {
-    return new Text(text, index_1.marks().code());
-}
-exports.code = code;
-var Text = /** @class */ (function (_super) {
-    __extends(Text, _super);
-    function Text(text, marks) {
-        var _this = _super.call(this) || this;
-        _this.text = text;
-        _this.marks = marks;
-        if (!text || text.length === 0) {
-            throw new Error('Text must be at least one character long');
-        }
-        return _this;
-    }
-    Text.prototype.toJSON = function () {
-        var textNode = {
-            type: 'text',
-            text: this.text,
-        };
-        if (this.marks) {
-            textNode.marks = this.marks.toJSON();
-        }
-        return textNode;
-    };
-    return Text;
-}(index_2.InlineNode));
-exports.Text = Text;
-//# sourceMappingURL=text.js.map
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.border = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var border = exports.border = function border(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'border',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
 
 /***/ }),
 
-/***/ 192:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 1426:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var Strong = /** @class */ (function (_super) {
-    __extends(Strong, _super);
-    function Strong() {
-        return _super.call(this, 'strong') || this;
-    }
-    return Strong;
-}(mark_1.Mark));
-exports.Strong = Strong;
-//# sourceMappingURL=strong.js.map
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.breakout = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var breakout = exports.breakout = function breakout(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'breakout',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
 
 /***/ }),
 
-/***/ 197:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ 22:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.code = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var code = exports.code = function code(maybeNode) {
+  return (0, _applyMark.applyMark)({
+    type: 'code'
+  }, maybeNode);
+};
+
+/***/ }),
+
+/***/ 5092:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.dataConsumer = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var dataConsumer = exports.dataConsumer = function dataConsumer(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'dataConsumer',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
+
+/***/ }),
+
+/***/ 7529:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.em = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var em = exports.em = function em(maybeNode) {
+  return (0, _applyMark.applyMark)({
+    type: 'em'
+  }, maybeNode);
+};
+
+/***/ }),
+
+/***/ 6999:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.fragment = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var fragment = exports.fragment = function fragment(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'fragment',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
+
+/***/ }),
+
+/***/ 5524:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.indentation = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var indentation = exports.indentation = function indentation(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'indentation',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
+
+/***/ }),
+
+/***/ 2999:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.link = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var link = exports.link = function link(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'link',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
+
+/***/ }),
+
+/***/ 5781:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.strike = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var strike = exports.strike = function strike(maybeNode) {
+  return (0, _applyMark.applyMark)({
+    type: 'strike'
+  }, maybeNode);
+};
+
+/***/ }),
+
+/***/ 7212:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.strong = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var strong = exports.strong = function strong(maybeNode) {
+  return (0, _applyMark.applyMark)({
+    type: 'strong'
+  }, maybeNode);
+};
+
+/***/ }),
+
+/***/ 713:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.subsup = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var subsup = exports.subsup = function subsup(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'subsup',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
+
+/***/ }),
+
+/***/ 9850:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.textColor = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var textColor = exports.textColor = function textColor(attrs) {
+  return function (maybeNode) {
+    return (0, _applyMark.applyMark)({
+      type: 'textColor',
+      attrs: attrs
+    }, maybeNode);
+  };
+};
+
+/***/ }),
+
+/***/ 8043:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.underline = void 0;
+var _applyMark = __nccwpck_require__(4436);
+var underline = exports.underline = function underline(maybeNode) {
+  return (0, _applyMark.applyMark)({
+    type: 'underline'
+  }, maybeNode);
+};
+
+/***/ }),
+
+/***/ 8220:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.blockCard = void 0;
+var blockCard = exports.blockCard = function blockCard(attrs) {
+  return {
+    type: 'blockCard',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 9873:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.blockQuote = void 0;
+var blockQuote = exports.blockQuote = function blockQuote() {
+  for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+    content[_key] = arguments[_key];
+  }
+  return {
+    type: 'blockquote',
+    content: content
+  };
+};
+
+/***/ }),
+
+/***/ 7867:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.bodiedExtension = void 0;
+var bodiedExtension = exports.bodiedExtension = function bodiedExtension(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'bodiedExtension',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 587:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.bulletList = void 0;
+var bulletList = exports.bulletList = function bulletList() {
+  for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+    content[_key] = arguments[_key];
+  }
+  return {
+    type: 'bulletList',
+    content: content
+  };
+};
+
+/***/ }),
+
+/***/ 339:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.codeBlock = void 0;
+var codeBlock = exports.codeBlock = function codeBlock(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'codeBlock',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 194:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.date = void 0;
+var date = exports.date = function date() {
+  var attrs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    timestamp: ''
+  };
+  return {
+    type: 'date',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 9882:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.decisionItem = void 0;
+var decisionItem = exports.decisionItem = function decisionItem(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'decisionItem',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 6313:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.decisionList = void 0;
+var decisionList = exports.decisionList = function decisionList(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'decisionList',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 8774:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.doc = void 0;
+var doc = exports.doc = function doc() {
+  for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+    content[_key] = arguments[_key];
+  }
+  return {
+    type: 'doc',
+    version: 1,
+    content: content
+  };
+};
+
+/***/ }),
+
+/***/ 808:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.embedCard = void 0;
+var embedCard = exports.embedCard = function embedCard(attrs) {
+  return {
+    type: 'embedCard',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 4438:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.emoji = void 0;
+var emoji = exports.emoji = function emoji(attrs, options) {
+  if (options !== null && options !== void 0 && options.marks) {
+    return {
+      type: 'emoji',
+      attrs: attrs,
+      marks: options === null || options === void 0 ? void 0 : options.marks
+    };
+  }
+  return {
+    type: 'emoji',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 7898:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.expand = void 0;
+var expand = exports.expand = function expand(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'expand',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 5741:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.extension = void 0;
+var extension = exports.extension = function extension(attrs) {
+  return {
+    type: 'extension',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 4385:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.hardBreak = void 0;
+var hardBreak = exports.hardBreak = function hardBreak(attrs) {
+  return {
+    type: 'hardBreak',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 6630:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.heading = void 0;
+var heading = exports.heading = function heading(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'heading',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 990:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.inlineCard = void 0;
+var inlineCard = exports.inlineCard = function inlineCard(attrs) {
+  return {
+    type: 'inlineCard',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 1795:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.inlineExtension = void 0;
+var inlineExtension = exports.inlineExtension = function inlineExtension(attrs) {
+  return function () {
+    return {
+      type: 'inlineExtension',
+      attrs: attrs
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 8595:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.layoutColumn = void 0;
+var layoutColumn = exports.layoutColumn = function layoutColumn(attrs) {
+  return function (content) {
+    return {
+      type: 'layoutColumn',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 6898:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.layoutSection = void 0;
+var layoutSection = exports.layoutSection = function layoutSection() {
+  return function (content) {
+    return {
+      type: 'layoutSection',
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 8368:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.listItem = void 0;
+var listItem = exports.listItem = function listItem(content) {
+  return {
+    type: 'listItem',
+    content: content
+  };
+};
+
+/***/ }),
+
+/***/ 9814:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.mediaGroup = void 0;
+var mediaGroup = exports.mediaGroup = function mediaGroup() {
+  for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+    content[_key] = arguments[_key];
+  }
+  return {
+    type: 'mediaGroup',
+    content: content
+  };
+};
+
+/***/ }),
+
+/***/ 6221:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.mediaSingle = void 0;
+var mediaSingle = exports.mediaSingle = function mediaSingle(attrs) {
+  return function (content) {
+    return {
+      type: 'mediaSingle',
+      attrs: attrs,
+      content: Array.isArray(content) ? content : [content]
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 48:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.media = void 0;
+var media = exports.media = function media(attrs) {
+  return {
+    type: 'media',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 3894:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __nccwpck_require__(2645);
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.mention = void 0;
+var _defineProperty2 = _interopRequireDefault(__nccwpck_require__(5300));
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2.default)(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+var mention = exports.mention = function mention(attrs) {
+  return {
+    type: 'mention',
+    attrs: _objectSpread({
+      accessLevel: ''
+    }, attrs)
+  };
+};
+
+/***/ }),
+
+/***/ 9202:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.nestedExpand = void 0;
+var nestedExpand = exports.nestedExpand = function nestedExpand(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'nestedExpand',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 4966:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.orderedList = void 0;
+var orderedList = exports.orderedList = function orderedList(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'orderedList',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 2574:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.panel = void 0;
+var panel = exports.panel = function panel(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'panel',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 9706:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.paragraph = void 0;
+var _createTextNodes = __nccwpck_require__(4884);
+var paragraph = exports.paragraph = function paragraph() {
+  for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+    content[_key] = arguments[_key];
+  }
+  return {
+    type: 'paragraph',
+    content: (0, _createTextNodes.createTextNodes)(content)
+  };
+};
+
+/***/ }),
+
+/***/ 7581:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.placeholder = void 0;
+var placeholder = exports.placeholder = function placeholder(attrs) {
+  return {
+    type: 'placeholder',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 2520:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.rule = void 0;
+var rule = exports.rule = function rule() {
+  return {
+    type: 'rule'
+  };
+};
+
+/***/ }),
+
+/***/ 956:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.status = void 0;
+var status = exports.status = function status() {
+  var attrs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    text: 'In progress',
+    color: 'blue'
+  };
+  return {
+    type: 'status',
+    attrs: attrs
+  };
+};
+
+/***/ }),
+
+/***/ 2937:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.tableCell = void 0;
+var tableCell = exports.tableCell = function tableCell(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'tableCell',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 6228:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.tableHeader = void 0;
+var tableHeader = exports.tableHeader = function tableHeader(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'tableHeader',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 2861:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.tableRow = void 0;
+var tableRow = exports.tableRow = function tableRow(content) {
+  return {
+    type: 'tableRow',
+    content: content
+  };
+};
+
+/***/ }),
+
+/***/ 8772:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.table = void 0;
+var table = exports.table = function table() {
+  for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+    content[_key] = arguments[_key];
+  }
+  return {
+    type: 'table',
+    content: content
+  };
+};
+
+/***/ }),
+
+/***/ 7059:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.taskItem = void 0;
+var taskItem = exports.taskItem = function taskItem(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'taskItem',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 1824:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.taskList = void 0;
+var taskList = exports.taskList = function taskList(attrs) {
+  return function () {
+    for (var _len = arguments.length, content = new Array(_len), _key = 0; _key < _len; _key++) {
+      content[_key] = arguments[_key];
+    }
+    return {
+      type: 'taskList',
+      attrs: attrs,
+      content: content
+    };
+  };
+};
+
+/***/ }),
+
+/***/ 9561:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.text = void 0;
+var text = exports.text = function text(_text) {
+  return {
+    type: 'text',
+    text: _text
+  };
+};
+
+/***/ }),
+
+/***/ 4436:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.applyMark = applyMark;
+var _isDuplicateMark = __nccwpck_require__(3530);
+var _text = __nccwpck_require__(9561);
+function applyMark(mark, maybeNode) {
+  var node = typeof maybeNode === 'string' ? (0, _text.text)(maybeNode) : maybeNode;
+  if ((0, _isDuplicateMark.isDuplicateMark)(node, mark.type)) {
+    // eslint-disable-next-line no-console
+    console.error((0, _isDuplicateMark.duplicateMarkError)(node, mark.type));
+    return node;
+  }
+  node.marks = node.marks || [];
+  node.marks.push(mark);
+  return node;
+}
+
+/***/ }),
+
+/***/ 4884:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.createTextFromString = createTextFromString;
+exports.createTextNodes = createTextNodes;
+var _text = __nccwpck_require__(9561);
+function createTextNodes(nodes) {
+  return nodes.map(createTextFromString);
+}
+function createTextFromString(str) {
+  return typeof str === 'string' ? (0, _text.text)(str) : str;
+}
+
+/***/ }),
+
+/***/ 3530:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.duplicateMarkError = duplicateMarkError;
+exports.isDuplicateMark = isDuplicateMark;
+function isDuplicateMark(node, type) {
+  if (node.marks && node.marks.some(function (mark) {
+    return mark.type === type;
+  })) {
+    return true;
+  }
+  return false;
+}
+function duplicateMarkError(node, type) {
+  return "Mark with the same name '".concat(type, "' already exists on a node: ").concat(JSON.stringify(node));
+}
+
+/***/ }),
+
+/***/ 1367:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/***********************************************************************************************************************
+ *
+ * Atlassian Document Format parsing of Emphasis
+ *
+ *  @author bruno.morel@b-yond.com
+ * ---------------------------------------------------------------------------------------------------------------------
+ *
+ * This transform a text with emphasis mark (*, _ or `) into an ADF expanded Paragraph
+ *
+ **********************************************************************************************************************/
+const { em, strike, strong, text } = __nccwpck_require__(7265)
+
+
+/**
+ * Parse a string character per character to find emphasis patterns
+ *  This is a very "manual" way to do it, but it provides the most efficient result
+ * @param textToEmphasis		{String}	text to parse for emphasis parsing
+ */
+function attachTextToNodeSliceEmphasis( textToEmphasis ){
+	const elements = []
+	const lineUnderscored = textToEmphasis.replace( /\*/g, '_' )
+	let currentDecorationLevel = 0
+	//see convertDecorationLevelToMark
+	// 0 => no decoration
+	// 1 => italic
+	// 2 => bold
+	// 3 => bold and italic
+	
+	let potentialUnderscorePair = false
+	let strikedThrough			= false
+	let expressionBuffer		= ''
+	for( const currentCharacterIndex in lineUnderscored ){
+		
+		if( lineUnderscored[ currentCharacterIndex ] !== '_' ){
+			expressionBuffer += lineUnderscored[ currentCharacterIndex ]
+			
+			if( potentialUnderscorePair ){
+				currentDecorationLevel = currentDecorationLevel === 0 || currentDecorationLevel === 2
+										 ? currentDecorationLevel + 1
+										 : currentDecorationLevel - 1
+				potentialUnderscorePair = false
+			}
+		}
+		
+		if( currentCharacterIndex > 0
+			&& lineUnderscored[ currentCharacterIndex ] === '~'
+			&& lineUnderscored[ currentCharacterIndex - 1 ] === '~' ){
+      const text = expressionBuffer.slice( 0, expressionBuffer.length - 2);
+      if (text.length > 0) {
+				elements.push(decorateText(text, currentDecorationLevel, strikedThrough))
+      }
+
+      expressionBuffer = ''
+      strikedThrough = !strikedThrough
+    }
+
+
+    if( lineUnderscored[ currentCharacterIndex ] === '_' ){
+			if( expressionBuffer !== '' ){
+				elements.push(decorateText(expressionBuffer, currentDecorationLevel, strikedThrough))
+			}
+			else {
+				if( potentialUnderscorePair )
+					currentDecorationLevel = currentDecorationLevel === 0 || currentDecorationLevel === 1
+											 ? currentDecorationLevel + 2
+											 : currentDecorationLevel - 2
+			}
+			
+			potentialUnderscorePair = !potentialUnderscorePair
+			expressionBuffer = ''
+		}
+	}
+	
+	if( expressionBuffer !== '' ){
+		elements.push(decorateText(expressionBuffer, currentDecorationLevel, strikedThrough))
+	}
+
+	return elements
+}
+
+/**
+ * Convert a "decoration level" (bit swap) to an actual ADF Mark for the text
+ *
+ * @param textContent		{String}	text to parse for emphasis parsing
+ * @param decorationLevelToConvert	{Number}		decoration level follow the convention:
+ * 														0 => no decoration
+ * 														1 => italic
+ * 														2 => bold
+ * 														3 => bold and italic
+ * @param addStrikethrough			{Boolean}		is strikethrough active?
+ */
+function decorateText(textContent, decorationLevelToConvert, addStrikethrough) {
+	if (addStrikethrough)
+		return decorationLevelToConvert === 1
+		? em(strike(textContent))
+		: decorationLevelToConvert === 2
+			? strong(strike(textContent))
+			: decorationLevelToConvert === 3
+				? em(strong(strike(textContent)))
+				: strike(textContent)
+
+  return decorationLevelToConvert === 1
+    ? em(textContent)
+    : decorationLevelToConvert === 2
+      ? strong(textContent)
+      : decorationLevelToConvert === 3
+        ? em(strong(textContent))
+        : text(textContent)
+}
+
+module.exports = attachTextToNodeSliceEmphasis
+
+
+/***/ }),
+
+/***/ 7812:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/***********************************************************************************************************************
+ *
+ * Atlassian Document Format Handling
+ *
+ *  @author bruno.morel@b-yond.com
+ * ---------------------------------------------------------------------------------------------------------------------
+ *
+ * This transform a Intermediate Representation Tree (see markdownHandling) into the equivalent ADF nodes.
+ * It also remove non-compatible hierarchy that ADF doesn't support
+ *
+ **********************************************************************************************************************/
+const { blockQuote, code, codeBlock, emoji, heading, li, link, mediaSingle, mention, ol, p, rule, table, td, text, th, tr, ul } = __nccwpck_require__(7265)
+
+const marked = __nccwpck_require__(9257)
+
+const attachTextToNodeSliceEmphasis = __nccwpck_require__( 1367 )
+
+// /**
+//  * @typedef { import("./markdownParsing").IRElement } IRElement
+//  * @typedef { import("./markdownHandling").IRTreeNode } IRTreeNode
+//  */
+
+// /**
+//  * Browse the tree recursively to add each node to the ADF Document
+//  * 	It also treat special cases between top-level node and generic ones
+//  *
+//  * @param currentParentNode					{Document}		ADF document to add to
+//  * @param currentArrayOfNodesOfSameIndent	{IRTreeNode}
+//  */
+// function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameIndent ){
+// 	currentArrayOfNodesOfSameIndent.reduce( ( lastListNode, currentNode ) => {
+// 		const nodeOrListNode = lastListNode !== null
+// 							   && ( currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' )
+// 							   && lastListNode.content.type === currentNode.node.adfType
+// 							   ? lastListNode
+// 							   : addTypeToNode( currentParentNode, currentNode.node.adfType, currentNode.node.typeParam )
+
+// 		const nodeOrListItem = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList'
+// 							   ? nodeOrListNode.content.push(li())
+// 							   : nodeOrListNode
+// 		const nodeToAttachTextTo = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' || currentNode.node.adfType === 'blockQuote'
+// 								   ? typeof currentNode.node.textToEmphasis !== 'undefined' || currentNode.children.length === 0
+// 									 ? nodeOrListItem.content.push(p())
+// 									 : nodeOrListItem
+// 								   : nodeOrListItem
+
+// 		if( currentNode.node.adfType === 'divider' )
+// 			return lastListNode
+		
+// 		else if( currentNode.node.adfType !== 'codeBlock'
+// 				 && currentNode.node.textToEmphasis )
+// 			attachItemNode( nodeToAttachTextTo, currentNode.node.textToEmphasis )
+		
+// 		else if( currentNode.node.adfType !== 'codeBlock'
+// 				 && currentNode.node.textToEmphasis === '' )
+// 			attachItemNode( nodeToAttachTextTo, ' ' )
+		
+// 		else if( currentNode.node.adfType === 'codeBlock' )
+// 			attachTextToNodeRaw( nodeToAttachTextTo, currentNode.node.textToEmphasis )
+
+// 		else if( currentNode.node.adfType === 'table' ) {
+// 			const rows = currentNode.node.rows.map(r => {
+// 				let cells
+// 				if (r.node.adfType === 'tableHeader') {
+// 					cells = r.node.cells.map(c => {
+// 						let x = th({})(p(text(c.node.value.node.textToEmphasis)))
+// 						return x
+// 					})
+// 				} else if (r.node.adfType === 'tableRow') {
+// 					cells = r.node.cells.map(c => {
+// 						let y = td({})(p(text(c.node.value.node.textToEmphasis)))
+// 						return y
+// 					})
+// 				}
+// 				return tr(cells)
+// 			})
+// 			const tab = table(...rows)
+// 			tab.attrs = {}
+// 			currentParentNode[currentParentNode.length - 1] = tab;
+// 		}
+
+// 		if( currentNode.children )
+// 			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
+		
+// 		return ( currentNode.node.adfType !== 'orderedList' && currentNode.node.adfType !== 'bulletList' )
+// 			   || ( !lastListNode || currentNode.node.adfType === lastListNode.content.type )
+// 			   ? nodeOrListNode
+// 			   : lastListNode
+// 	}, null )
+// }
+
+function treeToADF(tree) {
+	const elements = []
+	for (let i = 0; i < tree.length; i++) {
+		const node = tree[i].node
+		const children = tree[i].children
+		const tSlices = node?.textToEmphasis !== undefined ? textSlices(node.textToEmphasis) : undefined
+		let list
+
+		switch (node.adfType) {
+			case 'heading':
+				elements.push(heading({ level: node.typeParam })(...tSlices))
+				break
+
+			case 'paragraph':
+				node.textToEmphasis = node.textToEmphasis === '' ? ' ' : node.textToEmphasis
+				elements.push(p(...textSlices(node.textToEmphasis)))
+				break
+
+			case 'divider':
+				elements.push(rule())
+				break
+
+			case 'bulletList':
+				({ list, i } = processList('bulletList', tSlices, children, i))
+				elements.push(ul(...list))
+				break
+
+			case 'orderedList':
+				({ list, i } = processList('orderedList', tSlices, children, i))
+				if (node.typeParams)
+					elements.push(ol({ order: node.typeParams })(...list))
+				else
+					elements.push(ol()(...list))
+				break
+
+			case 'blockQuote':
+				elements.push(blockQuote(p(...tSlices)))
+				break
+
+			case 'table':
+				const rows = node.rows.map(r => {
+					let cells
+					if (r.node.adfType === 'tableHeader') {
+						cells = r.node.cells.map(c => {
+							let x = th({})(p(...textSlices(c.node.value.node.textToEmphasis)))
+							return x
+						})
+					} else if (r.node.adfType === 'tableRow') {
+						cells = r.node.cells.map(c => {
+							let y = td({})(p(...textSlices(c.node.value.node.textToEmphasis)))
+							return y
+						})
+					}
+					return tr(cells)
+				})
+				elements.push(table(...rows))
+				break
+
+			case 'codeBlock':
+				elements.push(codeBlock({ attrs: node.typeParams })(text(node.textToEmphasis)))
+				break
+
+			default:
+				console.log('incompatible type', node.adfType)
+				throw 'incompatible type'
+		}
+	}
+	return elements
+
+	function processList(adfType, tSlices, children, i) {
+		const items = [p(...tSlices)]
+
+		if (children?.length) {
+			items.push(...treeToADF(children))
+		}
+
+		const list = [li(items)]
+		for (let j = i + 1; j < tree.length; j++) {
+			const moreChildren = tree[j].children
+			if (tree[j].node.adfType === adfType) {
+				const moreItems = [p(...textSlices(tree[j].node.textToEmphasis))]
+				if (moreChildren?.length) {
+					moreItems.push(...treeToADF(moreChildren))
+				}
+				list.push(li(moreItems))
+				i++
+			}
+		}
+		return { list, i }
+	}
+}
+
+/**
+ *  Adding a Top-Level ADF element
+ *
+ * @param adfNodeToAttachTo	{Node}		ADF node to attach this element to
+ * @param adfType			{String}	ADF Type of the element we want to attach
+ * @param typeParams		{String}	extra params for special top-level nodes
+ *
+ * @returns 				{Node}		the node added
+ */
+function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
+	switch( adfType ) {
+		case "heading":
+			adfNodeToAttachTo.push(heading({ level: typeParams })())
+			break
+		
+		case "divider":
+			adfNodeToAttachTo.push(rule())
+			break
+		
+		case "bulletList":
+			adfNodeToAttachTo.push(ul())
+			break
+		
+		case "orderedList":
+			if (typeParams)
+				adfNodeToAttachTo.push(ol({ order: typeParams })())
+			else
+				adfNodeToAttachTo.push(ol()())
+			break
+		
+		case "codeBlock":
+			adfNodeToAttachTo.push(codeBlock({ typeParams })())
+			break
+		
+		case "blockQuote":
+			adfNodeToAttachTo.push(blockQuote())
+			break
+		
+		case "paragraph":
+			adfNodeToAttachTo.push(p())
+			break
+		
+		case "table":
+			adfNodeToAttachTo.push(table())
+			break
+
+		case "tableHeader":
+			adfNodeToAttachTo.push(th())
+			break
+
+		case "tableRow":
+			adfNodeToAttachTo.push(tr())
+			break
+
+		case "tableCell":
+				adfNodeToAttachTo.push(td())
+			break
+
+		default:
+			throw 'incompatible type'
+	}
+
+	return adfNodeToAttachTo
+}
+
+/**
+ * Adding a non-top-level ADF node
+ *
+ * @param rawText				{String}	text content of the node to add
+ */
+function textSlices(rawText) {
+	if (rawText === '') return [text(' ')]
+
+	const slicedInline = sliceInLineCode( rawText )
+	
+	const { slicedInlineAndEmoji } = slicedInline.reduce( ( { slicedInlineAndEmoji }, currentSlice ) => {
+		if( !currentSlice.isMatching ){
+			const slicedEmoji = sliceEmoji( currentSlice.text )
+			
+			return { slicedInlineAndEmoji: slicedInlineAndEmoji.concat( slicedEmoji ) }
+		}
+		
+		slicedInlineAndEmoji.push( currentSlice )
+		return { slicedInlineAndEmoji }
+	}, { slicedInlineAndEmoji: [] } )
+	
+	const { slicedInlineAndEmojiAndLink } = slicedInlineAndEmoji.reduce( ( { slicedInlineAndEmojiAndLink }, currentSlice ) => {
+		if( !currentSlice.isMatching ){
+			const slicedLink = sliceLink( currentSlice.text )
+			
+			return { slicedInlineAndEmojiAndLink: slicedInlineAndEmojiAndLink.concat( slicedLink ) }
+		}
+		
+		slicedInlineAndEmojiAndLink.push( currentSlice )
+		return { slicedInlineAndEmojiAndLink }
+	}, { slicedInlineAndEmojiAndLink: [] } )
+
+	const elements = []
+	for( const currentSlice of slicedInlineAndEmojiAndLink ) {
+		switch( currentSlice.type ){
+			case 'inline':
+				elements.push(code(currentSlice.text))
+				break
+			
+			case 'emoji':
+				elements.push(emoji({ shortName: currentSlice.text }))
+				break
+			
+			case 'link':
+				const linkFn = (currentSlice.optionalText2)
+					? link({ href: currentSlice.optionalText1, title: currentSlice.optionalText2 })
+					: link({ href: currentSlice.optionalText1 })
+
+				elements.push(linkFn(text(currentSlice.text)))
+				break
+			
+			case 'mention':
+				elements.push(mention({ id: currentSlice.optionalText1, text: currentSlice.text}))
+				break
+			
+			case 'image':
+				// const imageNode = new Text( currentSlice.text,
+				// 							marks().link( currentSlice.optionalText1,
+				// 										  currentSlice.optionalText2 ) )
+				// nodeToAttachTo.content.add( imageNode )
+				// const linkFn = (currentSlice.optionalText2)
+				// 	? link({ href: currentSlice.optionalText1, title: currentSlice.optionalText2 })
+				// 	: link({ href: currentSlice.optionalText1 })
+
+				// last.content.push(linkFn(text(currentSlice.text)))
+				elements.push(mediaSingle({ href: currentSlice.optionalText1 }))
+				break
+			
+			default:
+				elements.push(...attachTextToNodeSliceEmphasis( currentSlice.text ))
+		}
+	}
+	return elements
+}
+
+/**
+ * Match text content with and ADF inline type
+ *
+ * @param rawText				{String}	the text content to try to match
+ *
+ * @returns 					{String[]}	the different slice matching an inline style
+ */
+function sliceInLineCode( rawText ){
+	return sliceOneMatchFromRegexp( rawText, 'inline', /(?<nonMatchBefore>[^`]*)(?:`(?<match>[^`]+)`)(?<nonMatchAfter>[^`]*)/g )
+}
+
+/**
+ * Match text content with and ADF emoji type
+ *
+ * @param rawText				{String}	the text content to try to match
+ *
+ * @returns 					{String[]}	the different slice matching an emoji style
+ */
+function sliceEmoji( rawText ){
+	return sliceOneMatchFromRegexp( rawText, 'emoji',/(?<nonMatchBefore>[^`]*)(?::(?<match>[a-zA-Z0-9_\+]+):)(?<nonMatchAfter>[^`]*)/g )
+}
+
+/**
+ * Match text content with and ADF link type
+ *
+ * @param rawText				{String}	the text content to try to match
+ *
+ * @returns 					{String[]}	the different slice matching a link style
+ */
+function sliceLink( rawText ){
+	const linkSlices = [];
+	const walkTokens = (token) => {
+		if (token.type === 'link') {
+			const typeTag = token.text[0] === "@" ? 'mention' : 'link';
+			linkSlices.push({
+				isMatching: true,
+				type: typeTag,
+				text: token.text,
+				optionalText1: token.href,
+				optionalText2: token.title,
+				raw: token.raw
+			})
+		} 
+	};
+
+	// use marked to parse out just links
+	marked.parse(rawText, { walkTokens });
+
+	// this is crazy but pull the links out of the rawText to make the text slices
+	const slices = []
+	let paragraph = rawText
+
+	linkSlices.forEach(l => {
+		const link = l.raw
+		const linkIdx = rawText.indexOf(link)
+
+		if (linkIdx !== -1) {
+			const textBefore = paragraph.substring(0, linkIdx)
+
+			if (textBefore.length > 0) {
+				slices.push({
+					isMatching: false,
+					text: textBefore
+				})
+			}
+			slices.push(l)
+
+			// set paragraph to the remaining text
+			paragraph = paragraph.substring(linkIdx + link.length)
+		}
+	})
+
+	if (paragraph.length > 0) {
+		slices.push({
+			isMatching: false,
+			text: paragraph
+		})
+	}
+
+	return slices
+}
+
+/**
+ * Match text content with and regular expression with one match
+ *
+ * @param rawText				{String}	the text content to try to match
+ * @param typeTag				{String}	the ADF Type to return if it matches
+ * @param regexpToSliceWith		{RegExp}	the regexp with a match group and a non-match group to use
+ *
+ * @returns 					{String[]}	the different slice matching the specified regexp
+ */
+function sliceOneMatchFromRegexp( rawText, typeTag, regexpToSliceWith ){
+  let slicesResult = [ ]
+  let snippet = null
+  let hasAtLeastOneExpression = false
+
+  while( ( snippet = regexpToSliceWith.exec( rawText ) ) ) {
+    hasAtLeastOneExpression = true
+    if( snippet.groups.nonMatchBefore ){
+      slicesResult.push( { isMatching: false, text: snippet.groups.nonMatchBefore } )
+    }
+
+    if( snippet.groups.match ){
+      slicesResult.push( {
+        isMatching: 		true,
+        type: 			typeTag,
+        text: 			snippet.groups.match,
+        optionalText1: 	snippet.groups.matchOptional,
+        optionalText2: 	snippet.groups.matchOptional2
+      } )
+    }
+
+    if( snippet.groups.nonMatchAfter ){
+      slicesResult.push( { isMatching: false, text: snippet.groups.nonMatchAfter } )
+    }
+  }
+
+  if( !hasAtLeastOneExpression )
+    slicesResult.push( { isMatching: false, text: rawText } )
+
+  return slicesResult
+}
+
+/**
+ * Attach a raw simple text node to the parent
+ *
+ * @param nodeToAttachTo	{Node}		ADF node to attach to
+ * @param textToAttach		{String}	text to use for the Text node
+ */
+function attachTextToNodeRaw( nodeToAttachTo, textToAttach ){
+	nodeToAttachTo.push(text(textToAttach))
+}
+
+module.exports = treeToADF
+
+
+/***/ }),
+
+/***/ 160:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/***********************************************************************************************************************
+ *
+ * Take any markdown (Github focussed for now) and translate it into a JIRA/Confluence compatible ADF document
+ *
+ *  @author bruno.morel@b-yond.com
+ *
+ **********************************************************************************************************************/
+const { doc } = __nccwpck_require__(7265)
+
+
+const buildIRTreeFromMarkdown = __nccwpck_require__( 4150 )
+const fillADFNodesWithMarkdown = __nccwpck_require__( 7812 )
+
+function translateGITHUBMarkdownToADF( markdownText ){
+	const textTree = buildIRTreeFromMarkdown( markdownText )
+	return doc(...fillADFNodesWithMarkdown(textTree))
+}
+
+module.exports = translateGITHUBMarkdownToADF
+
+
+/***/ }),
+
+/***/ 4150:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**********************************************************************************************************************
  *
@@ -320,7 +2314,7 @@ exports.Strong = Strong;
  *  each branch will contain an object with the follow properties:
  *
  **********************************************************************************************************************/
-const translateMarkdownLineToIR = __webpack_require__( 572 )
+const translateMarkdownLineToIR = __nccwpck_require__( 7251 )
 
 /**
  * @typedef {Object}  IRTreeNode
@@ -728,1544 +2722,8 @@ module.exports = buildTreeFromMarkdown
 
 /***/ }),
 
-/***/ 198:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var decision_1 = __webpack_require__(135);
-var index_1 = __webpack_require__(492);
-var DecisionList = /** @class */ (function (_super) {
-    __extends(DecisionList, _super);
-    function DecisionList(localId) {
-        var _this = _super.call(this) || this;
-        _this.localId = localId;
-        _this.content = new index_1.ContentNode('decisionList');
-        return _this;
-    }
-    DecisionList.prototype.decision = function (localId, state) {
-        return this.content.add(new decision_1.Decision(localId, state));
-    };
-    DecisionList.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                localId: this.localId
-            } });
-    };
-    return DecisionList;
-}(index_1.TopLevelNode));
-exports.DecisionList = DecisionList;
-//# sourceMappingURL=decision-list.js.map
-
-/***/ }),
-
-/***/ 206:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var Link = /** @class */ (function (_super) {
-    __extends(Link, _super);
-    function Link(href, title) {
-        var _this = _super.call(this, 'link') || this;
-        _this.href = href;
-        _this.title = title;
-        return _this;
-    }
-    Link.prototype.toJSON = function () {
-        var linkMark = {
-            type: this.type,
-            attrs: {
-                href: this.href
-            }
-        };
-        if (this.title) {
-            linkMark.attrs.title = this.title;
-        }
-        return linkMark;
-    };
-    return Link;
-}(mark_1.Mark));
-exports.Link = Link;
-//# sourceMappingURL=link.js.map
-
-/***/ }),
-
-/***/ 223:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var Rule = /** @class */ (function (_super) {
-    __extends(Rule, _super);
-    function Rule() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Rule.prototype.toJSON = function () {
-        return {
-            type: 'rule'
-        };
-    };
-    return Rule;
-}(index_1.TopLevelNode));
-exports.Rule = Rule;
-//# sourceMappingURL=rule.js.map
-
-/***/ }),
-
-/***/ 263:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var table_row_1 = __webpack_require__(632);
-var Table = /** @class */ (function (_super) {
-    __extends(Table, _super);
-    function Table() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.content = new index_1.ContentNode('table');
-        return _this;
-    }
-    Table.prototype.row = function () {
-        return this.content.add(new table_row_1.TableRow());
-    };
-    Table.prototype.add = function (node) {
-        this.content.add(node);
-        return this;
-    };
-    Table.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return Table;
-}(index_1.TopLevelNode));
-exports.Table = Table;
-//# sourceMappingURL=table.js.map
-
-/***/ }),
-
-/***/ 270:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var bullet_list_1 = __webpack_require__(849);
-var heading_1 = __webpack_require__(366);
-var index_1 = __webpack_require__(492);
-var ordered_list_1 = __webpack_require__(982);
-var paragraph_1 = __webpack_require__(147);
-var Panel = /** @class */ (function (_super) {
-    __extends(Panel, _super);
-    function Panel(panelType) {
-        var _this = _super.call(this) || this;
-        _this.panelType = panelType;
-        _this.content = new index_1.ContentNode('panel');
-        return _this;
-    }
-    Panel.prototype.heading = function (level) {
-        return this.content.add(new heading_1.Heading(level));
-    };
-    Panel.prototype.paragraph = function () {
-        return this.content.add(new paragraph_1.Paragraph());
-    };
-    Panel.prototype.orderedList = function () {
-        return this.content.add(new ordered_list_1.OrderedList());
-    };
-    Panel.prototype.bulletList = function () {
-        return this.content.add(new bullet_list_1.BulletList());
-    };
-    Panel.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                panelType: this.panelType
-            } });
-    };
-    return Panel;
-}(index_1.TopLevelNode));
-exports.Panel = Panel;
-//# sourceMappingURL=panel.js.map
-
-/***/ }),
-
-/***/ 284:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var emoji_1 = __webpack_require__(526);
-var hard_break_1 = __webpack_require__(570);
-var index_1 = __webpack_require__(492);
-var mention_1 = __webpack_require__(962);
-var text_1 = __webpack_require__(171);
-var Task = /** @class */ (function () {
-    function Task(localId, state) {
-        this.localId = localId;
-        this.state = state;
-        this.content = new index_1.ContentNode('taskItem');
-    }
-    Task.prototype.text = function (text, marks) {
-        return this.add(new text_1.Text(text, marks));
-    };
-    Task.prototype.code = function (text) {
-        return this.add(text_1.code(text));
-    };
-    Task.prototype.em = function (text) {
-        return this.add(text_1.em(text));
-    };
-    Task.prototype.link = function (text, href, title) {
-        return this.add(text_1.link(text, href, title));
-    };
-    Task.prototype.strike = function (text) {
-        return this.add(text_1.strike(text));
-    };
-    Task.prototype.strong = function (text) {
-        return this.add(text_1.strong(text));
-    };
-    Task.prototype.mention = function (id, text) {
-        return this.add(new mention_1.Mention(id, text));
-    };
-    Task.prototype.emoji = function (shortName, id, text) {
-        return this.add(new emoji_1.Emoji({ shortName: shortName, id: id, text: text }));
-    };
-    Task.prototype.hardBreak = function () {
-        return this.add(new hard_break_1.HardBreak());
-    };
-    Task.prototype.add = function (node) {
-        this.content.add(node);
-        return this;
-    };
-    Task.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                localId: this.localId,
-                state: this.state
-            } });
-    };
-    return Task;
-}());
-exports.Task = Task;
-var TaskState;
-(function (TaskState) {
-    TaskState["TODO"] = "TODO";
-    TaskState["DONE"] = "DONE";
-})(TaskState = exports.TaskState || (exports.TaskState = {}));
-//# sourceMappingURL=task.js.map
-
-/***/ }),
-
-/***/ 286:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-var document_1 = __webpack_require__(802);
-exports.Document = document_1.Document;
-var tag_1 = __webpack_require__(322);
-exports.document = tag_1.document;
-__export(__webpack_require__(451));
-__export(__webpack_require__(893));
-__export(__webpack_require__(849));
-__export(__webpack_require__(561));
-__export(__webpack_require__(198));
-__export(__webpack_require__(135));
-__export(__webpack_require__(526));
-__export(__webpack_require__(570));
-__export(__webpack_require__(366));
-__export(__webpack_require__(566));
-__export(__webpack_require__(823));
-__export(__webpack_require__(659));
-__export(__webpack_require__(371));
-__export(__webpack_require__(962));
-__export(__webpack_require__(982));
-__export(__webpack_require__(270));
-__export(__webpack_require__(147));
-__export(__webpack_require__(223));
-__export(__webpack_require__(301));
-__export(__webpack_require__(639));
-__export(__webpack_require__(632));
-__export(__webpack_require__(263));
-__export(__webpack_require__(976));
-__export(__webpack_require__(284));
-__export(__webpack_require__(171));
-__export(__webpack_require__(812));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 294:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var Underline = /** @class */ (function (_super) {
-    __extends(Underline, _super);
-    function Underline() {
-        return _super.call(this, 'underline') || this;
-    }
-    return Underline;
-}(mark_1.Mark));
-exports.Underline = Underline;
-//# sourceMappingURL=underline.js.map
-
-/***/ }),
-
-/***/ 301:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var application_card_1 = __webpack_require__(451);
-var block_quote_1 = __webpack_require__(893);
-var bullet_list_1 = __webpack_require__(849);
-var code_block_1 = __webpack_require__(561);
-var decision_list_1 = __webpack_require__(198);
-var heading_1 = __webpack_require__(366);
-var index_1 = __webpack_require__(492);
-var media_group_1 = __webpack_require__(823);
-var ordered_list_1 = __webpack_require__(982);
-var panel_1 = __webpack_require__(270);
-var paragraph_1 = __webpack_require__(147);
-var rule_1 = __webpack_require__(223);
-var task_list_1 = __webpack_require__(976);
-var colorPattern = /^#[0-9a-f]{6}$/;
-var TableCell = /** @class */ (function () {
-    function TableCell(backgroundColor) {
-        this.backgroundColor = backgroundColor;
-        this.content = new index_1.ContentNode('tableCell');
-        if (backgroundColor) {
-            if (!colorPattern.test(backgroundColor)) {
-                throw new Error("Color " + backgroundColor + " does not match ^#[0-9a-f]{6}$");
-            }
-        }
-    }
-    TableCell.prototype.paragraph = function () {
-        return this.content.add(new paragraph_1.Paragraph());
-    };
-    TableCell.prototype.bulletList = function () {
-        return this.content.add(new bullet_list_1.BulletList());
-    };
-    TableCell.prototype.orderedList = function () {
-        return this.content.add(new ordered_list_1.OrderedList());
-    };
-    TableCell.prototype.heading = function (level) {
-        return this.content.add(new heading_1.Heading(level));
-    };
-    TableCell.prototype.panel = function (panelType) {
-        return this.content.add(new panel_1.Panel(panelType));
-    };
-    TableCell.prototype.blockQuote = function () {
-        return this.content.add(new block_quote_1.BlockQuote());
-    };
-    TableCell.prototype.rule = function () {
-        return this.content.add(new rule_1.Rule());
-    };
-    TableCell.prototype.mediaGroup = function () {
-        return this.content.add(new media_group_1.MediaGroup());
-    };
-    TableCell.prototype.applicationCard = function (title, text) {
-        return this.content.add(new application_card_1.ApplicationCard(title, text));
-    };
-    TableCell.prototype.decisionList = function (localId) {
-        return this.content.add(new decision_list_1.DecisionList(localId));
-    };
-    TableCell.prototype.taskList = function (localId) {
-        return this.content.add(new task_list_1.TaskList(localId));
-    };
-    TableCell.prototype.codeBlock = function (language) {
-        return this.content.add(new code_block_1.CodeBlock(language));
-    };
-    TableCell.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                background: this.backgroundColor
-            } });
-    };
-    return TableCell;
-}());
-exports.TableCell = TableCell;
-//# sourceMappingURL=table-cell.js.map
-
-/***/ }),
-
-/***/ 322:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var document_1 = __webpack_require__(802);
-var index_1 = __webpack_require__(492);
-function document(strings) {
-    var args = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        args[_i - 1] = arguments[_i];
-    }
-    var doc = new document_1.Document();
-    var paragraph = doc.paragraph();
-    for (var i = 0; i < args.length; i++) {
-        if (strings[i].length) {
-            paragraph.text(strings[i]);
-        }
-        if (args[i] instanceof index_1.TopLevelNode) {
-            throw new Error('Top level nodes cannot be used in tagged templates');
-        }
-        if (args[i] instanceof index_1.InlineNode) {
-            paragraph.add(args[i]);
-        }
-        else {
-            var stringified = String(args[i]);
-            if (stringified.length > 0) {
-                paragraph.text(stringified);
-            }
-        }
-    }
-    if (strings[args.length].length > 0) {
-        paragraph.text(strings[args.length]);
-    }
-    return doc;
-}
-exports.document = document;
-//# sourceMappingURL=tag.js.map
-
-/***/ }),
-
-/***/ 326:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-/***********************************************************************************************************************
- *
- * Atlassian Document Format Handling
- *
- *  @author bruno.morel@b-yond.com
- * ---------------------------------------------------------------------------------------------------------------------
- *
- * This transform a Intermediate Representation Tree (see markdownHandling) into the equivalent ADF nodes.
- * It also remove non-compatible hierarchy that ADF doesn't support
- *
- **********************************************************************************************************************/
-const { marks, Heading, Text, Emoji, BulletList, OrderedList, ListItem, CodeBlock, BlockQuote, Paragraph, Rule, Mention, Table, TableCell, TableHeader, TableRow }	= __webpack_require__( 286 )
-const marked = __webpack_require__(877)
-const { ContentNode } = __webpack_require__(492)
-
-const attachTextToNodeSliceEmphasis = __webpack_require__( 804 )
-
-// /**
-//  * @typedef { import("./markdownParsing").IRElement } IRElement
-//  * @typedef { import("./markdownHandling").IRTreeNode } IRTreeNode
-//  */
-
-/**
- * Browse the tree recursively to add each node to the ADF Document
- * 	It also treat special cases between top-level node and generic ones
- *
- * @param currentParentNode					{Document}		ADF document to add to
- * @param currentArrayOfNodesOfSameIndent	{IRTreeNode}
- */
-function fillADFNodesWithMarkdown( currentParentNode, currentArrayOfNodesOfSameIndent ){
-	currentArrayOfNodesOfSameIndent.reduce( ( lastListNode, currentNode ) => {
-		const nodeOrListNode = lastListNode !== null
-							   && ( currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' )
-							   && lastListNode.content.type === currentNode.node.adfType
-							   ? lastListNode
-							   : addTypeToNode( currentParentNode, currentNode.node.adfType, currentNode.node.typeParam )
-		
-		const nodeOrListItem = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList'
-							   ? nodeOrListNode.content.add( new ListItem() )
-							   : nodeOrListNode
-		const nodeToAttachTextTo = currentNode.node.adfType === 'orderedList' || currentNode.node.adfType === 'bulletList' || currentNode.node.adfType === 'blockQuote'
-								   ? typeof currentNode.node.textToEmphasis !== 'undefined' || currentNode.children.length === 0
-									 ? nodeOrListItem.content.add( new Paragraph() )
-									 : nodeOrListItem
-								   : nodeOrListItem
-		
-		if( currentNode.node.adfType === 'divider' )
-			return lastListNode
-		
-		else if( currentNode.node.adfType !== 'codeBlock'
-				 && currentNode.node.textToEmphasis )
-			attachItemNode( nodeToAttachTextTo, currentNode.node.textToEmphasis )
-		
-		else if( currentNode.node.adfType !== 'codeBlock'
-				 && currentNode.node.textToEmphasis === '' )
-			attachItemNode( nodeToAttachTextTo, ' ' )
-		
-		else if( currentNode.node.adfType === 'codeBlock' )
-			attachTextToNodeRaw( nodeToAttachTextTo, currentNode.node.textToEmphasis )
-
-		else if( currentNode.node.adfType === 'table' )
-			currentNode.children = currentNode.node.rows
-
-		else if( currentNode.node.adfType === 'tableRow' || currentNode.node.adfType === 'tableHeader' )
-			currentNode.children = currentNode.node.cells
-
-		else if( currentNode.node.adfType === 'tableCell' )
-			currentNode.children = [ currentNode.node.value ]
-
-		if( currentNode.children )
-			fillADFNodesWithMarkdown( nodeOrListItem, currentNode.children )
-		
-		return ( currentNode.node.adfType !== 'orderedList' && currentNode.node.adfType !== 'bulletList' )
-			   || ( !lastListNode || currentNode.node.adfType === lastListNode.content.type )
-			   ? nodeOrListNode
-			   : lastListNode
-	}, null )
-}
-
-/**
- *  Adding a Top-Level ADF element
- *
- * @param adfNodeToAttachTo	{Node}		ADF node to attach this element to
- * @param adfType			{String}	ADF Type of the element we want to attach
- * @param typeParams		{String}	extra params for special top-level nodes
- *
- * @returns 				{Node}		the node added
- */
-function addTypeToNode( adfNodeToAttachTo, adfType, typeParams ){
-	switch( adfType ) {
-		case "heading":
-			return adfNodeToAttachTo.content.add( new Heading( typeParams ) )
-		
-		case "divider":
-			return adfNodeToAttachTo.content.add( new Rule() )
-		
-		case "bulletList":
-			return adfNodeToAttachTo.content.add( new BulletList() )
-		
-		case "orderedList": {
-			const orderedListNode = new OrderedList( )
-			if( typeParams ) orderedListNode.attrs = { order: typeParams }
-			return adfNodeToAttachTo.content.add( orderedListNode )
-		}
-		
-		case "codeBlock":
-			return adfNodeToAttachTo.content.add( new CodeBlock( typeParams ) )
-		
-		case "blockQuote":
-			return adfNodeToAttachTo.content.add( new BlockQuote() )
-		
-		case "paragraph":
-			return adfNodeToAttachTo.content.add( new Paragraph() )
-		
-		case "table":
-			return adfNodeToAttachTo.content.add( new Table() )
-
-		case "tableHeader":
-			return adfNodeToAttachTo.content.add( new TableHeader() )
-
-		case "tableRow":
-			return adfNodeToAttachTo.content.add( new TableRow() )
-
-		case "tableCell":
-			return adfNodeToAttachTo.content.add( new TableCell() )
-
-		default:
-			throw 'incompatible type'
-	}
-}
-
-/**
- * Adding a non-top-level ADF node
- *
- * @param nodeToAttachTo		{Node}		ADF Node to attach to
- * @param rawText				{String}	text content of the node to add
- */
-function attachItemNode( nodeToAttachTo, rawText ) {
-	const slicedInline = sliceInLineCode( rawText )
-	
-	const { slicedInlineAndEmoji } = slicedInline.reduce( ( { slicedInlineAndEmoji }, currentSlice ) => {
-		if( !currentSlice.isMatching ){
-			const slicedEmoji = sliceEmoji( currentSlice.text )
-			
-			return { slicedInlineAndEmoji: slicedInlineAndEmoji.concat( slicedEmoji ) }
-		}
-		
-		slicedInlineAndEmoji.push( currentSlice )
-		return { slicedInlineAndEmoji }
-	}, { slicedInlineAndEmoji: [] } )
-	
-	const { slicedInlineAndEmojiAndLink } = slicedInlineAndEmoji.reduce( ( { slicedInlineAndEmojiAndLink }, currentSlice ) => {
-		if( !currentSlice.isMatching ){
-			const slicedLink = sliceLink( currentSlice.text )
-			
-			return { slicedInlineAndEmojiAndLink: slicedInlineAndEmojiAndLink.concat( slicedLink ) }
-		}
-		
-		slicedInlineAndEmojiAndLink.push( currentSlice )
-		return { slicedInlineAndEmojiAndLink }
-	}, { slicedInlineAndEmojiAndLink: [] } )
-	
-	for( const currentSlice of slicedInlineAndEmojiAndLink ) {
-		switch( currentSlice.type ){
-			case 'inline':
-				const inlineCodeNode = new Text( currentSlice.text, marks().code() )
-				nodeToAttachTo.content.add( inlineCodeNode )
-				break
-			
-			case 'emoji':
-				const emojiNode = new Emoji( {shortName: currentSlice.text } )
-				nodeToAttachTo.content.add( emojiNode )
-				break
-			
-			case 'link':
-				const linkNode = new Text( currentSlice.text,
-										   marks().link( currentSlice.optionalText1,
-														 currentSlice.optionalText2 ) )
-				nodeToAttachTo.content.add( linkNode )
-				break
-			
-			case 'mention':
-				const mentionNode = new Mention( currentSlice.optionalText1, currentSlice.text)
-				nodeToAttachTo.content.add( mentionNode )
-				break
-			
-			case 'image':
-				const imageNode = new Text( currentSlice.text,
-											marks().link( currentSlice.optionalText1,
-														  currentSlice.optionalText2 ) )
-				nodeToAttachTo.content.add( imageNode )
-				break
-			
-			default:
-				attachTextToNodeSliceEmphasis( nodeToAttachTo, currentSlice.text )
-			// const textNode = new Text( currentSlice.text, marksToUse )
-			// nodeToAttachTo.content.add( textNode )
-		}
-	}
-}
-
-/**
- * Match text content with and ADF inline type
- *
- * @param rawText				{String}	the text content to try to match
- *
- * @returns 					{String[]}	the different slice matching an inline style
- */
-function sliceInLineCode( rawText ){
-	return sliceOneMatchFromRegexp( rawText, 'inline', /(?<nonMatchBefore>[^`]*)(?:`(?<match>[^`]+)`)(?<nonMatchAfter>[^`]*)/g )
-}
-
-/**
- * Match text content with and ADF emoji type
- *
- * @param rawText				{String}	the text content to try to match
- *
- * @returns 					{String[]}	the different slice matching an emoji style
- */
-function sliceEmoji( rawText ){
-	return sliceOneMatchFromRegexp( rawText, 'emoji',/(?<nonMatchBefore>[^`]*)(?::(?<match>[a-zA-Z0-9_\+]+):)(?<nonMatchAfter>[^`]*)/g )
-}
-
-/**
- * Match text content with and ADF link type
- *
- * @param rawText				{String}	the text content to try to match
- *
- * @returns 					{String[]}	the different slice matching a link style
- */
-function sliceLink( rawText ){
-	const linkSlices = [];
-	const walkTokens = (token) => {
-		if (token.type === 'link') {
-			const typeTag = token.text[0] === "@" ? 'mention' : 'link';
-			linkSlices.push({
-				isMatching: true,
-				type: typeTag,
-				text: token.text,
-				optionalText1: token.href,
-				optionalText2: token.title,
-				raw: token.raw
-			})
-		} 
-	};
-
-	// use marked to parse out just links
-	marked.parse(rawText, { walkTokens });
-
-	// this is crazy but pull the links out of the rawText to make the text slices
-	const slices = []
-	let paragraph = rawText
-
-	linkSlices.forEach(l => {
-		const link = l.raw
-		const linkIdx = rawText.indexOf(link)
-
-		if (linkIdx !== -1) {
-			const textBefore = paragraph.substring(0, linkIdx)
-
-			if (textBefore.length > 0) {
-				slices.push({
-					isMatching: false,
-					text: textBefore
-				})
-			}
-			slices.push(l)
-
-			// set paragraph to the remaining text
-			paragraph = paragraph.substring(linkIdx + link.length)
-		}
-	})
-
-	if (paragraph.length > 0) {
-		slices.push({
-			isMatching: false,
-			text: paragraph
-		})
-	}
-
-	return slices
-}
-
-/**
- * Match text content with and regular expression with one match
- *
- * @param rawText				{String}	the text content to try to match
- * @param typeTag				{String}	the ADF Type to return if it matches
- * @param regexpToSliceWith		{RegExp}	the regexp with a match group and a non-match group to use
- *
- * @returns 					{String[]}	the different slice matching the specified regexp
- */
-function sliceOneMatchFromRegexp( rawText, typeTag, regexpToSliceWith ){
-  let slicesResult = [ ]
-  let snippet = null
-  let hasAtLeastOneExpression = false
-
-  while( ( snippet = regexpToSliceWith.exec( rawText ) ) ) {
-    hasAtLeastOneExpression = true
-    if( snippet.groups.nonMatchBefore ){
-      slicesResult.push( { isMatching: false, text: snippet.groups.nonMatchBefore } )
-    }
-
-    if( snippet.groups.match ){
-      slicesResult.push( {
-        isMatching: 		true,
-        type: 			typeTag,
-        text: 			snippet.groups.match,
-        optionalText1: 	snippet.groups.matchOptional,
-        optionalText2: 	snippet.groups.matchOptional2
-      } )
-    }
-
-    if( snippet.groups.nonMatchAfter ){
-      slicesResult.push( { isMatching: false, text: snippet.groups.nonMatchAfter } )
-    }
-  }
-
-  if( !hasAtLeastOneExpression )
-    slicesResult.push( { isMatching: false, text: rawText } )
-
-  return slicesResult
-}
-
-/**
- * Attach a raw simple text node to the parent
- *
- * @param nodeToAttachTo	{Node}		ADF node to attach to
- * @param textToAttach		{String}	text to use for the Text node
- */
-function attachTextToNodeRaw( nodeToAttachTo, textToAttach ){
-  const textNode = new Text( textToAttach )
-  nodeToAttachTo.content.add( textNode )
-}
-
-module.exports = fillADFNodesWithMarkdown
-
-
-/***/ }),
-
-/***/ 366:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var text_1 = __webpack_require__(171);
-var Heading = /** @class */ (function (_super) {
-    __extends(Heading, _super);
-    function Heading(level) {
-        var _this = _super.call(this) || this;
-        _this.level = level;
-        _this.content = new index_1.ContentNode('heading');
-        if (level < 1 || level > 6) {
-            throw new Error('Level must be in the range of 1-6');
-        }
-        return _this;
-    }
-    Heading.prototype.link = function (text, href, title) {
-        this.content.add(text_1.link(text, href, title));
-        return this;
-    };
-    Heading.prototype.text = function (text) {
-        this.content.add(text_1.plain(text));
-        return this;
-    };
-    Heading.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                level: this.level
-            } });
-    };
-    return Heading;
-}(index_1.TopLevelNode));
-exports.Heading = Heading;
-//# sourceMappingURL=heading.js.map
-
-/***/ }),
-
-/***/ 371:
-/***/ (function(__unusedmodule, exports) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Media = /** @class */ (function () {
-    function Media(attrs) {
-        this.attrs = attrs;
-    }
-    Media.prototype.toJSON = function () {
-        var media = {
-            type: 'media',
-            attrs: {
-                id: this.attrs.id,
-                type: this.attrs.type,
-                collection: this.attrs.collection
-            }
-        };
-        if (this.attrs.occurrenceKey) {
-            media.attrs.occurrenceKey = this.attrs.occurrenceKey;
-        }
-        if (this.attrs.url) {
-            media.attrs.url = this.attrs.url;
-        }
-        if (this.attrs.width) {
-            media.attrs.width = this.attrs.width;
-        }
-        if (this.attrs.height) {
-            media.attrs.height = this.attrs.height;
-        }
-        return media;
-    };
-    return Media;
-}());
-exports.Media = Media;
-//# sourceMappingURL=media.js.map
-
-/***/ }),
-
-/***/ 396:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var SubSup = /** @class */ (function (_super) {
-    __extends(SubSup, _super);
-    function SubSup(variant) {
-        var _this = _super.call(this, 'subsup') || this;
-        _this.variant = variant;
-        return _this;
-    }
-    SubSup.prototype.toJSON = function () {
-        return {
-            type: this.type,
-            attrs: {
-                type: this.variant
-            }
-        };
-    };
-    return SubSup;
-}(mark_1.Mark));
-exports.SubSup = SubSup;
-//# sourceMappingURL=subsup.js.map
-
-/***/ }),
-
-/***/ 400:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var Em = /** @class */ (function (_super) {
-    __extends(Em, _super);
-    function Em() {
-        return _super.call(this, 'em') || this;
-    }
-    return Em;
-}(mark_1.Mark));
-exports.Em = Em;
-//# sourceMappingURL=em.js.map
-
-/***/ }),
-
-/***/ 451:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var Action = /** @class */ (function () {
-    function Action() {
-    }
-    Action.prototype.title = function (title) {
-        this.actionTitle = title;
-        return this;
-    };
-    Action.prototype.target = function (target) {
-        if (!target.key) {
-            throw new Error('Action target key is required');
-        }
-        this.actionTarget = target;
-        return this;
-    };
-    Action.prototype.parameters = function (parameters) {
-        this.actionParameters = parameters;
-        return this;
-    };
-    Action.prototype.toJSON = function () {
-        var action = {};
-        if (this.actionTitle) {
-            action.title = this.actionTitle;
-        }
-        if (this.actionTarget) {
-            action.target = this.actionTarget;
-        }
-        if (this.actionParameters) {
-            action.parameters = this.actionParameters;
-        }
-        if (Object.keys(action).length < 2) {
-            throw new Error('Must set title and target attributes for action');
-        }
-        return action;
-    };
-    return Action;
-}());
-exports.Action = Action;
-var Detail = /** @class */ (function () {
-    function Detail() {
-        this.detailUsers = [];
-    }
-    Detail.prototype.title = function (text) {
-        this.detailTitle = text;
-        return this;
-    };
-    Detail.prototype.text = function (text) {
-        this.detailText = text;
-        return this;
-    };
-    Detail.prototype.lozenge = function (lozenge) {
-        this.detailLozenge = lozenge;
-        return this;
-    };
-    Detail.prototype.icon = function (icon) {
-        this.detailIcon = icon;
-        return this;
-    };
-    Detail.prototype.badge = function (badge) {
-        this.detailBadge = badge;
-        return this;
-    };
-    Detail.prototype.user = function (user) {
-        this.detailUsers.push(user);
-        return this;
-    };
-    Detail.prototype.toJSON = function () {
-        var detail = {};
-        if (this.detailTitle) {
-            detail.title = this.detailTitle;
-        }
-        if (this.detailText) {
-            detail.text = this.detailText;
-        }
-        if (this.detailIcon) {
-            detail.icon = this.detailIcon;
-        }
-        if (this.detailBadge) {
-            detail.badge = this.detailBadge;
-        }
-        if (this.detailLozenge) {
-            detail.lozenge = this.detailLozenge;
-        }
-        if (this.detailUsers.length > 0) {
-            detail.users = this.detailUsers;
-        }
-        if (Object.keys(detail).length === 0) {
-            throw new Error('Must at least set one attribute');
-        }
-        return detail;
-    };
-    return Detail;
-}());
-exports.Detail = Detail;
-var Context = /** @class */ (function () {
-    function Context(text) {
-        this.text = text;
-    }
-    Context.prototype.icon = function (icon) {
-        this.contextIcon = icon;
-        return this;
-    };
-    Context.prototype.toJSON = function () {
-        var context = {
-            text: this.text
-        };
-        if (this.contextIcon) {
-            context.icon = this.contextIcon;
-        }
-        return context;
-    };
-    return Context;
-}());
-exports.Context = Context;
-var TitleUser = /** @class */ (function () {
-    function TitleUser(titleUserIcon) {
-        this.titleUserIcon = titleUserIcon;
-    }
-    TitleUser.prototype.id = function (id) {
-        this.titleUserId = id;
-        return this;
-    };
-    TitleUser.prototype.toJSON = function () {
-        var titleUser = {
-            icon: this.titleUserIcon
-        };
-        if (this.titleUserId) {
-            titleUser.id = this.titleUserId;
-        }
-        return titleUser;
-    };
-    return TitleUser;
-}());
-exports.TitleUser = TitleUser;
-var ApplicationCard = /** @class */ (function (_super) {
-    __extends(ApplicationCard, _super);
-    function ApplicationCard(title, text) {
-        var _this = _super.call(this) || this;
-        _this.title = title;
-        _this.text = text;
-        _this.isCollapsible = false;
-        _this.details = [];
-        _this.actions = [];
-        return _this;
-    }
-    ApplicationCard.prototype.link = function (url) {
-        this.linkUrl = url;
-        return this;
-    };
-    ApplicationCard.prototype.background = function (url) {
-        this.backgroundUrl = url;
-        return this;
-    };
-    ApplicationCard.prototype.preview = function (url) {
-        this.previewUrl = url;
-        return this;
-    };
-    ApplicationCard.prototype.collapsible = function (collapsible) {
-        this.isCollapsible = collapsible;
-        return this;
-    };
-    ApplicationCard.prototype.description = function (text) {
-        this.descriptionText = text;
-        return this;
-    };
-    ApplicationCard.prototype.titleUser = function (icon) {
-        var titleUser = new TitleUser(icon);
-        this.userInTitle = titleUser;
-        return titleUser;
-    };
-    ApplicationCard.prototype.detail = function () {
-        var detail = new Detail();
-        this.details.push(detail);
-        return detail;
-    };
-    ApplicationCard.prototype.action = function () {
-        var action = new Action();
-        this.actions.push(action);
-        return action;
-    };
-    ApplicationCard.prototype.context = function (text) {
-        this.cardContext = new Context(text);
-        return this.cardContext;
-    };
-    ApplicationCard.prototype.toJSON = function () {
-        var card = {
-            type: 'applicationCard',
-            attrs: {
-                text: this.text || this.title,
-                title: {
-                    text: this.title
-                },
-                collapsible: this.isCollapsible
-            }
-        };
-        if (this.linkUrl) {
-            card.attrs.textUrl = this.linkUrl;
-            card.attrs.link = {
-                url: this.linkUrl
-            };
-        }
-        if (this.backgroundUrl) {
-            card.attrs.background = {
-                url: this.backgroundUrl
-            };
-        }
-        if (this.previewUrl) {
-            card.attrs.preview = {
-                url: this.previewUrl
-            };
-        }
-        if (this.descriptionText) {
-            card.attrs.description = {
-                text: this.descriptionText
-            };
-        }
-        if (this.userInTitle) {
-            card.attrs.title.user = this.userInTitle.toJSON();
-        }
-        if (this.details.length > 0) {
-            card.attrs.details = this.details.map(function (detail) { return detail.toJSON(); });
-        }
-        if (this.actions.length > 0) {
-            card.attrs.actions = this.actions.map(function (action) { return action.toJSON(); });
-        }
-        if (this.cardContext) {
-            card.attrs.context = this.cardContext.toJSON();
-        }
-        return card;
-    };
-    return ApplicationCard;
-}(index_1.TopLevelNode));
-exports.ApplicationCard = ApplicationCard;
-//# sourceMappingURL=application-card.js.map
-
-/***/ }),
-
-/***/ 492:
-/***/ (function(__unusedmodule, exports) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var ContentNode = /** @class */ (function () {
-    function ContentNode(type, minLength) {
-        if (minLength === void 0) { minLength = 1; }
-        this.type = type;
-        this.minLength = minLength;
-        this.content = [];
-    }
-    ContentNode.prototype.toJSON = function () {
-        if (this.content.length < this.minLength) {
-            return {
-                type: this.type,
-                //We cannot import Paragraph as it is the subclass :(
-                //content: [new Paragraph().text(' ').toJSON()] 
-                content: [{
-                        type: 'paragraph',
-                        content: [{
-                                type: 'text',
-                                text: ' '
-                            }]
-                    }]
-            };
-        }
-        return {
-            type: this.type,
-            content: this.content.map(function (node) { return node.toJSON(); })
-        };
-    };
-    ContentNode.prototype.add = function (node) {
-        if (!node) {
-            throw new Error('Illegal value');
-        }
-        this.content.push(node);
-        return node;
-    };
-    Object.defineProperty(ContentNode.prototype, "length", {
-        get: function () {
-            return this.content.length;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ContentNode.prototype.getItem = function (index) {
-        return this.content[index];
-    };
-    return ContentNode;
-}());
-exports.ContentNode = ContentNode;
-var TopLevelNode = /** @class */ (function () {
-    function TopLevelNode() {
-    }
-    return TopLevelNode;
-}());
-exports.TopLevelNode = TopLevelNode;
-var InlineNode = /** @class */ (function () {
-    function InlineNode() {
-    }
-    return InlineNode;
-}());
-exports.InlineNode = InlineNode;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 503:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-/***********************************************************************************************************************
- *
- * Take any markdown (Github focussed for now) and translate it into a JIRA/Confluence compatible ADF document
- *
- *  @author bruno.morel@b-yond.com
- *
- **********************************************************************************************************************/
-const { Document }	= __webpack_require__( 286 )
-
-
-const buildIRTreeFromMarkdown = __webpack_require__( 197 )
-const fillADFNodesWithMarkdown = __webpack_require__( 326 )
-
-function translateGITHUBMarkdownToADF( markdownText ){
-	
-	const textTree = buildIRTreeFromMarkdown( markdownText )
-	
-	const adfRoot = new Document()
-	if( textTree.length > 0 )
-		fillADFNodesWithMarkdown( adfRoot, textTree )
-	
-	return adfRoot
-}
-
-module.exports = translateGITHUBMarkdownToADF
-
-
-/***/ }),
-
-/***/ 526:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-function emoji(shortName, id, text) {
-    return new Emoji({ shortName: shortName, id: id, text: text });
-}
-exports.emoji = emoji;
-var Emoji = /** @class */ (function (_super) {
-    __extends(Emoji, _super);
-    function Emoji(attrs) {
-        var _this = _super.call(this) || this;
-        _this.attrs = attrs;
-        return _this;
-    }
-    Emoji.prototype.toJSON = function () {
-        var emojiNode = {
-            type: 'emoji',
-            attrs: {
-                shortName: this.attrs.shortName
-            }
-        };
-        if (this.attrs.id) {
-            emojiNode.attrs.id = this.attrs.id;
-        }
-        if (this.attrs.text) {
-            emojiNode.attrs.text = this.attrs.text;
-        }
-        return emojiNode;
-    };
-    return Emoji;
-}(index_1.InlineNode));
-exports.Emoji = Emoji;
-//# sourceMappingURL=emoji.js.map
-
-/***/ }),
-
-/***/ 561:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var text_1 = __webpack_require__(171);
-var CodeBlock = /** @class */ (function (_super) {
-    __extends(CodeBlock, _super);
-    function CodeBlock(language) {
-        var _this = _super.call(this) || this;
-        _this.language = language;
-        _this.content = new index_1.ContentNode('codeBlock');
-        return _this;
-    }
-    CodeBlock.prototype.text = function (code) {
-        this.content.add(text_1.plain(code));
-        return this;
-    };
-    CodeBlock.prototype.toJSON = function () {
-        var codeBlock = this.content.toJSON();
-        if (this.language) {
-            codeBlock.attrs = {
-                language: this.language
-            };
-        }
-        return codeBlock;
-    };
-    return CodeBlock;
-}(index_1.TopLevelNode));
-exports.CodeBlock = CodeBlock;
-//# sourceMappingURL=code-block.js.map
-
-/***/ }),
-
-/***/ 566:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var bullet_list_1 = __webpack_require__(849);
-var index_1 = __webpack_require__(492);
-var ordered_list_1 = __webpack_require__(982);
-var paragraph_1 = __webpack_require__(147);
-var ListItem = /** @class */ (function () {
-    function ListItem() {
-        this.content = new index_1.ContentNode('listItem');
-    }
-    ListItem.prototype.paragraph = function () {
-        return this.content.add(new paragraph_1.Paragraph());
-    };
-    ListItem.prototype.bulletList = function () {
-        return this.content.add(new bullet_list_1.BulletList());
-    };
-    ListItem.prototype.orderedList = function () {
-        return this.content.add(new ordered_list_1.OrderedList());
-    };
-    ListItem.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return ListItem;
-}());
-exports.ListItem = ListItem;
-//# sourceMappingURL=list-item.js.map
-
-/***/ }),
-
-/***/ 570:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-function hardBreak() {
-    return new HardBreak();
-}
-exports.hardBreak = hardBreak;
-var HardBreak = /** @class */ (function (_super) {
-    __extends(HardBreak, _super);
-    function HardBreak() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    HardBreak.prototype.toJSON = function () {
-        return {
-            type: 'hardBreak',
-            attrs: {
-                text: '\n'
-            }
-        };
-    };
-    return HardBreak;
-}(index_1.InlineNode));
-exports.HardBreak = HardBreak;
-//# sourceMappingURL=hard-break.js.map
-
-/***/ }),
-
-/***/ 572:
-/***/ (function(module) {
+/***/ 7251:
+/***/ ((module) => {
 
 /**********************************************************************************************************************
  *
@@ -2471,652 +2929,83 @@ module.exports = parseMarkdownLinetoIR
 
 /***/ }),
 
-/***/ 601:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 5300:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var Code = /** @class */ (function (_super) {
-    __extends(Code, _super);
-    function Code() {
-        return _super.call(this, 'code') || this;
-    }
-    return Code;
-}(mark_1.Mark));
-exports.Code = Code;
-//# sourceMappingURL=code.js.map
-
-/***/ }),
-
-/***/ 620:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var Action = /** @class */ (function (_super) {
-    __extends(Action, _super);
-    function Action(title, target, actionParameters) {
-        var _this = _super.call(this, 'action') || this;
-        _this.title = title;
-        _this.target = target;
-        _this.actionParameters = actionParameters;
-        return _this;
-    }
-    Action.prototype.toJSON = function () {
-        var actionMark = {
-            type: this.type,
-            attrs: {
-                title: this.title,
-                target: this.target
-            }
-        };
-        if (this.actionParameters) {
-            actionMark.attrs.parameters = this.actionParameters;
-        }
-        return actionMark;
-    };
-    return Action;
-}(mark_1.Mark));
-exports.Action = Action;
-//# sourceMappingURL=action.js.map
-
-/***/ }),
-
-/***/ 632:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var table_cell_1 = __webpack_require__(301);
-var table_header_1 = __webpack_require__(639);
-var TableRow = /** @class */ (function () {
-    function TableRow() {
-        this.content = new index_1.ContentNode('tableRow');
-    }
-    TableRow.prototype.cell = function (backgroundColor) {
-        return this.content.add(new table_cell_1.TableCell(backgroundColor));
-    };
-    TableRow.prototype.header = function (backgroundColor) {
-        return this.content.add(new table_header_1.TableHeader(backgroundColor));
-    };
-    TableRow.prototype.add = function (node) {
-        this.content.add(node);
-        return this;
-    };
-    TableRow.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return TableRow;
-}());
-exports.TableRow = TableRow;
-//# sourceMappingURL=table-row.js.map
-
-/***/ }),
-
-/***/ 639:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var application_card_1 = __webpack_require__(451);
-var block_quote_1 = __webpack_require__(893);
-var bullet_list_1 = __webpack_require__(849);
-var code_block_1 = __webpack_require__(561);
-var decision_list_1 = __webpack_require__(198);
-var heading_1 = __webpack_require__(366);
-var index_1 = __webpack_require__(492);
-var media_group_1 = __webpack_require__(823);
-var ordered_list_1 = __webpack_require__(982);
-var panel_1 = __webpack_require__(270);
-var paragraph_1 = __webpack_require__(147);
-var rule_1 = __webpack_require__(223);
-var task_list_1 = __webpack_require__(976);
-var colorPattern = /^#[0-9a-f]{6}$/;
-var TableHeader = /** @class */ (function () {
-    function TableHeader(backgroundColor) {
-        this.backgroundColor = backgroundColor;
-        this.content = new index_1.ContentNode('tableHeader');
-        if (backgroundColor) {
-            if (!colorPattern.test(backgroundColor)) {
-                throw new Error("Color " + backgroundColor + " does not match ^#[0-9a-f]{6}$");
-            }
-        }
-    }
-    TableHeader.prototype.paragraph = function () {
-        return this.content.add(new paragraph_1.Paragraph());
-    };
-    TableHeader.prototype.bulletList = function () {
-        return this.content.add(new bullet_list_1.BulletList());
-    };
-    TableHeader.prototype.orderedList = function () {
-        return this.content.add(new ordered_list_1.OrderedList());
-    };
-    TableHeader.prototype.heading = function (level) {
-        return this.content.add(new heading_1.Heading(level));
-    };
-    TableHeader.prototype.panel = function (panelType) {
-        return this.content.add(new panel_1.Panel(panelType));
-    };
-    TableHeader.prototype.blockQuote = function () {
-        return this.content.add(new block_quote_1.BlockQuote());
-    };
-    TableHeader.prototype.rule = function () {
-        return this.content.add(new rule_1.Rule());
-    };
-    TableHeader.prototype.mediaGroup = function () {
-        return this.content.add(new media_group_1.MediaGroup());
-    };
-    TableHeader.prototype.applicationCard = function (title, text) {
-        return this.content.add(new application_card_1.ApplicationCard(title, text));
-    };
-    TableHeader.prototype.decisionList = function (localId) {
-        return this.content.add(new decision_list_1.DecisionList(localId));
-    };
-    TableHeader.prototype.taskList = function (localId) {
-        return this.content.add(new task_list_1.TaskList(localId));
-    };
-    TableHeader.prototype.codeBlock = function (language) {
-        return this.content.add(new code_block_1.CodeBlock(language));
-    };
-    TableHeader.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                background: this.backgroundColor
-            } });
-    };
-    return TableHeader;
-}());
-exports.TableHeader = TableHeader;
-//# sourceMappingURL=table-header.js.map
-
-/***/ }),
-
-/***/ 659:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var media_1 = __webpack_require__(371);
-var MediaSingle = /** @class */ (function (_super) {
-    __extends(MediaSingle, _super);
-    function MediaSingle(layout) {
-        var _this = _super.call(this) || this;
-        //private layout: MediaSingleLayout;
-        _this.content = new index_1.ContentNode('mediaGroup');
-        return _this;
-        //this.layout = layout || 'wrap-right';
-    }
-    MediaSingle.prototype.file = function (attr) {
-        this.content.add(new media_1.Media(attr));
-        return this;
-    };
-    MediaSingle.prototype.external = function (attr) {
-        this.content.add(new media_1.Media(attr));
-        return this;
-    };
-    MediaSingle.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return MediaSingle;
-}(index_1.TopLevelNode));
-exports.MediaSingle = MediaSingle;
-//# sourceMappingURL=media-single.js.map
-
-/***/ }),
-
-/***/ 711:
-/***/ (function(__unusedmodule, exports) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Mark = /** @class */ (function () {
-    function Mark(type) {
-        this.type = type;
-    }
-    Mark.prototype.toJSON = function () {
-        return {
-            type: this.type
-        };
-    };
-    return Mark;
-}());
-exports.Mark = Mark;
-//# sourceMappingURL=mark.js.map
-
-/***/ }),
-
-/***/ 802:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var nodes_1 = __webpack_require__(492);
-var application_card_1 = __webpack_require__(451);
-var block_quote_1 = __webpack_require__(893);
-var bullet_list_1 = __webpack_require__(849);
-var code_block_1 = __webpack_require__(561);
-var decision_list_1 = __webpack_require__(198);
-var heading_1 = __webpack_require__(366);
-var media_group_1 = __webpack_require__(823);
-var ordered_list_1 = __webpack_require__(982);
-var panel_1 = __webpack_require__(270);
-var paragraph_1 = __webpack_require__(147);
-var rule_1 = __webpack_require__(223);
-var table_1 = __webpack_require__(263);
-var task_list_1 = __webpack_require__(976);
-var media_single_1 = __webpack_require__(659);
-var Document = /** @class */ (function () {
-    function Document(attrs) {
-        if (attrs === void 0) { attrs = { version: 1 }; }
-        this.attrs = attrs;
-        this.content = new nodes_1.ContentNode('doc');
-    }
-    Document.prototype.applicationCard = function (title, text) {
-        return this.content.add(new application_card_1.ApplicationCard(title, text));
-    };
-    Document.prototype.blockQuote = function () {
-        return this.content.add(new block_quote_1.BlockQuote());
-    };
-    Document.prototype.bulletList = function () {
-        return this.content.add(new bullet_list_1.BulletList());
-    };
-    Document.prototype.codeBlock = function (language) {
-        return this.content.add(new code_block_1.CodeBlock(language));
-    };
-    Document.prototype.decisionList = function (localId) {
-        return this.content.add(new decision_list_1.DecisionList(localId));
-    };
-    Document.prototype.heading = function (level) {
-        return this.content.add(new heading_1.Heading(level));
-    };
-    Document.prototype.textHeading = function (level, text) {
-        return this.content.add(new heading_1.Heading(level).text(text));
-    };
-    Document.prototype.mediaGroup = function () {
-        return this.content.add(new media_group_1.MediaGroup());
-    };
-    Document.prototype.mediaSingle = function () {
-        return this.content.add(new media_single_1.MediaSingle());
-    };
-    Document.prototype.orderedList = function () {
-        return this.content.add(new ordered_list_1.OrderedList());
-    };
-    Document.prototype.panel = function (type) {
-        return this.content.add(new panel_1.Panel(type));
-    };
-    Document.prototype.paragraph = function () {
-        return this.content.add(new paragraph_1.Paragraph());
-    };
-    Document.prototype.rule = function () {
-        this.content.add(new rule_1.Rule());
-        return this;
-    };
-    Document.prototype.table = function () {
-        return this.content.add(new table_1.Table());
-    };
-    Document.prototype.taskList = function (localId) {
-        return this.content.add(new task_list_1.TaskList(localId));
-    };
-    Document.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { version: this.attrs.version });
-    };
-    Document.prototype.toString = function () {
-        return JSON.stringify(this);
-    };
-    return Document;
-}());
-exports.Document = Document;
-//# sourceMappingURL=document.js.map
-
-/***/ }),
-
-/***/ 804:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-/***********************************************************************************************************************
- *
- * Atlassian Document Format parsing of Emphasis
- *
- *  @author bruno.morel@b-yond.com
- * ---------------------------------------------------------------------------------------------------------------------
- *
- * This transform a text with emphasis mark (*, _ or `) into an ADF expanded Paragraph
- *
- **********************************************************************************************************************/
-const { marks, Text }	= __webpack_require__( 286 )
-
-
-/**
- * Parse a string character per character to find emphasis patterns
- *  This is a very "manual" way to do it, but it provides the most efficient result
- * @param parentNode			{Node}		ADF Node to attach the suite of Text node to
- * @param textToEmphasis		{String}	text to parse for emphasis parsing
- */
-function attachTextToNodeSliceEmphasis( parentNode, textToEmphasis ){
-	const lineUnderscored = textToEmphasis.replace( /\*/g, '_' )
-	let currentDecorationLevel = 0
-	//see convertDecorationLevelToMark
-	// 0 => no decoration
-	// 1 => italic
-	// 2 => bold
-	// 3 => bold and italic
-	
-	let potentialUnderscorePair = false
-	let strikedThrough			= false
-	let expressionBuffer		= ''
-	for( const currentCharacterIndex in lineUnderscored ){
-		
-		if( lineUnderscored[ currentCharacterIndex ] !== '_' ){
-			expressionBuffer += lineUnderscored[ currentCharacterIndex ]
-			
-			if( potentialUnderscorePair ){
-				currentDecorationLevel = currentDecorationLevel === 0 || currentDecorationLevel === 2
-										 ? currentDecorationLevel + 1
-										 : currentDecorationLevel - 1
-				potentialUnderscorePair = false
-			}
-		}
-		
-		if( currentCharacterIndex > 0
-			&& lineUnderscored[ currentCharacterIndex ] === '~'
-			&& lineUnderscored[ currentCharacterIndex - 1 ] === '~' ){
-      const text = expressionBuffer.slice( 0, expressionBuffer.length - 2);
-      if (text.length > 0) {
-        const textNode = new Text( text,
-          convertDecorationLevelToMark( currentDecorationLevel, strikedThrough ) )
-        parentNode.content.add( textNode )
-      }
-
-      expressionBuffer = ''
-      strikedThrough = !strikedThrough
-    }
-
-
-    if( lineUnderscored[ currentCharacterIndex ] === '_' ){
-      let decorationToUse = convertDecorationLevelToMark( currentDecorationLevel, strikedThrough )
-			
-			if( expressionBuffer !== '' ){
-				const textNode = new Text( expressionBuffer, decorationToUse )
-				parentNode.content.add( textNode )
-				// textWithInline( parentNode, expressionBuffer, decorationToUse )
-			}
-			else {
-				if( potentialUnderscorePair )
-					currentDecorationLevel = currentDecorationLevel === 0 || currentDecorationLevel === 1
-											 ? currentDecorationLevel + 2
-											 : currentDecorationLevel - 2
-			}
-			
-			potentialUnderscorePair = !potentialUnderscorePair
-			expressionBuffer = ''
-		}
-	}
-	
-	if( expressionBuffer !== '' ){
-		const textNode = new Text( expressionBuffer, convertDecorationLevelToMark( currentDecorationLevel, strikedThrough ) )
-		parentNode.content.add( textNode )
-	}
+var toPropertyKey = __nccwpck_require__(3963);
+function _defineProperty(e, r, t) {
+  return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
 }
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
-/**
- * Convert a "decoration level" (bit swap) to an actual ADF Mark for the text
- *
- * @param decorationLevelToConvert	{Number}		decoration level follow the convention:
- * 														0 => no decoration
- * 														1 => italic
- * 														2 => bold
- * 														3 => bold and italic
- * @param addStrikethrough			{Boolean}		is strikethrough active?
- */
-function convertDecorationLevelToMark( decorationLevelToConvert, addStrikethrough ){
-	if( addStrikethrough )
-		return decorationLevelToConvert === 1
-			   ? marks().strike().em()
-			   : decorationLevelToConvert === 2
-				 ? marks().strike().strong()
-				 : decorationLevelToConvert === 3
-				   ? marks().strike().strong().em()
-				   : marks().strike()
-	
-	return decorationLevelToConvert === 1
-		   ? marks().em()
-		   : decorationLevelToConvert === 2
-			 ? marks().strong()
-			 : decorationLevelToConvert === 3
-			   ? marks().strong().em()
-			   : null
+/***/ }),
+
+/***/ 2645:
+/***/ ((module) => {
+
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
+  };
 }
-
-module.exports = attachTextToNodeSliceEmphasis
-
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
-/***/ 812:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 9558:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var action_1 = __webpack_require__(620);
-var code_1 = __webpack_require__(601);
-var em_1 = __webpack_require__(400);
-var link_1 = __webpack_require__(206);
-var strike_1 = __webpack_require__(103);
-var strong_1 = __webpack_require__(192);
-var subsup_1 = __webpack_require__(396);
-var text_color_1 = __webpack_require__(936);
-var underline_1 = __webpack_require__(294);
-function marks() {
-    return new Marks();
+var _typeof = (__nccwpck_require__(7087)["default"]);
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
 }
-exports.marks = marks;
-var Marks = /** @class */ (function () {
-    function Marks() {
-        this.marks = [];
-    }
-    Marks.prototype.code = function () {
-        return this.add(new code_1.Code());
-    };
-    Marks.prototype.em = function () {
-        return this.add(new em_1.Em());
-    };
-    Marks.prototype.link = function (href, title) {
-        return this.add(new link_1.Link(href, title));
-    };
-    Marks.prototype.strike = function () {
-        return this.add(new strike_1.Strike());
-    };
-    Marks.prototype.strong = function () {
-        return this.add(new strong_1.Strong());
-    };
-    Marks.prototype.sub = function () {
-        return this.add(new subsup_1.SubSup('sub'));
-    };
-    Marks.prototype.sup = function () {
-        return this.add(new subsup_1.SubSup('sup'));
-    };
-    Marks.prototype.color = function (color) {
-        return this.add(new text_color_1.TextColor(color));
-    };
-    Marks.prototype.underline = function () {
-        return this.add(new underline_1.Underline());
-    };
-    Marks.prototype.action = function (title, target, actionParameters) {
-        return this.add(new action_1.Action(title, target, actionParameters));
-    };
-    Marks.prototype.toJSON = function () {
-        if (this.marks.length === 0) {
-            throw new Error('At least one mark is required');
-        }
-        return this.marks.map(function (mark) { return mark.toJSON(); });
-    };
-    Marks.prototype.add = function (mark) {
-        var existing = this.marks.filter(function (m) { return m.type === mark.type; });
-        if (existing.length > 0) {
-            throw new Error('A mark type can only be used once');
-        }
-        this.marks.push(mark);
-        return this;
-    };
-    return Marks;
-}());
-exports.Marks = Marks;
-//# sourceMappingURL=index.js.map
+module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
-/***/ 823:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 3963:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var media_1 = __webpack_require__(371);
-var MediaGroup = /** @class */ (function (_super) {
-    __extends(MediaGroup, _super);
-    function MediaGroup() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.content = new index_1.ContentNode('mediaGroup');
-        return _this;
-    }
-    MediaGroup.prototype.media = function (attrs) {
-        this.content.add(new media_1.Media(attrs));
-        return this;
-    };
-    MediaGroup.prototype.link = function (id, collection) {
-        this.content.add(new media_1.Media({ id: id, collection: collection, type: 'link' }));
-        return this;
-    };
-    MediaGroup.prototype.file = function (id, collection) {
-        this.content.add(new media_1.Media({ id: id, collection: collection, type: 'file' }));
-        return this;
-    };
-    MediaGroup.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return MediaGroup;
-}(index_1.TopLevelNode));
-exports.MediaGroup = MediaGroup;
-//# sourceMappingURL=media-group.js.map
+var _typeof = (__nccwpck_require__(7087)["default"]);
+var toPrimitive = __nccwpck_require__(9558);
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : i + "";
+}
+module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
-/***/ 849:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ 7087:
+/***/ ((module) => {
 
-"use strict";
+function _typeof(o) {
+  "@babel/helpers - typeof";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var list_item_1 = __webpack_require__(566);
-var BulletList = /** @class */ (function (_super) {
-    __extends(BulletList, _super);
-    function BulletList() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.content = new index_1.ContentNode('bulletList');
-        return _this;
-    }
-    BulletList.prototype.item = function () {
-        return this.content.add(new list_item_1.ListItem());
-    };
-    BulletList.prototype.textItem = function (text, marks) {
-        this.item().paragraph().text(text, marks);
-        return this;
-    };
-    BulletList.prototype.linkItem = function (text, href, title) {
-        this.item().paragraph().link(text, href, title);
-        return this;
-    };
-    BulletList.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return BulletList;
-}(index_1.TopLevelNode));
-exports.BulletList = BulletList;
-//# sourceMappingURL=bullet-list.js.map
+  return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(o);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
-/***/ 877:
-/***/ (function(__unusedmodule, exports) {
+/***/ 9257:
+/***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
 /**
@@ -5932,227 +5821,52 @@ exports.use = use;
 exports.walkTokens = walkTokens;
 
 
-/***/ }),
-
-/***/ 893:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var paragraph_1 = __webpack_require__(147);
-var BlockQuote = /** @class */ (function (_super) {
-    __extends(BlockQuote, _super);
-    function BlockQuote() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.content = new index_1.ContentNode('blockquote');
-        return _this;
-    }
-    BlockQuote.prototype.paragraph = function () {
-        return this.content.add(new paragraph_1.Paragraph());
-    };
-    BlockQuote.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return BlockQuote;
-}(index_1.TopLevelNode));
-exports.BlockQuote = BlockQuote;
-//# sourceMappingURL=block-quote.js.map
-
-/***/ }),
-
-/***/ 936:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var mark_1 = __webpack_require__(711);
-var colorPattern = /^#[0-9a-f]{6}$/;
-var TextColor = /** @class */ (function (_super) {
-    __extends(TextColor, _super);
-    function TextColor(color) {
-        var _this = _super.call(this, 'textColor') || this;
-        _this.color = color;
-        if (!colorPattern.test(color)) {
-            throw new Error("Color " + color + " does not match ^#[0-9a-f]{6}$");
-        }
-        return _this;
-    }
-    TextColor.prototype.toJSON = function () {
-        return {
-            type: this.type,
-            attrs: {
-                color: this.color
-            }
-        };
-    };
-    return TextColor;
-}(mark_1.Mark));
-exports.TextColor = TextColor;
-//# sourceMappingURL=text-color.js.map
-
-/***/ }),
-
-/***/ 962:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-function mention(id, text) {
-    return new Mention(id, text);
-}
-exports.mention = mention;
-var Mention = /** @class */ (function (_super) {
-    __extends(Mention, _super);
-    function Mention(id, text) {
-        var _this = _super.call(this) || this;
-        _this.id = id;
-        _this.text = text;
-        return _this;
-    }
-    Mention.prototype.toJSON = function () {
-        return {
-            type: 'mention',
-            attrs: {
-                id: this.id,
-                text: this.text
-            }
-        };
-    };
-    return Mention;
-}(index_1.InlineNode));
-exports.Mention = Mention;
-//# sourceMappingURL=mention.js.map
-
-/***/ }),
-
-/***/ 976:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var task_1 = __webpack_require__(284);
-var TaskList = /** @class */ (function (_super) {
-    __extends(TaskList, _super);
-    function TaskList(localId) {
-        var _this = _super.call(this) || this;
-        _this.localId = localId;
-        _this.content = new index_1.ContentNode('taskList');
-        return _this;
-    }
-    TaskList.prototype.task = function (localId, state) {
-        return this.content.add(new task_1.Task(localId, state));
-    };
-    TaskList.prototype.toJSON = function () {
-        return __assign({}, this.content.toJSON(), { attrs: {
-                localId: this.localId
-            } });
-    };
-    return TaskList;
-}(index_1.TopLevelNode));
-exports.TaskList = TaskList;
-//# sourceMappingURL=task-list.js.map
-
-/***/ }),
-
-/***/ 982:
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __webpack_require__(492);
-var list_item_1 = __webpack_require__(566);
-var OrderedList = /** @class */ (function (_super) {
-    __extends(OrderedList, _super);
-    function OrderedList() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.content = new index_1.ContentNode('orderedList');
-        return _this;
-    }
-    OrderedList.prototype.item = function () {
-        return this.content.add(new list_item_1.ListItem());
-    };
-    OrderedList.prototype.textItem = function (text, marks) {
-        this.item().paragraph().text(text, marks);
-        return this;
-    };
-    OrderedList.prototype.linkItem = function (text, href, title) {
-        this.item().paragraph().link(text, href, title);
-        return this;
-    };
-    OrderedList.prototype.toJSON = function () {
-        return this.content.toJSON();
-    };
-    return OrderedList;
-}(index_1.TopLevelNode));
-exports.OrderedList = OrderedList;
-//# sourceMappingURL=ordered-list.js.map
-
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __nccwpck_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			__webpack_modules__[moduleId](module, module.exports, __nccwpck_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
+/******/ 		}
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat */
+/******/ 	
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __nccwpck_require__(160);
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
+/******/ })()
+;

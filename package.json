@@ -32,7 +32,7 @@
     "adf-builder": "github:orval/adf-builder-javascript"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.20.5",
+    "@vercel/ncc": "^0.38.2",
     "codecov": "^4.0.0-0",
     "commitizen": "^4.0.4",
     "conventional-changelog-jscs": "^0.1.0",
