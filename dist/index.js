@@ -2158,9 +2158,6 @@ const fillADFNodesWithMarkdown = __nccwpck_require__( 7812 )
 
 function translateGITHUBMarkdownToADF( markdownText ){
 	const textTree = buildIRTreeFromMarkdown( markdownText )
-	const d = doc(...fillADFNodesWithMarkdown(textTree))
-	console.log(JSON.stringify(d))
-	return d
 	return doc(...fillADFNodesWithMarkdown(textTree))
 }
 
