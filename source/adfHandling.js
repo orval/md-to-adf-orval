@@ -9,7 +9,7 @@
  * It also remove non-compatible hierarchy that ADF doesn't support
  *
  **********************************************************************************************************************/
-const { blockQuote, code, codeBlock, emoji, heading, li, link, mediaSingle, mention, ol, p, rule, table, td, text, th, tr, ul } = require('@atlaskit/adf-utils/builders')
+const { blockQuote, code, codeBlock, emoji, heading, li, link, media, mediaSingle, mention, ol, p, rule, table, td, text, th, tr, ul } = require('@atlaskit/adf-utils/builders')
 
 const marked = require('marked')
 
@@ -163,16 +163,12 @@ function textSlices(rawText) {
 				break
 			
 			case 'image':
-				// const imageNode = new Text( currentSlice.text,
-				// 							marks().link( currentSlice.optionalText1,
-				// 										  currentSlice.optionalText2 ) )
-				// nodeToAttachTo.content.add( imageNode )
-				// const linkFn = (currentSlice.optionalText2)
-				// 	? link({ href: currentSlice.optionalText1, title: currentSlice.optionalText2 })
-				// 	: link({ href: currentSlice.optionalText1 })
-
-				// last.content.push(linkFn(text(currentSlice.text)))
-				elements.push(mediaSingle({ href: currentSlice.optionalText1 }))
+				elements.push(mediaSingle()(media({
+					"id": currentSlice.optionalText1,
+					"type": "file",
+					"alt": currentSlice.text,
+					"collection": "attachment"
+				})))
 				break
 			
 			default:
@@ -224,8 +220,17 @@ function sliceLink( rawText ){
 				optionalText2: token.title,
 				raw: token.raw
 			})
-		} 
-	};
+		} else if (token.type === 'image') {
+			linkSlices.push({
+				isMatching: true,
+				type: 'image',
+				text: token.text,
+				optionalText1: token.href,
+				optionalText2: token.title,
+				raw: token.raw
+			})
+		}
+	}
 
 	// use marked to parse out just links
 	marked.parse(rawText, { walkTokens });
@@ -236,7 +241,7 @@ function sliceLink( rawText ){
 
 	linkSlices.forEach(l => {
 		const link = l.raw
-		const linkIdx = rawText.indexOf(link)
+		const linkIdx = paragraph.indexOf(link)
 
 		if (linkIdx !== -1) {
 			const textBefore = paragraph.substring(0, linkIdx)
