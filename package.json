@@ -25,11 +25,7 @@
   ],
   "dependencies": {
     "@atlaskit/adf-utils": "^19.8.1",
-    "adf-builder": "github:orval/adf-builder-javascript",
     "marked": "^4.3.0"
-  },
-  "resolutions": {
-    "adf-builder": "github:orval/adf-builder-javascript"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.2",
